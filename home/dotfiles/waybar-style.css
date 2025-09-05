@@ -1,0 +1,82 @@
+* {
+    font-family: "NotoSans Nerd Font Propo";
+    font-weight: 500;
+    font-size: 16px;
+ 
+    border-radius: 16px;
+    text-shadow: none;
+ 
+    transition-property: background;
+    transition-duration: 0.2s;
+}
+ 
+window#waybar {
+    background-color: transparent;
+}
+ 
+window#waybar.hidden  {
+    opacity: 0.2;
+}
+ 
+.modules-left {
+    background-color: rgba(32, 32, 32, 0.8);
+    padding: 12px 6px;
+}
+ 
+.modules-center {
+    background-color: rgba(32, 32, 32, 0.8);
+    padding: 12px 6px;
+}
+ 
+.modules-right {
+    background-color: rgba(32, 32, 32, 0.8);
+    padding: 12px 6px;
+}
+
+#custom-lock,
+#custom-poweroff,
+#custom-reboot,
+#custom-search,
+#custom-caffeine,
+#workspaces button,
+#tray,
+#backlight,
+#battery,
+#cpu,
+#memory,
+#network,
+#wireplumber,
+#clock 
+{
+    margin-top: 2px;
+    margin-bottom: 2px;
+    margin-left: 12px;
+    padding: 5px 2px;
+}
+
+
+#battery { color: #93abbe; }
+
+#clock { color: #eefff1; }
+
+#cpu { color: #FE968B; }
+
+#backlight { color: #FFD700;}
+
+#memory { color: #FFEAAA; }
+
+#wireplumber { color: #b0f5e5; }
+
+#network { color: #8eb1f2; }
+
+#custom-lock { color: #B5E8E0; }
+
+#custom-poweroff { color: #df6a76; }
+
+#custom-reboot { color: #e8c55d; }
+
+#custom-search { color: #ffffff; }
+
+#custom-caffeine { color: #deb49f; }
+
+#workspaces button.focused { color: #36d792; }
