@@ -5,6 +5,7 @@
 
 {
   imports = [
+    ../home/clipboard-sync.nix
     ../home/dconf.nix
     ../home/dotfiles.nix
     ../home/file.nix

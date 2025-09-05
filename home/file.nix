@@ -9,6 +9,11 @@
       target = ".nix-profile";
     };
 
+    rime-config = {
+      source = ../home/fcitx5/rime;
+      target = ".local/share/fcitx5/rime";
+    };
+
     theme1 = {
       source = "${config.home.path}/share/themes";
       target = ".themes";

@@ -13,6 +13,6 @@
       efiSupport = true;
       gfxmodeEfi = auto;
     };
-    timeout = 3;
+    timeout = 5;
   };
 }

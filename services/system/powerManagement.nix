@@ -21,5 +21,13 @@
     HibernateDelaySec=15m
   '';
 
+  services.logind.settings = {
+    HandleLidSwitch = "suspend-then-hibernate";
+    HandleLidSwitchExternalPower = "lock";
+    HandleLidSwitchDocked = "ignore";
+  
+    HandlePowerKey = "lock";
+    HandlePowerKeyLongPress = "hibernate";
+  };
 }
 

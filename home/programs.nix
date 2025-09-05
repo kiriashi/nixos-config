@@ -67,7 +67,7 @@
     settings = {
       theme = "tokyonight_transparent";
       editor = {
-        clipboard-provider = "wl-clipboard";
+        clipboard-provider = "wl-copy";
         cursor-shape = {
           normal = "block";
           insert = "bar";

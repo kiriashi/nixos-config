@@ -11,6 +11,7 @@
     gcc
     nix-output-monitor
     wlr-randr
+    xrog.xrandr
 
     unzip
     unrar
@@ -20,29 +21,29 @@
     adwaita-icon-theme
 
     # openwrt编译环境
-    ack antlr3 asciidoc autoconf automake autopoint
+    ack antlr3 asciidoc autoconf automake
     binutils bison bzip2 
-    ccache clang cmake cpio curl
-    device-tree-compiler
+    ccache clang cmake cpio curl cdrtools
+    dtc
     ecj
     fastjar flex fuse fuse3
     gawk gettext gnutls gperf gmp
     haveged help2man
     intltool
-    libelf libglib2 libtool libmpc lld llvm libyaml
-    mpfr mkisofs msmtp
+    libelf libglibutil libtool libmpc lld libllvm libyaml
+    mpfr msmtp
     ncurses ninja
     openssl
-    python3Packages.ply python3Packages.docutils python3Packages.pyelftools pkgconf
-    qemu
+    python313Packages.ply python313Packages.docutils python313Packages.pyelftools pkgconf
+    qemu-utils
     re2c rsync readline
-    scons squashfs-tools subversion
+    scons squashfs-tools-ng subversion
     swig
-    texinfo
+    texinfo tinyxxd
     uglify-js upx
     vim
     wget
-    xmlto xxd
+    xmlto 
     zlib zstd
   ];
 

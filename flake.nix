@@ -55,7 +55,7 @@
 
           (import ./overlays)
 
-          # Chaotic模块
+          # Chaotic软件源
           chaotic.nixosModules.default
           ({ lib, ... }: {
             chaotic.mesa-git.enable = true;
