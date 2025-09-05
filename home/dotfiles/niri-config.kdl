@@ -152,6 +152,7 @@ window-rule {
     match app-id="wechat"
     match app-id="org.telegram.desktop"
     match app-id="QQ"
+    match app-id="chatgpt"
     
     open-on-workspace "Chat"
 }
@@ -232,10 +233,10 @@ binds {
     Mod+Ctrl+R      hotkey-overlay-title="随机壁纸"                            { spawn "waypaper" "--random"; }
 
     Mod+T        hotkey-overlay-title="打开终端"      repeat=false  { spawn "kitty"; }
-    Mod+D        hotkey-overlay-title="打开搜索"      repeat=false  { spawn "anyrun"; }
+    Mod+D        hotkey-overlay-title="打开搜索"      repeat=false  { spawn "fuzzel"; }
     Mod+B        hotkey-overlay-title="打开浏览器"    repeat=false  { spawn "zen-browser"; }
     Mod+M        hotkey-overlay-title="打开音乐"      repeat=false  { spawn "splayer"; }
-    Mod+C        hotkey-overlay-title="打开剪切板"    repeat=false  { spawn "sh" "-c" "cliphist list | anyrun --dmenu | cliphist decode | wl-copy"; }
+    Mod+C        hotkey-overlay-title="打开剪切板"    repeat=false  { spawn "sh" "-c" "cliphist list | fuzzel --dmenu | cliphist decode | wl-copy"; }
     Mod+Escape   hotkey-overlay-title="总览"          repeat=false  { toggle-overview; }
     Super+Alt+L  hotkey-overlay-title="锁屏"          repeat=false  { spawn "gtklock"; }
 

@@ -33,6 +33,7 @@
     wechat
     qq
     telegram-desktop
+    chatgpt
     thunderbird
 
     bilibili

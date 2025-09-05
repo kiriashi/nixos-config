@@ -11,7 +11,7 @@
       device = "nodev";
       useOSProber = true;
       efiSupport = true;
-      gfxmodeEfi = auto;
+      # gfxmodeEfi = "3200x2000";
     };
     timeout = 5;
   };

@@ -11,7 +11,7 @@
     gcc
     nix-output-monitor
     wlr-randr
-    xrog.xrandr
+    xorg.xrandr
 
     unzip
     unrar
@@ -25,7 +25,6 @@
     binutils bison bzip2 
     ccache clang cmake cpio curl cdrtools
     dtc
-    ecj
     fastjar flex fuse fuse3
     gawk gettext gnutls gperf gmp
     haveged help2man

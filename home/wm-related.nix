@@ -35,6 +35,37 @@
     ];
   };
 
+  programs.fuzzel = {
+    enable = true;
+    settings = {
+      main = {
+        font = "monospace:size=10";
+        icons-enabled = "no";
+        layer = "overlay";
+        line-height = "16";
+        terminal = "${pkgs.alacritty}/bin/alacritty";
+      };
+      colors = {
+        background = "2c2c2ccc";
+
+        text = "ffffffff";
+        prompt = "4db6acff";
+        input = "4db6acff";
+        match = "f3777cff";
+
+        selection = "383838cc";
+        selection-text = "8fc3a2ff";
+        selection-match = "f58e92ff";
+
+        border = "#7fc8ffff";
+      };
+      border = {
+        width = "6";
+        radius = "28";
+      };
+    };
+  };
+
   services.mako = {
     enable = true;
     settings = {
@@ -87,123 +118,5 @@
         icon_size = 48;
       };
     };
-  };
-
-  programs.anyrun = {
-    enable = true;
-    config = {
-      # 窗口位置和大小
-      x = { fraction = 0.5; absolute = null; };
-      y = { fraction = 0.3; absolute = null; };
-      width = { fraction = 0.35; absolute = null; };
-      hideIcons = false;
-      ignoreExclusiveZones = false;
-      layer = "overlay";
-      hidePluginInfo = true;
-      closeOnClick = true;
-      showResultsImmediately = true;
-      maxEntries = 30;
-
-      # 加载插件
-      plugins = [
-        "${anyrunPkgs}/lib/libapplications.so"
-        "${anyrunPkgs}/lib/libsymbols.so"
-      ];
-    };
-
-    # 根据深浅模式切换 CSS
-    extraCss = lib.mkIf config.profile.darkMode ''
-      * {
-        font-family: "monospace";
-        font-size: 1.2rem;
-        all: unset;
-      }
-
-      box#main {
-        background: rgba(30, 30, 30, 0.7);
-        border-radius: 20px;
-        padding: 12px;
-        box-shadow:
-          0 0 10px rgba(0,0,0,0.5),
-          inset 0 0 0 1px rgba(255,255,255,0.05);
-      }
-
-      #entry {
-        background: rgba(255,255,255,0.05);
-        border: 1px solid rgba(255,255,255,0.1);
-        border-radius: 12px;
-        padding: 4px 8px;
-      }
-
-      #match.activatable {
-        border-radius: 10px;
-        margin: 4px 0;
-        padding: 6px;
-        transition: 100ms ease-out;
-      }
-
-      #match.activatable:hover,
-      #match:selected {
-        background: rgba(255,255,255,0.1);
-      }
-
-      #plugin:hover {
-        background: rgba(255,255,255,0.05);
-      }
-    '' 
-    // 浅色模式
-    else ''
-      * {
-        font-family: "monospace";
-        font-size: 1.2rem;
-        all: unset;
-        color: black;
-      }
-
-      box#main {
-        background: rgba(240, 240, 240, 0.8);
-        border-radius: 20px;
-        padding: 12px;
-        box-shadow:
-          0 0 10px rgba(0,0,0,0.2),
-          inset 0 0 0 1px rgba(0,0,0,0.05);
-      }
-
-      #entry {
-        background: rgba(0,0,0,0.03);
-        border: 1px solid rgba(0,0,0,0.1);
-        border-radius: 12px;
-        padding: 4px 8px;
-      }
-
-      #match.activatable {
-        border-radius: 10px;
-        margin: 4px 0;
-        padding: 6px;
-      }
-
-      #match.activatable:hover,
-      #match:selected {
-        background: rgba(0,0,0,0.05);
-      }
-
-      #plugin:hover {
-        background: rgba(0,0,0,0.03);
-      }
-    '';
-
-    # 插件配置文件示例
-    extraConfigFiles."applications.ron".text = ''
-      Config(
-        maxResults: 20,
-        enableIcons: true
-      )
-    '';
-
-    extraConfigFiles."symbols.ron".text = ''
-      Config(
-        maxResults: 50
-      )
-    '';
   };
 }
