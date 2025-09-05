@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  # ===== 内核模块优化 =====
+  # ===== AMD 内核模块优化 =====
   boot.extraModprobeConfig = ''
     options kvm_amd nested=1
     options kvm ignore_msrs=1 report_ignored_msrs=0
@@ -8,7 +8,7 @@
 
   hardware.cpu.amd.updateMicrocode = true;
 
-  # ===== 蓝牙优化 =====
+  # ===== 通用蓝牙优化 =====
   services.blueman.enable = true;
   hardware.bluetooth = {
     enable = true;
@@ -32,7 +32,7 @@
     serviceConfig.ExecStart = "${pkgs.bluez}/bin/mpris-proxy";
   };
 
-  # ===== 显卡和图形栈优化 =====
+  # ===== AMD 显卡和图形栈优化 =====
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
@@ -49,7 +49,7 @@
     ];
   };
 
-  # ===== 内核参数优化 =====
+  # ===== AMD 内核参数优化 =====
   boot.kernelParams = [
     "acpi_backlight=native"
     "amd_pstate=active" 
