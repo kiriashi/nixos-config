@@ -56,7 +56,7 @@ input {
 }
 
 output "eDP-1" {
-    scale = 2
+    scale 2.0
 }
 
 output "HDMI-A-1" {
@@ -164,7 +164,7 @@ window-rule {
     match app-id=r#"steam_app*."#
     match app-id=".gamescope-wrapped"
 
-    match app-id="Splayer"
+    match app-id="SPlayer"
     match app-id="bilibili"
 
     match app-id="osu!"
@@ -234,7 +234,7 @@ binds {
 
     Mod+T        hotkey-overlay-title="打开终端"      repeat=false  { spawn "kitty"; }
     Mod+D        hotkey-overlay-title="打开搜索"      repeat=false  { spawn "fuzzel"; }
-    Mod+B        hotkey-overlay-title="打开浏览器"    repeat=false  { spawn "zen-browser"; }
+    Mod+B        hotkey-overlay-title="打开浏览器"    repeat=false  { spawn "zen-beta"; }
     Mod+M        hotkey-overlay-title="打开音乐"      repeat=false  { spawn "splayer"; }
     Mod+C        hotkey-overlay-title="打开剪切板"    repeat=false  { spawn "sh" "-c" "cliphist list | fuzzel --dmenu | cliphist decode | wl-copy"; }
     Mod+Escape   hotkey-overlay-title="总览"          repeat=false  { toggle-overview; }

@@ -13,8 +13,8 @@
   home.packages = with pkgs; [
     onlyoffice-desktopeditors
     wpsoffice-cn
-    
-    gimp3-with-plugins 
+
+    gimp3-with-plugins
     inkscape-with-extensions
     kdePackages.kdenlive
 
@@ -33,7 +33,6 @@
     wechat
     qq
     telegram-desktop
-    chatgpt
     thunderbird
 
     bilibili
@@ -68,7 +67,7 @@
     settings = {
       theme = "tokyonight_transparent";
       editor = {
-        clipboard-provider = "wl-copy";
+        # clipboard-provider = "wl-copy";
         cursor-shape = {
           normal = "block";
           insert = "bar";
