@@ -1,6 +1,6 @@
-{ 
-  pkgs, 
-  ... 
+{
+  pkgs,
+  ...
 }:
 
 {
@@ -8,6 +8,7 @@
     fastfetch
     git
     uv
+    jq
     gcc
     nix-output-monitor
     wlr-randr
@@ -21,29 +22,66 @@
     adwaita-icon-theme
 
     # openwrt编译环境
-    ack antlr3 asciidoc autoconf automake
-    binutils bison bzip2 
-    ccache clang cmake cpio curl cdrtools
+    ack
+    antlr3
+    asciidoc
+    autoconf
+    automake
+    binutils
+    bison
+    bzip2
+    ccache
+    clang
+    cmake
+    cpio
+    curl
+    cdrtools
     dtc
-    fastjar flex fuse fuse3
-    gawk gettext gnutls gperf gmp
-    haveged help2man
+    fastjar
+    flex
+    fuse
+    fuse3
+    gawk
+    gettext
+    gnutls
+    gperf
+    gmp
+    haveged
+    help2man
     intltool
-    libelf libglibutil libtool libmpc lld libllvm libyaml
-    mpfr msmtp
-    ncurses ninja
+    libelf
+    libglibutil
+    libtool
+    libmpc
+    lld
+    libllvm
+    libyaml
+    mpfr
+    msmtp
+    ncurses
+    ninja
     openssl
-    python313Packages.ply python313Packages.docutils python313Packages.pyelftools pkgconf
+    python313Packages.ply
+    python313Packages.docutils
+    python313Packages.pyelftools
+    pkgconf
     qemu-utils
-    re2c rsync readline
-    scons squashfs-tools-ng subversion
+    re2c
+    rsync
+    readline
+    scons
+    squashfs-tools-ng
+    subversion
     swig
-    texinfo tinyxxd
-    uglify-js upx
+    texinfo
+    tinyxxd
+    uglify-js
+    upx
     vim
     wget
-    xmlto 
-    zlib zstd
+    xmlto
+    zlib
+    zstd
   ];
 
   environment.localBinInPath = true;

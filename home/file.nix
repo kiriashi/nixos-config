@@ -9,9 +9,14 @@
       target = ".nix-profile";
     };
 
-    rime-config = {
-      source = ../home/fcitx5/rime;
-      target = ".local/share/fcitx5/rime";
+    rime-config1 = {
+      source = ../home/fcitx5/rime/wanxiang-update.sh;
+      target = ".local/share/fcitx5/rime/wanxiang-update.sh";
+    };
+
+    rime-config2 = {
+      source = ../home/fcitx5/rime/user_exclude_file.txt;
+      target = ".local/share/fcitx5/rime/user_exclude_file.txt";
     };
 
     theme1 = {
