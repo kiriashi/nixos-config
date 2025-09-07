@@ -14,6 +14,6 @@ stdenv.mkDerivation rec {
     ln -s $out/share/grub/themes/Arknights/theme.txt $out/
   '';
 
-  passthru.grubTheme = "${placeholder "out"}/share/grub/themes/Arknights/";
+  passthru.grubTheme = "${placeholder "out"}/share/grub/themes/Arknights";
 }
 
