@@ -9,8 +9,8 @@ stdenv.mkDerivation rec {
   dontBuild = true;
 
   installPhase = ''
-    mkdir -p $out/share/grub/themes/Arknights
-    cp -r $src/* $out/share/grub/themes/Arknights/
+    mkdir -p $out/
+    cp -r $src/* $out/
   '';
 }
 
