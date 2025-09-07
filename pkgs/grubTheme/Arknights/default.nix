@@ -1,4 +1,4 @@
-{ stdenv }:
+{ stdenv, lib }:
 
 stdenv.mkDerivation rec {
   pname = "Arknights";
