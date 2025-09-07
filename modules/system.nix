@@ -14,7 +14,7 @@
     ../system/zram.nix
   ];
 
-  networking.hostName = "Kiriashi-NixOS";
+  networking.hostName = "RBP152022";
 
   system = {
     stateVersion = "25.11";
