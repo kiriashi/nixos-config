@@ -37,8 +37,5 @@
     extraModprobeConfig = ''
       options v4l2loopback devices=1 video_nr=2 exclusive_caps=1 card_label="OBS Virtual Camera"
     '';
-
-    # 休眠硬盘
-    resumeDevice = "/dev/disk/by-uuid/7f13166a-2b55-4525-9980-dccec3cbf849";
   };
 }

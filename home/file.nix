@@ -16,7 +16,7 @@
 
     rime-config2 = {
       source = ../home/fcitx5/rime/user_exclude_file.txt;
-      target = ".local/share/fcitx5/rime/user_exclude_file.txt";
+      target = ".local/share/fcitx5/rime/custom/user_exclude_file.txt";
     };
 
     theme1 = {

@@ -37,6 +37,8 @@
       vim = "hx";
       vi = "hx";
       helix = "hx";
+
+      rime-wanxiang-update = "bash ~/.local/share/fcitx5/rime/wanxiang-update.sh";
     };
     interactiveShellInit = ''
       fastfetch

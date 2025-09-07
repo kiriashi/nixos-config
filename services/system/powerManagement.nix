@@ -17,8 +17,25 @@
   };
 
   # 休眠设置
+  boot.resumeDevice = "/dev/disk/by-uuid/7f13166a-2b55-4525-9980-dccec3cbf849";
+
+  services.logind = {
+    settings = {
+      Login = {
+        HandleLidSwitch = "suspend-then-hibernate";
+        HandleLidSwitchExternalPower = "lock";
+        HandleLidSwitchDocked = "ignore";
+      
+        HandlePowerKey = "hibernate";
+        HandlePowerKeyLongPress = "poweroff";
+      };
+    };
+  };
+
+  
   systemd.sleep.extraConfig = ''
     HibernateDelaySec=15m
+    SuspendThenHibernateDelaySec=15m
   '';
 }
 
