@@ -1,5 +1,5 @@
-{ 
-  ... 
+{
+  ...
 }:
 
 {
@@ -9,7 +9,7 @@
   };
 
   services.dbus.apparmor = "enabled";
-  
+
   services.openssh = {
     enable = true;
     settings = {
@@ -18,5 +18,12 @@
     };
   };
 
-  networking.firewall.allowedTCPPorts = [ 22 ];
+  networking.firewall.allowedTCPPorts = [
+    22
+    7897
+  ];
+
+  networking.firewall.allowedUDPPorts = [
+    7897
+  ];
 }

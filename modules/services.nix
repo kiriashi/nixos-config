@@ -20,7 +20,6 @@
     ../services/user/fcitx5.nix
     ../services/user/qt6ct.nix
     ../services/user/poweralertd.nix
-    # ../services/user/sparkle.nix
     ../services/user/steam.nix
     ../services/user/wallpaper.nix
 

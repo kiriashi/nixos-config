@@ -1,5 +1,6 @@
 { 
-  lib, 
+  lib,
+  customPkgs,
   ... 
 }:
 
@@ -9,9 +10,13 @@
     grub = {
       enable = true;
       device = "nodev";
-      useOSProber = true;
       efiSupport = true;
-      # gfxmodeEfi = "3200x2000";
+
+      useOSProber = true;
+      # default = "Windows Boot Manager (on /dev/nvme0n1p1)";
+
+      # gfxmodeEfi = "1200x750";
+      theme = customPkgs.grubTheme.Arknights;
     };
     timeout = 5;
   };

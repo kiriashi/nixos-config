@@ -139,7 +139,7 @@ workspace "Code"
 window-rule {
     match app-id="kitty"
     match title=r#".*Lapce$"#
-    match app-id="Code"
+    match app-id="code"
     match app-id="cursor"
     match app-id="dev.zed.Zed-Dev"
     
@@ -163,9 +163,6 @@ window-rule {
     match app-id="steam"
     match app-id=r#"steam_app*."#
     match app-id=".gamescope-wrapped"
-
-    match app-id="SPlayer"
-    match app-id="bilibili"
 
     match app-id="osu!"
     
@@ -233,10 +230,12 @@ binds {
     Mod+Ctrl+R      hotkey-overlay-title="随机壁纸"                            { spawn "waypaper" "--random"; }
 
     Mod+T        hotkey-overlay-title="打开终端"      repeat=false  { spawn "kitty"; }
-    Mod+D        hotkey-overlay-title="打开搜索"      repeat=false  { spawn "fuzzel"; }
+    Mod+S        hotkey-overlay-title="打开搜索"      repeat=false  { spawn "fuzzel"; }
+    Mod+E        hotkey-overlay-title="打开文件"      repeat=false  { spawn "nemo"; }
     Mod+B        hotkey-overlay-title="打开浏览器"    repeat=false  { spawn "zen-beta"; }
+    Mod+C        hotkey-overlay-title="打开code"      repeat=false  { spawn "code"; }
     Mod+M        hotkey-overlay-title="打开音乐"      repeat=false  { spawn "splayer"; }
-    Mod+C        hotkey-overlay-title="打开剪切板"    repeat=false  { spawn "sh" "-c" "cliphist list | fuzzel --dmenu | cliphist decode | wl-copy"; }
+    Mod+X        hotkey-overlay-title="打开剪切板"    repeat=false  { spawn "sh" "-c" "cliphist list | fuzzel --dmenu | cliphist decode | wl-copy"; }
     Mod+Escape   hotkey-overlay-title="总览"          repeat=false  { toggle-overview; }
     Super+Alt+L  hotkey-overlay-title="锁屏"          repeat=false  { spawn "gtklock"; }
 

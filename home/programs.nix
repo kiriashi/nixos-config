@@ -28,7 +28,7 @@
     mission-center
     qtscrcpy
     baobab
-    filezilla
+    yazi
 
     wechat
     qq

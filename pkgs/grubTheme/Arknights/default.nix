@@ -1,7 +1,7 @@
-{ stdenv, lib }:
+{ stdenv }:
 
 stdenv.mkDerivation rec {
-  pname = "arknights";
+  pname = "Arknights";
   version = "1.0";
 
   src =./theme-files;

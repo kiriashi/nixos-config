@@ -10,8 +10,8 @@
     ../system/i18n.nix
     ../system/security.nix
     ../system/services.nix
-    ../system/zram.nix
     ../system/user.nix
+    ../system/zram.nix
   ];
 
   networking.hostName = "Kiriashi-NixOS";

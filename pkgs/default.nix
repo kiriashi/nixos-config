@@ -1,5 +1,23 @@
-# 自定义软件包，可以与 nixpkgs 中的定义方式相同
-# 你可以使用 'nix build .#example' 构建它们
-pkgs: {
-  # example = pkgs.callPackage ./example { };
+{ pkgs }:
+
+let
+  loadDir = dir: pkgs.callPackage dir {};
+  
+  loadSubdirs = baseDir:
+    let
+      entries = builtins.readDir baseDir;
+      isDir = name: entries.${name} == "directory";
+      dirNames = builtins.filter isDir (builtins.attrNames entries);
+    in
+    builtins.listToAttrs (builtins.map (name: {
+      inherit name;
+      value = loadDir (baseDir + "/${name}");
+    }) dirNames);
+in
+{
+  # 直接包
+  # my-app = loadDir ./my-app;
+  
+  # 分类包
+  grubTheme = loadSubdirs ./grubTheme;
 }
