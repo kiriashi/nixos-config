@@ -7,7 +7,7 @@ stdenv.mkDerivation rec {
   src =./theme-files;
 
   installPhase = ''
-    mkdir -p $out/share/grub/themes/${pname}
-    cp -r $src/* $out/share/grub/themes/${pname}/
+    mkdir -p $out/share/grub/themes/Arknights
+    cp -r $src/* $out/share/grub/themes/Arknights/
   '';
 }
