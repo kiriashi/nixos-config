@@ -11,9 +11,6 @@ stdenv.mkDerivation rec {
   installPhase = ''
     mkdir -p $out/share/grub/themes/Arknights
     cp -r $src/* $out/share/grub/themes/Arknights/
-    ln -s $out/share/grub/themes/Arknights/theme.txt $out/
   '';
-
-  passthru.grubTheme = "${placeholder "out"}/share/grub/themes/Arknights";
 }
 
