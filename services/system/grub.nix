@@ -16,7 +16,7 @@
       # default = "Windows Boot Manager (on /dev/nvme0n1p1)";
 
       # gfxmodeEfi = "1200x750";
-      theme = customPkgs.grubTheme.Elegant;
+      theme = customPkgs.grubTheme.Arknights;
     };
     timeout = 5;
   };
