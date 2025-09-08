@@ -1,5 +1,6 @@
 {
   lib,
+  pkgs,
   ...
 }:
 
@@ -18,6 +19,8 @@
   ];
 
   programs.home-manager.enable = true;
+
+  clipboardSync.enable = true;
 
   home = {
     username = "kiriashi";
