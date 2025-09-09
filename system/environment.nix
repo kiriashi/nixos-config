@@ -42,6 +42,7 @@
     rsync
     git
     patch
+    libncurses
     ncurses
     ncurses.dev
   ];
