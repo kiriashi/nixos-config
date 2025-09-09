@@ -66,19 +66,6 @@
     };
   };
 
-  programs.rofi = {
-    enable = true;
-    package = pkgs.rofi-wayland;
-    terminal = "${pkgs.kitty}/bin/kitty";
-
-    extraConfig = {
-      modi = "drun,run,window";
-      show-icons = true;
-      display-drun = "Apps:";
-      display-run = "Run:";
-    };
-  };
-
   services.mako = {
     enable = true;
     settings = {

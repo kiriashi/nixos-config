@@ -15,7 +15,6 @@ environment {
     XMODIFIERS "@im=fcitx"
     GLFW_IM_MODULE "fcitx"
     QT_IM_MODULE "fcitx"
-    GTK_IM_MODULE "fcitx"
     INPUT_METHOD "fcitx"
     QT_AUTO_SCREEN_SCALE_FACTOR "1"
 }
@@ -328,7 +327,7 @@ binds {
     Mod+R         hotkey-overlay-title="更改窗口大小"     { switch-preset-column-width; }
     Mod+F         hotkey-overlay-title="窗口最大化"       { maximize-column; }
     Mod+Shift+F   hotkey-overlay-title="窗口全屏"         { fullscreen-window; }
-    Mod+Ctrl+C         hotkey-overlay-title="将窗口移至中央"   { center-column; }
+    Mod+Ctrl+C    hotkey-overlay-title="将窗口移至中央"   { center-column; }
 
     Mod+Minus   hotkey-overlay-title="减小窗口宽度"       { set-column-width "-5%"; }
     Mod+Equal   hotkey-overlay-title="增大窗口宽度"       { set-column-width "+5%"; }

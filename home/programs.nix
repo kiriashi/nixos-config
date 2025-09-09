@@ -49,6 +49,9 @@
   # OBS Studio：录屏/直播
   programs.obs-studio = {
     enable = true;
+    package = pkgs.obs-studio.override {
+    ffmpeg = pkgs.ffmpeg-full;
+    };
     plugins = with pkgs.obs-studio-plugins; [
       obs-pipewire-audio-capture
       obs-text-pthread
