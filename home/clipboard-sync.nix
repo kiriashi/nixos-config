@@ -47,7 +47,7 @@ let
             echo -n "$NEW_X11" | $CLIPHIST_CMD
         fi
 
-        sleep 0.5
+        sleep 0.3
     done
   '';
 
@@ -60,6 +60,7 @@ let
     Service = {
       ExecStart = "${clipboardSyncScript}/bin/clipboard-sync";
       Restart = "always";
+      RestartSec = "5s";
       Environment = [
         "DISPLAY=:0"
         "WAYLAND_DISPLAY=wayland-1"
@@ -67,7 +68,7 @@ let
       ];
     };
     Install = {
-      WantedBy = [ "default.target" ];
+      WantedBy = [ "graphical.target" ];
     };
   };
 

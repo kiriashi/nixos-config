@@ -41,17 +41,17 @@ outputs =
   let
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
-    customPkgs = import ./pkgs { inherit pkgs; };
+    myPkgs = import ./pkgs { inherit pkgs; };
     genRev = import ./modules/genRev.nix { inherit self; };
   in
   {
-    packages.${system} = customPkgs;
+    packages.${system} = myPkgs;
 
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       inherit system;
       specialArgs = { 
         inherit inputs;
-        customPkgs = self.packages.${system}; 
+        myPkgs = self.packages.${system}; 
       };
       modules = [
         ./modules/system.nix
@@ -83,7 +83,7 @@ outputs =
           home-manager.users."kiriashi".imports = [ ./modules/home.nix ];
           home-manager.extraSpecialArgs = { 
             inherit inputs;
-            customPkgs = self.packages.${system}; 
+            myPkgs = self.packages.${system}; 
           };
         }
 

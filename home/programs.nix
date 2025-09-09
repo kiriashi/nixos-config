@@ -49,16 +49,14 @@
   # OBS Studio：录屏/直播
   programs.obs-studio = {
     enable = true;
-    package = pkgs.obs-studio.override {
-    ffmpeg = pkgs.ffmpeg-full;
-    };
+    # package = pkgs.obs-studio.override { ffmpeg = pkgs.ffmpeg-full; };
     plugins = with pkgs.obs-studio-plugins; [
       obs-pipewire-audio-capture
       obs-text-pthread
       obs-vkcapture
       wlrobs
     ];
-  };
+   };
 
   # Secret Service（以 pass 提供）与 KeePassXC
   services.pass-secret-service.enable = true;

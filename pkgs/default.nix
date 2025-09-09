@@ -19,5 +19,5 @@ in
   # my-app = loadDir ./my-app;
   
   # 分类包
-  grubTheme = loadSubdirs ./grubTheme;
+  Themes = loadSubdirs ./Themes;
 }

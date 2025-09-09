@@ -8,11 +8,13 @@
   environment.systemPackages = with pkgs; [
     pwvucontrol
     brightnessctl
-    wl-clipboard
     libnotify
     labwc
-    cliphist
-    xclip
+
+    swww
+    mpvpaper
+    waypaper
+    socat
 
     xwayland-satellite-unstable
 
