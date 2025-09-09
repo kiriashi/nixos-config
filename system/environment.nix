@@ -21,6 +21,29 @@
 
     bibata-cursors
     adwaita-icon-theme
+
+    gnumake
+    gcc
+    binutils
+    gawk
+    flex
+    bison
+    gettext
+    unzip
+    zip
+    zlib
+    file
+    openssl
+    wget
+    curl
+    python3
+    python3Packages.setuptools
+    python3Packages.wheel
+    rsync
+    git
+    patch
+    ncurses
+    ncurses.dev
   ];
 
   environment.localBinInPath = true;
