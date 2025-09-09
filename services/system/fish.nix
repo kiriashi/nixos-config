@@ -26,6 +26,7 @@
       clean = "sudo nix-collect-garbage -d && nix-collect-garbage -d";
       shutdown = "systemctl poweroff";
       reboot = "systemctl reboot";
+      nf = "nvfetcher";
 
       cat = "bat";
       du = "dust";

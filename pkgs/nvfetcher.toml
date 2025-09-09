@@ -1,0 +1,3 @@
+[wallpaper]
+src.git = "https://github.com/kiriashi/wallpaper.git"
+fetch.github = "kiriashi/wallpaper"
