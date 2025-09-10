@@ -21,6 +21,7 @@
     ../services/user/qt6ct.nix
     ../services/user/poweralertd.nix
     ../services/user/steam.nix
+    ../services/user/virtualisation.nix
   ];
 
   nixpkgs.config.permittedInsecurePackages = [
