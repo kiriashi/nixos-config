@@ -1,0 +1,23 @@
+{
+    "wallpaper": {
+        "cargoLocks": null,
+        "date": "2025-09-10",
+        "extract": null,
+        "name": "wallpaper",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "kiriashi",
+            "repo": "wallpaper",
+            "rev": "55928e786ca51e9a22f8f90ee7ce5418ec384f90",
+            "sha256": "sha256-oybEygCP8bbsRR/8pasPpL0WkU5u++GsiwkpbbEMpNg=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "55928e786ca51e9a22f8f90ee7ce5418ec384f90"
+    }
+}

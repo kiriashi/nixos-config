@@ -30,8 +30,9 @@
     baobab
     yazi
 
-    wechat
     qq
+    wechat
+    wemeet
     telegram-desktop
     thunderbird
 

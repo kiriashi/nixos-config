@@ -1,6 +1,20 @@
-{ stdenv }:
+{ stdenv, fetchFromGitHub }:
 
-stdenv.mkDerivation rec {
-  pname = "grub";
-  version = "1.0";
+stdenv.mkDerivation {
+  pname = "wallpaper";
+  version = "1.0.0";
+
+  src = fetchFromGitHub {
+    owner = "kiriashi";
+    repo = "wallpaper";
+    rev = "main";
+    sha256 = "sha256-oybEygCP8bbsRR/8pasPpL0WkU5u++GsiwkpbbEMpNg=";
+  };
+
+  dontBuild = true;
+
+  installPhase = ''
+    mkdir -p $out
+    cp -r * $out/
+  '';
 }

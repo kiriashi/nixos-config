@@ -9,7 +9,7 @@ stdenv.mkDerivation rec {
   dontBuild = true;
 
   installPhase = ''
-    mkdir -p $out/
+    mkdir -p $out
     cp -r $src/* $out/
   '';
 }
