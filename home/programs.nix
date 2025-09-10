@@ -67,6 +67,7 @@
   # OBS Studio：录屏/直播
   programs.obs-studio = {
     enable = true;
+    package = pkgs.obs-studio.override { withAMF = true; };
     plugins = with pkgs.obs-studio-plugins; [
       obs-pipewire-audio-capture
       obs-text-pthread
