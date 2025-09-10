@@ -1,8 +1,9 @@
 { pkgs }:
-
 let
-  sources = import ./_sources/generated.nix;
-
+  sources = import ./_sources/generated.nix {
+    inherit (pkgs) fetchgit fetchurl fetchFromGitHub dockerTools;
+  };
+  
   loadDir = dir: extraArgs: pkgs.callPackage dir extraArgs;
   
   loadSubdirs = baseDir:
@@ -13,7 +14,7 @@ let
     in
     builtins.listToAttrs (builtins.map (name: {
       inherit name;
-      value = loadDir (baseDir + "/${name}");
+      value = loadDir (baseDir + "/${name}") {};
     }) dirNames);
 in
 {
