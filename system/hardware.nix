@@ -1,4 +1,5 @@
 { 
+  pkgs,
   ... 
 }:
 
@@ -17,8 +18,6 @@
         rocmPackages.rpp-opencl
         amf
       ];
-      dirSupport = true;
-      dirSupport32Bit = true;
     };
 
     enableAllFirmware = true;

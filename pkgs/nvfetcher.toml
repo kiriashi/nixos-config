@@ -2,6 +2,12 @@
 src.git = "https://github.com/kiriashi/wallpaper.git"
 fetch.github = "kiriashi/wallpaper"
 
+[amf-sdk]
+src.github = "GPUOpen-LibrariesAndSDKs/AMF"
+src.from_pattern = "v(.*)"
+src.to_pattern = "\\1"
+fetch.url = "https://github.com/GPUOpen-LibrariesAndSDKs/AMF/releases/download/v$ver/AMF-headers-v$ver.tar.gz"
+
 [lx-music-desktop]
 src.github = "ikunshare/ikun-music-desktop"
 src.from_pattern = "v(.*)"

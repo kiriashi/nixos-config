@@ -1,4 +1,19 @@
 {
+    "amf-sdk": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "amf-sdk",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-7AfuIbggpz9briJOkv08SS9Scy1IhfBjf0gYmv3YdWQ=",
+            "type": "url",
+            "url": "https://github.com/GPUOpen-LibrariesAndSDKs/AMF/releases/download/v1.4.36/AMF-headers-v1.4.36.tar.gz"
+        },
+        "version": "1.4.36"
+    },
     "lx-music-desktop": {
         "cargoLocks": null,
         "date": null,

@@ -67,7 +67,17 @@
   # OBS Studio：录屏/直播
   programs.obs-studio = {
     enable = true;
-    package = pkgs.obs-studio.override { withAMF = true; };
+    package = pkgs.obs-studio.overrideAttrs (oldAttrs: {
+      cmakeFlags = (oldAttrs.cmakeFlags or []) ++ [
+        "-DENABLE_AMF=ON"
+      ];
+      buildInputs = (oldAttrs.buildInputs or []) ++ [
+        myPkgs.amf-sdk
+      ];
+      postInstall = ''
+        ln -s ${myPkgs.amf-sdk}/lib $out/lib/amf
+      '';
+    });
     plugins = with pkgs.obs-studio-plugins; [
       obs-pipewire-audio-capture
       obs-text-pthread
