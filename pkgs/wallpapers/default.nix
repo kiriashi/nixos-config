@@ -8,7 +8,7 @@ stdenv.mkDerivation {
     owner = "kiriashi";
     repo = "wallpaper";
     rev = "main";
-    sha256 = "sha256-oybEygCP8bbsRR/8pasPpL0WkU5u++GsiwkpbbEMpNg=";
+    sha256 = "sha256-sMC6FM1IZ3v9JVYR5Ed48w1oOa/d0cvRmH6wp+7TXLY=";
   };
 
   dontBuild = true;

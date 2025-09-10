@@ -3,13 +3,13 @@
 {
   wallpaper = {
     pname = "wallpaper";
-    version = "55928e786ca51e9a22f8f90ee7ce5418ec384f90";
+    version = "e4a3fc100f2285dc856821e20c7efa7989290ba3";
     src = fetchFromGitHub {
       owner = "kiriashi";
       repo = "wallpaper";
-      rev = "55928e786ca51e9a22f8f90ee7ce5418ec384f90";
+      rev = "e4a3fc100f2285dc856821e20c7efa7989290ba3";
       fetchSubmodules = false;
-      sha256 = "sha256-oybEygCP8bbsRR/8pasPpL0WkU5u++GsiwkpbbEMpNg=";
+      sha256 = "sha256-sMC6FM1IZ3v9JVYR5Ed48w1oOa/d0cvRmH6wp+7TXLY=";
     };
     date = "2025-09-10";
   };
