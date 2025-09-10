@@ -39,7 +39,6 @@
     extraPackages = with pkgs; [
       mesa
       libva
-      amf
       amdvlk
       
       libva-utils
