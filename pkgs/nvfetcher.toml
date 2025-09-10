@@ -1,3 +1,9 @@
 [wallpaper]
 src.git = "https://github.com/kiriashi/wallpaper.git"
 fetch.github = "kiriashi/wallpaper"
+
+[lx-music-desktop]
+src = "github"
+owner = "lyswhut"
+repo = "lx-music-desktop"
+branch = "master"
