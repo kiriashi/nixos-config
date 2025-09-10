@@ -3,7 +3,7 @@
 let
   sources = import ./_sources/generated.nix;
 
-  loadDir = dir: pkgs.callPackage dir {};
+  loadDir = dir: extraArgs: pkgs.callPackage dir extraArgs;
   
   loadSubdirs = baseDir:
     let
