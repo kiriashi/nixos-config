@@ -3,6 +3,7 @@ spawn-at-startup "waypaper" "--restore"
 spawn-at-startup "clash-verge"
 spawn-at-startup "niriswitcher"
 spawn-at-startup "wl-paste" "--watch" "cliphist" "store"
+spawn-at-startup "xclip" "-selection" "clipboard -o | wl-copy"
 
 prefer-no-csd
 
@@ -197,7 +198,7 @@ window-rule {
     match app-id="labwc"
     
     match title=r#".*Lapce$"#  
-    match app-id="Code"
+    match app-id="code"
 
     open-maximized true
 }
@@ -337,9 +338,9 @@ binds {
     Mod+Shift+Minus   hotkey-overlay-title="减小窗口高度" { set-window-height "-5%"; }
     Mod+Shift+Equal   hotkey-overlay-title="增大窗口高度" { set-window-height "+5%"; }
 
-    Print      hotkey-overlay-title=null   { screenshot; }
-    Ctrl+Print hotkey-overlay-title=null   { screenshot-screen; }
-    Alt+Print  hotkey-overlay-title=null   { screenshot-window; }
+    Print      hotkey-overlay-title="截取自由选择区域"   { screenshot; }
+    Ctrl+Print hotkey-overlay-title="截取全屏区域"  { screenshot-screen; }
+    Alt+Print  hotkey-overlay-title="截取当前窗口"   { screenshot-window; }
 
     Alt+Tab       repeat=false hotkey-overlay-title="显示当前窗口"    { spawn "niriswitcherctl" "show" "--window"; }
     Alt+Shift+Tab repeat=false hotkey-overlay-title="显示当前工作区"  { spawn "niriswitcherctl" "show" "--workspace"; }

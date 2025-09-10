@@ -1,22 +1,30 @@
 {
   config,
+  myPkgs,
   ...
 }:
 {
+  home.packages = [ myPkgs.Themes.wallpapers ];
+
   home.file = {
     nix-profile = {
       source = config.home.path;
       target = ".nix-profile";
     };
 
-    rime-config1 = {
+    rime-wanxiang = {
+      source = ../home/fcitx5/rime/user_exclude_file.txt;
+      target = ".local/share/fcitx5/rime/custom/user_exclude_file.txt";
+    };
+
+    rime-wanxiang-update = {
       source = ../home/fcitx5/rime/wanxiang-update.sh;
       target = ".local/share/fcitx5/rime/wanxiang-update.sh";
     };
 
-    rime-config2 = {
-      source = ../home/fcitx5/rime/user_exclude_file.txt;
-      target = ".local/share/fcitx5/rime/custom/user_exclude_file.txt";
+    wallpapers = {
+      source = "${myPkgs.Themes.wallpapers}/share/wallpapers";
+      target = "Pictures/wallpapers";
     };
 
     theme1 = {

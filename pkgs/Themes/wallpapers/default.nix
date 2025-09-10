@@ -1,7 +1,7 @@
 { stdenv, fetchFromGitHub }:
 
 stdenv.mkDerivation {
-  pname = "wallpaper";
+  pname = "wallpapers";
   version = "1.0.0";
 
   src = fetchFromGitHub {
@@ -14,7 +14,7 @@ stdenv.mkDerivation {
   dontBuild = true;
 
   installPhase = ''
-    mkdir -p $out
-    cp -r * $out/
+    mkdir -p $out/share/wallpapers
+    cp -r * $out/share/wallpapers/
   '';
 }

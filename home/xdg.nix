@@ -1,11 +1,9 @@
 { 
   pkgs, 
-  myPkgs,
   ... 
 }:
 
 {
-  environment.systemPackages = [ myPkgs.Themes.wallpaper ];
 
   xdg = {
     enable = true;
@@ -31,13 +29,6 @@
         name = "mcaselector";
         exec = "mcaselector";
       };
-
-      configFile."waypaper/config.ini".text = ''
-        [Settings]
-        folders = ${myPkgs.Themes.wallpaper}
-        backend = swaybg
-        fill = fill
-      '';
 
     };
   };
