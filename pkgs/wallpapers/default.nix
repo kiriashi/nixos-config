@@ -1,12 +1,12 @@
 # pkgs/wallpapers/default.nix
-{ stdenv, fetchFromGitHub, sources }:
+{ stdenv, fetchFromGitHub, sources, }:
 
 stdenv.mkDerivation rec {
   pname = "wallpapers";
   version = "1.0.0";
   
   src = fetchFromGitHub {
-    inherit (sources.wallpapers.src) owner repo rev sha256;
+    inherit (sources.wallpaper.src) owner repo rev sha256;
   };
 
   dontBuild = true;
