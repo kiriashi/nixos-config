@@ -1,6 +1,8 @@
 { pkgs }:
 
 let
+  sources = import ./_sources/generated.nix;
+
   loadDir = dir: pkgs.callPackage dir {};
   
   loadSubdirs = baseDir:
@@ -15,7 +17,7 @@ let
     }) dirNames);
 in
 {
-  wallpapers = loadDir ./wallpapers;
+  wallpapers = loadDir ./wallpapers { inherit sources; };
   
   Themes = loadSubdirs ./Themes;
 }

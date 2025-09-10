@@ -30,6 +30,7 @@
     telegram-desktop
     thunderbird
     bilibili
+    lx-music-desktop
     splayer
     #实用工具
     coppwr
