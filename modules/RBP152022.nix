@@ -23,6 +23,10 @@
     bluez
     blueman
     sof-firmware
+
+    libva-utils
+    vulkan-loader
+    vulkan-tools
   ];
 
   systemd.user.services.mpris-proxy = {
@@ -40,10 +44,6 @@
       mesa
       libva
       amdvlk
-      
-      libva-utils
-      vulkan-loader
-      vulkan-tools
     ];
     extraPackages32 = with pkgs.pkgsi686Linux; [
       mesa
@@ -56,6 +56,7 @@
   boot.kernelParams = [
     "acpi_backlight=native"
     "amd_pstate=active" 
+    "amdgpu.gpu_recovery=1"
     "amdgpu.ppfeaturemask=0xffffffff"
   ];
 }
