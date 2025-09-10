@@ -1,6 +1,7 @@
 {
   lib,
   pkgs,
+  myPkgs,
   inputs,
   ...
 }:
@@ -10,7 +11,8 @@
     inputs.zen-browser.homeModules.beta
   ];
 
-  home.packages = with pkgs; [
+  home.packages = 
+  (with pkgs; [
     #图像/视频
     gimp3-with-plugins
     inkscape-with-extensions
@@ -30,7 +32,6 @@
     telegram-desktop
     thunderbird
     bilibili
-    lx-music-desktop
     splayer
     #实用工具
     coppwr
@@ -54,7 +55,11 @@
         proton-ge-custom
       ];
     })
-  ];
+  ])
+  ++ 
+  (with myPkgs; [
+    lx-music-desktop
+  ]);
 
   # Zen-Browser
   programs.zen-browser.enable = true;

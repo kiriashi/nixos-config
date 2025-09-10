@@ -20,14 +20,6 @@
         comment = "轻松做自己";
       };
 
-      lx-music = {
-        name = "LX Music";
-        exec = "lx-music-desktop";
-        icon = "${pkgs.lx-music-desktop}/share/icons/512x512.png";
-        categories = [ "Audio" ];
-        comment = "轻量音乐播放器";
-      };
-
       labwc = {
         name = "labwc";
         exec = "${pkgs.labwc}/bin/labwc";

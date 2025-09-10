@@ -1,4 +1,19 @@
 {
+    "lx-music-desktop": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "lx-music-desktop",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-CjsTJhT0WXo4SR7Ub8D3+L3xTsItXDcTZUcvmo1t6bU=",
+            "type": "url",
+            "url": "https://github.com/lyswhut/lx-music-desktop/releases/download/v2.11.0/lx-music-desktop_2.11.0_x64.AppImage"
+        },
+        "version": "2.11.0"
+    },
     "wallpaper": {
         "cargoLocks": null,
         "date": "2025-09-10",
