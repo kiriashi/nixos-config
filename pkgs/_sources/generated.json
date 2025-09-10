@@ -1,19 +1,4 @@
 {
-    "amf-sdk": {
-        "cargoLocks": null,
-        "date": null,
-        "extract": null,
-        "name": "amf-sdk",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "name": null,
-            "sha256": "sha256-7AfuIbggpz9briJOkv08SS9Scy1IhfBjf0gYmv3YdWQ=",
-            "type": "url",
-            "url": "https://github.com/GPUOpen-LibrariesAndSDKs/AMF/releases/download/v1.4.36/AMF-headers-v1.4.36.tar.gz"
-        },
-        "version": "1.4.36"
-    },
     "lx-music-desktop": {
         "cargoLocks": null,
         "date": null,
@@ -23,11 +8,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-RurKS6GRMCyWOItw2M1npYAOFfngy51m4vELj+WX1mA=",
+            "sha256": "sha256-CjsTJhT0WXo4SR7Ub8D3+L3xTsItXDcTZUcvmo1t6bU=",
             "type": "url",
-            "url": "https://github.com/ikunshare/ikun-music-desktop/releases/download/v3.2.7/ikun-music-desktop_3.2.7_x64.AppImage"
+            "url": "https://github.com/lyswhut/lx-music-desktop/releases/download/v2.11.0/lx-music-desktop_2.11.0_x64.AppImage"
         },
-        "version": "3.2.7"
+        "version": "2.11.0"
     },
     "wallpaper": {
         "cargoLocks": null,
