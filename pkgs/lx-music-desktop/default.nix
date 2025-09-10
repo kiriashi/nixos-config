@@ -2,6 +2,7 @@
 { 
 stdenv, 
 appimageTools, 
+makeDesktopItem,
 sources
 }:
 
@@ -16,7 +17,7 @@ let
     exec = pname;
     icon = pname;
     comment = "A free and open-source music player";
-    desktopName = "LX Music Desktop";
+    desktopName = "LX Music";
     categories = [ "Audio" "Music" ];
   };
 
