@@ -1,7 +1,7 @@
 { lib, stdenv, makeWrapper, lx-music-desktop }:
 
 stdenv.mkDerivation {
-  pname = "lx-music-desktop";
+  pname = "lx-music-desktop-wrapper";
   version = 2.11.0;
 
   nativeBuildInputs = [ makeWrapper ];

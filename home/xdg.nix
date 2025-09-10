@@ -23,8 +23,8 @@
       lx-music = {
         name = "LX Music";
         exec = "lx-music-desktop";
-        icon = "${lx-music-desltop}/resources/icons/512x512.png";
-        categories = [ "AudioVideo" ];
+        icon = "${pkgs.lx-music-desltop}/share/icons/512x512.png";
+        categories = [ "Audio" ];
         comment = "轻量音乐播放器";
       };
 
