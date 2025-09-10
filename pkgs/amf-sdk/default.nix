@@ -1,7 +1,7 @@
 { stdenv, sources }:
 
 stdenv.mkDerivation rec {
-  pname = sources.amf-sdk.pname;
+  pname = amf-sdk;
   version = sources.amf-sdk.version;
   
   src = sources.amf-sdk.src;

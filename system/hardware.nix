@@ -15,7 +15,7 @@
       extraPackages = with pkgs; [
         amdvlk
         rocmPackages.clr
-        rocmPackages.rpp-opencl
+        # rocmPackages.rpp-opencl
         amf
       ];
     };
