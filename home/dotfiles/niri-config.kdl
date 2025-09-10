@@ -3,7 +3,7 @@ spawn-at-startup "waypaper" "--restore"
 spawn-at-startup "clash-verge"
 spawn-at-startup "niriswitcher"
 spawn-at-startup "wl-paste" "--watch" "cliphist" "store"
-spawn-at-startup "xclip" "-selection" "clipboard -o | wl-copy"
+spawn-at-startup "systemctl" "--user" "restart" "clipboard-sync.service"
 
 prefer-no-csd
 

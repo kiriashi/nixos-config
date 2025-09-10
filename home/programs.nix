@@ -11,39 +11,48 @@
   ];
 
   home.packages = with pkgs; [
-    onlyoffice-desktopeditors
-    wpsoffice-cn
-
-    gdk-pixbuf
-    libpng
+    #图像/视频
     gimp3-with-plugins
     inkscape-with-extensions
     kdePackages.kdenlive
-
-    ffmpeg-full
+    krita
+    ffmpeg
     imagemagick
-
     nomacs
     mpv
-
-    coppwr
-    mission-center
-    qtscrcpy
-    baobab
-    yazi
-
+    # 办公套件
+    onlyoffice-desktopeditors
+    wpsoffice-cn
+    #社交娱乐
     qq
     wechat
     wemeet
     telegram-desktop
     thunderbird
-
     bilibili
     splayer
-
+    #实用工具
+    coppwr
+    yazi
+    #开发工具
     typora
+    nixd
     vscode-fhs
     code-cursor-fhs
+    #游戏相关
+    mangojuice
+    mangohud_git
+
+    (bottles.override {
+      removeWarningPopup = true;
+    })
+    
+    (heroic.override {
+      extraPkgs = pkgs: with pkgs; [
+        proton-cachyos_x86_64_v3
+        proton-ge-custom
+      ];
+    })
   ];
 
   # Zen-Browser
