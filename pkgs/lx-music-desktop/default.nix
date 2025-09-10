@@ -48,11 +48,4 @@ in stdenv.mkDerivation rec {
     cp squashfs-root/usr/share/icons/hicolor/512x512/apps/lx-music-desktop.png $out/share/icons/hicolor/512x512/apps/${pname}.png
   '';
 
-  meta = with stdenv.lib; {
-    description = "A free and open-source music player";
-    homepage = "https://github.com/lyswhut/lx-music-desktop";
-    license = licenses.mit;
-    maintainers = with maintainers; [ ];
-    platforms = [ "x86_64-linux" ];
-  };
 }
