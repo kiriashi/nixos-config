@@ -10,6 +10,7 @@
     uv
     jq
     gcc
+    curl
     wget
     nvfetcher
     nix-output-monitor
@@ -19,6 +20,8 @@
     unzip
     unrar
     p7zip
+
+    python3
 
     bibata-cursors
     adwaita-icon-theme
