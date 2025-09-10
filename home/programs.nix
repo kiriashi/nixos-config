@@ -14,11 +14,13 @@
     onlyoffice-desktopeditors
     wpsoffice-cn
 
+    gdk-pixbuf
+    libpng
     gimp3-with-plugins
     inkscape-with-extensions
     kdePackages.kdenlive
 
-    ffmpeg
+    ffmpeg-full
     imagemagick
 
     nomacs
@@ -29,7 +31,6 @@
     qtscrcpy
     baobab
     yazi
-    nautilus
 
     qq
     wechat
@@ -51,7 +52,7 @@
   # OBS Studio：录屏/直播
   programs.obs-studio = {
     enable = true;
-    # package = pkgs.obs-studio.override { ffmpeg = pkgs.ffmpeg-full; };
+    package = pkgs.obs-studio.override { ffmpeg = pkgs.ffmpeg-full; };
     plugins = with pkgs.obs-studio-plugins; [
       obs-pipewire-audio-capture
       obs-text-pthread

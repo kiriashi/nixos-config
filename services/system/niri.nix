@@ -18,7 +18,8 @@
 
     xwayland-satellite-unstable
 
-    nemo-with-extensions
+    # nemo-with-extensions
+    nautilus
     file-roller
   ];
 
