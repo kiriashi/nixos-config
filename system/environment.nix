@@ -12,6 +12,7 @@
     gcc
     curl
     wget
+    python3
     nvfetcher
     nix-output-monitor
     wlr-randr
@@ -20,8 +21,7 @@
     unzip
     unrar
     p7zip
-
-    python3
+    zstd
 
     bibata-cursors
     adwaita-icon-theme

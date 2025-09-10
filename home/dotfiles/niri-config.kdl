@@ -239,8 +239,9 @@ binds {
     Mod+T        hotkey-overlay-title="打开终端"      repeat=false  { spawn "kitty"; }
     Mod+S        hotkey-overlay-title="打开搜索"      repeat=false  { spawn "fuzzel"; }
     Mod+E        hotkey-overlay-title="打开文件"      repeat=false  { spawn "nautilus"; }
-    Mod+B        hotkey-overlay-title="打开浏览器"    repeat=false  { spawn "librewolf"; }
+    Mod+Y        hotkey-overlay-title="打开Yazi"    repeat=false  { spawn "kitty" "-e" "yazi"; }
     Mod+O        hotkey-overlay-title="打开录屏"    repeat=false  { spawn "obs"; }
+    Mod+B        hotkey-overlay-title="打开浏览器"    repeat=false  { spawn "librewolf"; }
     Mod+C        hotkey-overlay-title="打开code"      repeat=false  { spawn "code"; }
     Mod+M        hotkey-overlay-title="打开音乐"      repeat=false  { spawn "splayer"; }
     Mod+X        hotkey-overlay-title="打开剪切板"    repeat=false  { spawn "sh" "-c" "cliphist list | fuzzel --dmenu | cliphist decode | wl-copy"; }

@@ -38,6 +38,7 @@
     dutree
     btop
     yazi
+    mission-center
     #开发工具
     typora
     nixd
@@ -60,7 +61,7 @@
   ])
   ++ 
   (with myPkgs; [
-    # lx-music-desktop
+    lx-music-desktop
   ]);
 
   # Zen-Browser
