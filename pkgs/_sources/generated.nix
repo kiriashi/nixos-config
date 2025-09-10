@@ -3,10 +3,10 @@
 {
   lx-music-desktop = {
     pname = "lx-music-desktop";
-    version = "2.11.0";
+    version = "3.2.7";
     src = fetchurl {
-      url = "https://github.com/lyswhut/lx-music-desktop/releases/download/v2.11.0/lx-music-desktop_2.11.0_x64.AppImage";
-      sha256 = "sha256-CjsTJhT0WXo4SR7Ub8D3+L3xTsItXDcTZUcvmo1t6bU=";
+      url = "https://github.com/ikunshare/ikun-music-desktop/releases/download/v3.2.7/ikun-music-desktop_3.2.7_x64.AppImage";
+      sha256 = "sha256-RurKS6GRMCyWOItw2M1npYAOFfngy51m4vELj+WX1mA=";
     };
   };
   wallpaper = {

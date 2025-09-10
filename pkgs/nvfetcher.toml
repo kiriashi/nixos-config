@@ -3,7 +3,7 @@ src.git = "https://github.com/kiriashi/wallpaper.git"
 fetch.github = "kiriashi/wallpaper"
 
 [lx-music-desktop]
-src.github = "lyswhut/lx-music-desktop"
+src.github = "ikunshare/ikun-music-desktop"
 src.from_pattern = "v(.*)"
 src.to_pattern = "\\1"
-fetch.url = "https://github.com/lyswhut/lx-music-desktop/releases/download/v$ver/lx-music-desktop_$ver_x64.AppImage"
+fetch.url = "https://github.com/ikunshare/ikun-music-desktop/releases/download/v$ver/ikun-music-desktop_$ver_x64.AppImage"
