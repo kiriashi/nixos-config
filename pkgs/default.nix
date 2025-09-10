@@ -15,9 +15,7 @@ let
     }) dirNames);
 in
 {
-  # 直接包
-  # my-app = loadDir ./my-app;
+  wallpapers = loadDir ./wallpapers;
   
-  # 分类包
   Themes = loadSubdirs ./Themes;
 }

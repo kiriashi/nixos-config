@@ -4,7 +4,7 @@
   ...
 }:
 {
-  home.packages = [ myPkgs.Themes.wallpapers ];
+  home.packages = [ myPkgs.wallpapers ];
 
   home.file = {
     nix-profile = {
@@ -23,7 +23,7 @@
     };
 
     wallpapers = {
-      source = "${myPkgs.Themes.wallpapers}/share/wallpapers";
+      source = "${myPkgs.wallpapers}/share/wallpapers";
       target = "Pictures/wallpapers";
     };
 

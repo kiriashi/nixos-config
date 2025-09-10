@@ -29,6 +29,7 @@
     qtscrcpy
     baobab
     yazi
+    nautilus
 
     qq
     wechat
