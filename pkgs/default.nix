@@ -19,7 +19,7 @@ let
 in
 {
   wallpapers = loadDir ./wallpapers { inherit sources; };
-  amf-sdk = loadDir ./amf-sdk { inherit sources; };
+  # amf-sdk = loadDir ./amf-sdk { inherit sources; };
   # lx-music-desktop = loadDir ./lx-music-desktop { inherit sources; };
   
   Themes = loadSubdirs ./Themes;

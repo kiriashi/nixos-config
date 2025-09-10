@@ -72,7 +72,7 @@
         "-DENABLE_AMF=ON"
       ];
       buildInputs = (oldAttrs.buildInputs or []) ++ [
-        myPkgs.amf-sdk
+        pkgs.amf
       ];
       postInstall = ''
         ln -s ${myPkgs.amf-sdk}/lib $out/lib/amf
