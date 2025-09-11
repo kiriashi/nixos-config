@@ -71,8 +71,8 @@ outputs =
         # ({ lib, ... }: {
         #   niri-flake.cache.enable = true;
         #   nixpkgs.overlays = [ niri-flake.overlays.niri ];
-          services.gnome.gnome-keyring.enable = lib.mkForce false;
-        })
+        #   services.gnome.gnome-keyring.enable = lib.mkForce false;
+        # })
 
         # Home Manager 配置
         home-manager.nixosModules.home-manager
