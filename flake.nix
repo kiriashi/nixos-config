@@ -16,10 +16,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    niri-flake = {
-      url = "github:sodiboo/niri-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # niri-flake = {
+    #   url = "github:sodiboo/niri-flake";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
 
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
@@ -31,7 +31,7 @@ outputs =
   { 
     chaotic, 
     home-manager, 
-    niri-flake, 
+    # niri-flake, 
     nix-index-database, 
     nixpkgs, 
     self, 
@@ -67,10 +67,10 @@ outputs =
         })
 
         # niri平铺窗口管理器
-        niri-flake.nixosModules.niri
-        ({ lib, ... }: {
-          niri-flake.cache.enable = true;
-          nixpkgs.overlays = [ niri-flake.overlays.niri ];
+        # niri-flake.nixosModules.niri
+        # ({ lib, ... }: {
+        #   niri-flake.cache.enable = true;
+        #   nixpkgs.overlays = [ niri-flake.overlays.niri ];
           services.gnome.gnome-keyring.enable = lib.mkForce false;
         })
 
