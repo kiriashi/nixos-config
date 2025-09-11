@@ -24,10 +24,6 @@
       "org/cinnamon/desktop/applications/terminal" = {
         exec = "kitty";
       };
-
-      "org/gnome/nautilus/preferences" = {
-        thumbnail-limit = "31457280";
-      };
       
     };
   };
