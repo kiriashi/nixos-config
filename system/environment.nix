@@ -26,8 +26,6 @@
 
   environment.localBinInPath = true;
 
-  systemd.services.nix-daemon.serviceConfig.LimitNOFILE = 1048576;
-
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
     EDITOR = "hx";
