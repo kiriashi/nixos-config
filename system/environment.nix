@@ -29,6 +29,9 @@
 
   environment.localBinInPath = true;
 
+  environment.etc."bash".source = "${pkgs.bash}/bin/bash";
+  environment.etc."bin/bash".source = "${pkgs.bash}/bin/bash";
+
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
     EDITOR = "hx";
