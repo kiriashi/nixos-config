@@ -1,6 +1,13 @@
 { ... }:
 {
   nixpkgs.overlays = [
+    inputs.niri-flake.overlays.niri
+    (final: prev: {
+      niri = prev.niri.overrideAttrs (old: {
+        doCheck = false;
+      });
+    })
+
     (final: prev: {
       qt6Packages = prev.qt6Packages.overrideScope (
         _final': prev': {
