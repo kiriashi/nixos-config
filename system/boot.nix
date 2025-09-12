@@ -13,7 +13,7 @@
     resumeDevice = "/dev/disk/by-uuid/6c90afc6-2d97-450a-8d4d-9c0dc1b938e5";
 
     kernel.sysctl = {
-      "vm.max_map_count" = 2147483642;
+      "vm.max_map_count" = 212646;
     };
 
     loader = {
