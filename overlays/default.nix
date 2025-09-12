@@ -44,5 +44,21 @@
         gsettings-desktop-schemas = null;
       }).overrideAttrs
         { mesonFlags = [ (prev.lib.mesonEnable "wallpaper" false) ]; };
+
+  (self: super: {
+    scx_full = super.scx_full.overrideAttrs (old: {
+      prePatch = (old.prePatch or "") + ''
+        # 修复 bash 路径
+        substituteInPlace meson-scripts/build_bpftool \
+          --replace '/bin/bash' '${super.bash}/bin/bash'
+        
+        # 修复其他硬编码路径
+        find . -type f -exec sed -i \
+          -e 's|/bin/bash|${super.bash}/bin/bash|g' \
+          -e 's|/usr/bin/env|${super.coreutils}/bin/env|g' \
+          {} +
+      '';
+    });
+  })
     })];
 }
