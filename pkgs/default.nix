@@ -19,7 +19,6 @@ let
 in
 {
   wallpapers = loadDir ./wallpapers { inherit sources; };
-  lx-music-desktop = loadDir ./lx-music-desktop { inherit sources; };
   
   Themes = loadSubdirs ./Themes;
 }
