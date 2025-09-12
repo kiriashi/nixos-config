@@ -1,13 +1,11 @@
 { ... }:
 {
   nixpkgs.overlays = [
-    (final: prev: let
-  disableCheck = pkg: pkg.overrideAttrs (_: { doCheck = false; });
-in {
-  niri = disableCheck prev.niri;
-  niri-unwrapped = disableCheck prev.niri-unwrapped;
-  niri-fish-completions = disableCheck prev.niri-fish-completions;
-  niri-zsh-completions = disableCheck prev.niri-zsh-completions;
+(final: prev: {
+  niri-stable = prev.niri-stable.overrideAttrs (_: { doCheck = false; });
+  niri-unstable = prev.niri-unstable.overrideAttrs (_: { doCheck = false; });
+  xwayland-satellite-stable = prev.xwayland-satellite-stable.overrideAttrs (_: { doCheck = false; });
+  xwayland-satellite-unstable = prev.xwayland-satellite-unstable.overrideAttrs (_: { doCheck = false; });
 })
 
     (final: prev: {
