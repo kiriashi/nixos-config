@@ -4,9 +4,14 @@
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
 
-    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
-
     niri.url = "github:sodiboo/niri-flake";
+
+    zen-browser.url = "github:0xc000022070/zen-browser-flake";
+
+    chaotic = {
+      url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -15,11 +20,6 @@
 
     nix-index-database = {
       url = "github:nix-community/nix-index-database";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    zen-browser = {
-      url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
