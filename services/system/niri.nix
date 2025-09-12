@@ -6,7 +6,7 @@
 }:
 
 {
-  nixpkgs.overlays = [ inputs.niri.overlays.niri ];
+  nixpkgs.overlays = [ inputs.niri-flake.overlays.niri ];
   niri-flake.cache.enable = true;
 
   environment.systemPackages = with pkgs; [
