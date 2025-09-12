@@ -9,7 +9,9 @@
     enableContainers = false;
 
     kernelPackages = pkgs.linuxPackages_cachyos-lto;
-    
+
+    resumeDevice = "/dev/disk/by-uuid/52766c5a-d0a6-4fb4-9626-b2d6a57e03f0";
+
     kernel.sysctl = {
       "vm.max_map_count" = 2147483642;
     };
