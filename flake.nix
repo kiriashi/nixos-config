@@ -29,7 +29,6 @@
 outputs = 
   { 
     chaotic,
-    niri-flake, 
     home-manager,  
     nix-index-database, 
     nixpkgs, 
@@ -58,8 +57,6 @@ outputs =
         ./modules/services.nix
         ./modules/RBP152022.nix
 
-        # niri-flake模块
-        niri-flake.nixosModules.niri
 
         # Chaotic软件源
         chaotic.nixosModules.default
