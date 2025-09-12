@@ -4,13 +4,13 @@
     (final: prev: {
       qt6Packages = prev.qt6Packages.overrideScope (
         _final': prev': {
-          # HACK：不再使用 qt5
+          # HACK: no more qt5
           fcitx5-with-addons = prev'.fcitx5-with-addons.override { libsForQt5.fcitx5-qt = null; };
 
-          # HACK：不再使用 KDE 相关内容
+          # HACK: no more kde stuff
           fcitx5-configtool = prev'.fcitx5-configtool.override { kcmSupport = false; };
 
-          # HACK：不再使用 qtwebengine、opencc
+          # HACK: no more qtwebengine, opencc
           fcitx5-chinese-addons =
             (prev'.fcitx5-chinese-addons.override {
               curl = null;
@@ -31,7 +31,7 @@
         }
       );
 
-    # HACK：不再使用 gtk2
+    # HACK: no more gtk2
     gnome-themes-extra = (prev.gnome-themes-extra.override { gtk2 = null; }).overrideAttrs {
       configureFlags = [ "--disable-gtk2-engine" ];
     };
