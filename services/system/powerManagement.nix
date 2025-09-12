@@ -17,7 +17,6 @@
   };
 
   # 休眠设置
-
   services.logind = {
     settings = {
       Login = {
