@@ -6,9 +6,9 @@
 }:
 
 {
-  imports = [ inputs.niri.nixosModules.niri ];
-
-  nixpkgs.overlays = [ inputs.niri.overlays.niri ];
+  # imports = [ inputs.niri.nixosModules.niri ];
+  # nixpkgs.overlays = [ inputs.niri.overlays.niri ];
+  # niri-flake.cache.enable = false;
 
   environment.systemPackages = with pkgs; [
     pwvucontrol
@@ -21,7 +21,7 @@
     waypaper
     socat
 
-    xwayland-satellite-unstable
+    xwayland-satellite
 
     # nemo-with-extensions
     nautilus
@@ -32,12 +32,10 @@
     xwayland.enable = true;
     niri = {
       enable = true;
-      package = pkgs.niri-unstable;
+      package = pkgs.niri;
     };
     gtklock.enable = true;
   };
-
-  niri-flake.cache.enable = false;
 
   security.pam.services.gtklock.text = lib.readFile "${pkgs.gtklock}/etc/pam.d/gtklock";
 
