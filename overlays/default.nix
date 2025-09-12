@@ -1,4 +1,4 @@
-{ ... }:
+{ inputs, ... }:
 {
   nixpkgs.overlays = [
     inputs.niri-flake.overlays.niri
