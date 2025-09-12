@@ -56,7 +56,6 @@
   boot.kernelParams = [
     "acpi_backlight=native"
     "amd_pstate=active" 
-    "amdgpu.gpu_recovery=1"
     "amdgpu.ppfeaturemask=0xffffffff"
   ];
 }
