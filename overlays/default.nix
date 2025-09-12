@@ -1,12 +1,14 @@
-{ inputs, ... }:
+{ ... }:
 {
   nixpkgs.overlays = [
-    inputs.niri-flake.overlays.niri
-    (final: prev: {
-      niri = prev.niri.overrideAttrs (old: {
-        doCheck = false;
-      });
-    })
+    (final: prev: let
+  disableCheck = pkg: pkg.overrideAttrs (_: { doCheck = false; });
+in {
+  niri = disableCheck prev.niri;
+  niri-unwrapped = disableCheck prev.niri-unwrapped;
+  niri-fish-completions = disableCheck prev.niri-fish-completions;
+  niri-zsh-completions = disableCheck prev.niri-zsh-completions;
+})
 
     (final: prev: {
       qt6Packages = prev.qt6Packages.overrideScope (
