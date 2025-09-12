@@ -6,16 +6,7 @@
   security = {
     rtkit.enable = true;
     apparmor.enable = true;
-
-    pam.loginLimits = [
-      { domain = "*"; type = "hard"; item = "nofile"; value = "1048576"; }
-      { domain = "*"; type = "soft"; item = "nofile"; value = "1048576"; }
-    ];
   };
-
-  systemd.extraConfig = ''
-    DefaultLimitNOFILE=1048576
-  '';
 
   services.dbus.apparmor = "enabled";
 
