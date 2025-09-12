@@ -17,7 +17,7 @@
   };
 
   # 休眠设置
-  boot.resumeDevice = "/dev/disk/by-uuid/760c856a-8c28-49dc-8744-2c116554acf1";
+  boot.resumeDevice = "/dev/disk/by-uuid/afcab6ad-1992-4b90-90de-8e92375efb12";
 
   services.logind = {
     settings = {
