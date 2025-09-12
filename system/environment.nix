@@ -8,9 +8,7 @@
     fastfetch
     git
     uv
-    jq
     gcc
-    curl
     wget
     python3
     nvfetcher
