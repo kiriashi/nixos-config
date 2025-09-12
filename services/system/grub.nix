@@ -11,6 +11,7 @@
       enable = true;
       device = "nodev";
       efiSupport = true;
+      configurationName = "NixOS";
 
       useOSProber = true;
       # default = "Windows Boot Manager (on /dev/nvme0n1p1)";
