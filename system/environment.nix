@@ -31,6 +31,10 @@
 
   environment.etc."bash".source = "${pkgs.bash}/bin/bash";
   environment.etc."bin/bash".source = "${pkgs.bash}/bin/bash";
+  systemd.extraConfig = ''
+    DefaultLimitNOFILE=262144
+  '';
+  systemd.services.nix-daemon.serviceConfig.LimitNOFILE = 262144;
 
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
