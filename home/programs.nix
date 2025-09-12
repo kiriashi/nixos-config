@@ -61,7 +61,6 @@
   ])
   ++ 
   (with myPkgs; [
-    lx-music-desktop
   ]);
 
   # Zen-Browser
