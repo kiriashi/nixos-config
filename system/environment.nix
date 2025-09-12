@@ -21,7 +21,6 @@
     unzip
     unrar
     p7zip
-    zstd
 
     bibata-cursors
     adwaita-icon-theme
