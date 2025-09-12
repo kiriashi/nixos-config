@@ -86,8 +86,6 @@ outputs =
           {
             niri-flake.cache.enable = true;
             nixpkgs.overlays = [ niri-flake.overlays.niri ];
-
-            # Shit niri-flake.
             services.gnome.gnome-keyring.enable = lib.mkForce false;
           })
 
