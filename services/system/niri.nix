@@ -27,7 +27,6 @@
     xwayland.enable = true;
     niri = {
       enable = true;
-      cache.enable = true;
       package = pkgs.niri;
     };
     gtklock.enable = true;
