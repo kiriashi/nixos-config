@@ -33,10 +33,11 @@
     niri = {
       enable = true;
       package = pkgs.niri-unstable;
-      cache.enable = false;
     };
     gtklock.enable = true;
   };
+
+  niri-flake.cache.enable = false;
 
   security.pam.services.gtklock.text = lib.readFile "${pkgs.gtklock}/etc/pam.d/gtklock";
 
