@@ -17,7 +17,6 @@
   };
 
   # 休眠设置
-  boot.resumeDevice = "/dev/disk/by-uuid/afcab6ad-1992-4b90-90de-8e92375efb12";
 
   services.logind = {
     settings = {
@@ -31,11 +30,5 @@
       };
     };
   };
-
-  
-  # systemd.sleep.extraConfig = ''
-  #   HibernateDelaySec=15m
-  #   SuspendThenHibernateDelaySec=15m
-  # '';
 }
 
