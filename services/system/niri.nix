@@ -6,6 +6,7 @@
 }:
 
 {
+  imports = [inputs.nir-flake.nixosModules.niri ];
   nixpkgs.overlays = [ inputs.niri-flake.overlays.niri ];
   niri-flake.cache.enable = true;
 
