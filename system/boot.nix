@@ -11,7 +11,7 @@
     kernelPackages = pkgs.linuxPackages_cachyos-lto;
     
     kernel.sysctl = {
-      "vm.max_map_count" = 262144;
+      "vm.max_map_count" = 2147483642;
     };
 
     loader = {
