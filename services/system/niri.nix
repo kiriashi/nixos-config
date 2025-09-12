@@ -33,6 +33,7 @@
     niri = {
       enable = true;
       package = pkgs.niri-unstable;
+      cache.enable = true;
     };
     gtklock.enable = true;
   };
