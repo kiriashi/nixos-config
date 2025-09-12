@@ -33,9 +33,9 @@
   };
 
   
-  systemd.sleep.extraConfig = ''
-    HibernateDelaySec=15m
-    SuspendThenHibernateDelaySec=15m
-  '';
+  # systemd.sleep.extraConfig = ''
+  #   HibernateDelaySec=15m
+  #   SuspendThenHibernateDelaySec=15m
+  # '';
 }
 
