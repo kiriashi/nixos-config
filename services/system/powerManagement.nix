@@ -16,7 +16,7 @@
     rulesProvider = pkgs.ananicy-rules-cachyos_git;
   };
 
-  # 休眠设置
+  # 电源事件
   services.logind = {
     settings = {
       Login = {
