@@ -27,11 +27,13 @@
     xwayland.enable = true;
     niri = {
       enable = true;
+      cache.enable = true;
       package = pkgs.niri;
     };
     gtklock.enable = true;
   };
 
+  services.gnome.gnome-keyring.enable = lib.mkForce false;
   security.pam.services.gtklock.text = lib.readFile "${pkgs.gtklock}/etc/pam.d/gtklock";
 
   services = {
