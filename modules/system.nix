@@ -18,6 +18,6 @@
 
   system = {
     stateVersion = "25.11";
-    autoUpgrade.channel = "https://mirrors.sustech.edu.cn/nix-channels/nixos-unstable";
+    autoUpgrade.channel = "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/nixos-unstable";
   };
 }
