@@ -6,7 +6,17 @@
 }:
 
 {
+  nixpkgs.overlays = [
+    inputs.niri-flake.overlays.niri
+    (final: prev: {
+      niri = prev.niri.overrideAttrs (old: {
+        doCheck = false;
+      });
+    })
+  ];
+
   imports = [ inputs.niri-flake.nixosModules.niri ];
+
   nixpkgs.overlays = [ inputs.niri-flake.overlays.niri ];
   niri-flake.cache.enable = true;
 
