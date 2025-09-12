@@ -5,6 +5,7 @@
 }:
 
 {
+  imports = [ inputs.niri.nixosModules.niri ];
   environment.systemPackages = with pkgs; [
     pwvucontrol
     brightnessctl
