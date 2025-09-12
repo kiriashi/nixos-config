@@ -4,7 +4,7 @@
   ...
 }:
 {
-  home.packages = [ myPkgs.wallpapers ];
+  home.packages = [ myPkgs.wallpaper ];
 
   home.file = {
     nix-profile = {
@@ -22,8 +22,8 @@
       target = ".local/share/fcitx5/rime/wanxiang-update.sh";
     };
 
-    wallpapers = {
-      source = "${myPkgs.wallpapers}/share/wallpapers";
+    wallpaper = {
+      source = "${myPkgs.wallpaper}/share/wallpapers";
       target = "Pictures/wallpapers";
     };
 

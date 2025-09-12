@@ -33,6 +33,7 @@
     thunderbird
     bilibili
     splayer
+    amberol
     #实用工具
     coppwr
     dutree

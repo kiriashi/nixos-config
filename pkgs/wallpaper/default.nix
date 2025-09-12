@@ -1,7 +1,7 @@
 { stdenv, sources }:
 
 stdenv.mkDerivation rec {
-  pname = "wallpapers";
+  pname = "wallpaper";
   version = "1.0.0";
   
   src = sources.wallpaper.src;

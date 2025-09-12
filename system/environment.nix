@@ -8,6 +8,7 @@
     fastfetch
     git
     uv
+    jq
     gcc
     wget
     python3

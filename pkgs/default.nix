@@ -18,7 +18,7 @@ let
     }) dirNames);
 in
 {
-  wallpapers = loadDir ./wallpapers { inherit sources; };
+  wallpaper = loadDir ./wallpaper { inherit sources; };
   
   Themes = loadSubdirs ./Themes;
 }
