@@ -7,7 +7,9 @@
 
 {
   imports = [ inputs.niri.nixosModules.niri ];
+
   nixpkgs.overlays = [ inputs.niri.overlays.niri ];
+
   environment.systemPackages = with pkgs; [
     pwvucontrol
     brightnessctl
@@ -35,13 +37,13 @@
     gtklock.enable = true;
   };
 
-  services.gnome.gnome-keyring.enable = lib.mkForce false;
   security.pam.services.gtklock.text = lib.readFile "${pkgs.gtklock}/etc/pam.d/gtklock";
 
   services = {
     xserver.desktopManager.runXdgAutostartIfNone = true;
     gvfs.enable = true;
     seatd.enable = true;
+    gnome.gnome-keyring.enable = lib.mkForce false;
   };
 
   xdg = {
