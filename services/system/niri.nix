@@ -17,7 +17,7 @@
     waypaper
     socat
 
-    xwayland-satellite
+    xwayland-satellite-unstable
 
     # nemo-with-extensions
     nautilus
@@ -28,7 +28,7 @@
     xwayland.enable = true;
     niri = {
       enable = true;
-      package = pkgs.niri;
+      package = pkgs.niri-unstable;
     };
     gtklock.enable = true;
   };
