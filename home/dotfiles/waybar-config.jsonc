@@ -3,7 +3,7 @@
     "position": "left",
     "spacing": 0,
     "weight": 24,
-    "margin": "12 0 12 -14",
+    "margin": "14 0 14 -14",
     
     "modules-left": ["custom/search","group/power","niri/workspaces"],
     "modules-center": ["clock"],
@@ -91,7 +91,7 @@
         "format": "",
         "tooltip": true,
         "tooltip-format": "RAM: {used}G / {total}G\nSwap: {swapUsed}G / {swapTotal}G",
-		"on-click": "kitty -e btop",
+		"on-click": "kitty btop",
     },
     
     "network": {
@@ -122,6 +122,7 @@
 		"orientation": "inherit",
 		"modules": [
 		    "custom/caffeine",
+            "custom/hibernate",
             "custom/lock",
 			"custom/poweroff",
 			"custom/reboot",
@@ -152,6 +153,13 @@
         "tooltip": true,
         "tooltip-format": "重启",
         "on-click": "systemctl reboot",
+    },
+    
+    "custom/hibernate": {
+    	"format" : "󰒲",
+        "tooltip": true,
+        "tooltip-format": "休眠",
+        "on-click": "systemctl hibernate",
     },
 
     "custom/search": {
