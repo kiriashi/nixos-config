@@ -51,11 +51,10 @@ outputs =
         myPkgs = self.packages.${system}; 
       };
       modules = [
+         (import ./overlays)       
         ./modules/system.nix
         ./modules/services.nix
         ./modules/RBP152022.nix
-
-        (import ./overlays)
 
 
         # Chaotic软件源
