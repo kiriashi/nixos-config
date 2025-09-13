@@ -45,27 +45,17 @@
     })
 
     # ------------------- scx_full /bin/bash fixed -------------------
-    (final: prev: {
-      scx_full = prev.scx_full.overrideAttrs (old: {
-        prePatch = (old.prePatch or "") + ''
-          echo "Patching scx_full build scripts to use Nix paths..."
-
-          # replace /bin/bash
-          substituteInPlace meson-scripts/build_bpftool \
-            --replace "/bin/bash" "${prev.bash}/bin/bash"
-
-          # replace /bin/sh
-          find . -type f -exec sed -i \
-            -e "s|/bin/sh|${prev.bash}/bin/sh|g" \
-            {} +
-
-          # replace /usr/bin/env
-          find . -type f -exec sed -i \
-            -e "s|/usr/bin/env|${prev.coreutils}/bin/env|g" \
-            {} +
-        '';
-      });
-    })
+self: super: {
+  scx_full = super.scx_full.overrideAttrs (old: {
+    prePatch = (old.prePatch or "") + ''
+      substituteInPlace meson-scripts/build_bpftool \
+        --replace '/bin/bash' '${super.bash}/bin/bash'
+      substituteInPlace meson-scripts/build_bpftool \
+        --replace '/usr/bin/env' '${super.coreutils}/bin/env'
+    '';
+    buildInputs = old.buildInputs ++ [ super.linuxPackages_cachyos-lto.kernelHeaders ];
+  });
+}
 
   ];
 }
