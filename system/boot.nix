@@ -8,7 +8,7 @@
   boot = {
     enableContainers = false;
 
-    # kernelPackages = pkgs.linuxPackages_cachyos-lto;
+    kernelPackages = pkgs.linuxPackages_cachyos-lto;
 
     resumeDevice = "/dev/disk/by-uuid/f92e8657-f575-4798-be82-69b16a45e50a";
 
