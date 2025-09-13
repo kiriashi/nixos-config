@@ -1,4 +1,4 @@
-{ lib, stdenv, rustPlatform, fetchurl, sources, pkg-config, clang, llvm, makeWrapper }:
+{ lib, stdenv, rustPlatform, sources, pkg-config, clang, llvm, makeWrapper }:
 
 rustPlatform.buildRustPackage rec {
   pname = "scx_rust";
