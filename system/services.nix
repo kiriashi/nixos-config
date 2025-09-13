@@ -22,30 +22,7 @@
 
     scx = {
       enable = true;
-      package = pkgs.scx_git.full.overrideAttrs (old: {
-      # 禁用有问题的 bpftool 构建
-      mesonFlags = (old.mesonFlags or []) ++ [
-        "-Dbpftool=disabled"
-      ];
-      
-      # 添加必要的构建依赖
-      nativeBuildInputs = (old.nativeBuildInputs or []) ++ [
-        pkgs.bpftool  # 提供系统级 bpftool
-        pkgs.gnused   # 用于脚本修复
-      ];
-      
-      # 创建必要的环境
-      preConfigure = (old.preConfigure or "") + ''
-        # 创建虚拟 /bin 目录
-        mkdir -p bin
-        ln -sf ${pkgs.bash}/bin/bash bin/bash
-        ln -sf ${pkgs.bash}/bin/sh bin/sh
-        export PATH="$PWD/bin:$PATH"
-        
-        # 修复所有脚本
-        patchShebangs .
-      '';
-    });
+      package = pkgs.scx_git.full;
       scheduler = "scx_rusty";
     };
 
