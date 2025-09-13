@@ -19,7 +19,6 @@ let
 in
 {
   wallpaper = loadDir ./wallpaper { inherit sources; };
-  scx_rust = loadDir ./scx_rust { inherit sources; };
 
   Themes = loadSubdirs ./Themes;
 }

@@ -18,6 +18,7 @@
       noto-fonts-emoji-blob-bin
       noto-fonts-cjk-sans
       noto-fonts-cjk-serif
+      wqy_microhei
     ];
   };
 }
