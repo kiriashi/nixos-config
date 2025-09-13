@@ -24,8 +24,7 @@
       enable = true;
       package = pkgs.scx_git.full.overrideAttrs (old: {
   postPatch = (old.postPatch or "") + ''
-    substituteInPlace meson.build \
-      --replace-fail '/bin/bash' '${lib.getExe pkgs.bash}'
+    patchShebangs meson-scripts
   '';
 });
       scheduler = "scx_rusty";
