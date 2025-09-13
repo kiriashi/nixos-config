@@ -1,8 +1,6 @@
 { ... }:
 {
   nixpkgs.overlays = [
-
-    # ------------------- niri-flake doCheck hack -------------------
     (final: prev: {
       niri-stable = prev.niri-stable.overrideAttrs (_: { doCheck = false; });
       niri-unstable = prev.niri-unstable.overrideAttrs (_: { doCheck = false; });
@@ -10,7 +8,6 @@
       xwayland-satellite-unstable = prev.xwayland-satellite-unstable.overrideAttrs (_: { doCheck = false; });
     })
 
-    # ------------------- Qt / GTK / fcitx hack -------------------
     (final: prev: {
       qt6Packages = prev.qt6Packages.overrideScope (
         _final': prev': {
@@ -42,20 +39,17 @@
           gnome-desktop = null;
           gsettings-desktop-schemas = null;
         }).overrideAttrs { mesonFlags = [ (prev.lib.mesonEnable "wallpaper" false) ]; };
+
+      # SCX Full patch，支持 CachyOS 内核
+      scx_full = prev.scx_full.overrideAttrs (old: {
+        prePatch = (old.prePatch or "") + ''
+          substituteInPlace meson-scripts/build_bpftool \
+            --replace '/bin/bash' '${prev.bash}/bin/bash'
+          substituteInPlace meson-scripts/build_bpftool \
+            --replace '/usr/bin/env' '${prev.coreutils}/bin/env'
+        '';
+        buildInputs = (old.buildInputs or []) ++ [ prev.linuxPackages_cachyos-lto.kernelHeaders ];
+      });
     })
-
-    # ------------------- scx_full /bin/bash fixed -------------------
-self: super: {
-  scx_full = super.scx_full.overrideAttrs (old: {
-    prePatch = (old.prePatch or "") + ''
-      substituteInPlace meson-scripts/build_bpftool \
-        --replace '/bin/bash' '${super.bash}/bin/bash'
-      substituteInPlace meson-scripts/build_bpftool \
-        --replace '/usr/bin/env' '${super.coreutils}/bin/env'
-    '';
-    buildInputs = old.buildInputs ++ [ super.linuxPackages_cachyos-lto.kernelHeaders ];
-  });
-}
-
   ];
 }
