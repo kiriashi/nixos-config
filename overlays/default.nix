@@ -1,6 +1,19 @@
 { ... }:
 {
   nixpkgs.overlays = [
+(final: prev: {
+  scx_full = prev.scx_full.overrideAttrs (old: {
+    prePatch = (old.prePatch or "") + ''
+      echo "Patching /bin/bash paths in scx_full..."
+      substituteInPlace meson-scripts/build_bpftool \
+        --replace "/bin/bash" "${prev.bash}/bin/bash"
+      find . -type f -exec sed -i \
+        -e "s|/usr/bin/env|${prev.coreutils}/bin/env|g" \
+        {} +
+    '';
+  });
+})
+
     (final: prev: {
       niri-stable = prev.niri-stable.overrideAttrs (_: {
         doCheck = false;
