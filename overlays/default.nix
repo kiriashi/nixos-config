@@ -40,16 +40,5 @@
           gsettings-desktop-schemas = null;
         }).overrideAttrs { mesonFlags = [ (prev.lib.mesonEnable "wallpaper" false) ]; };
 
-      # SCX Full patch，支持 CachyOS 内核
-      scx_full = prev.scx_full.overrideAttrs (old: {
-        prePatch = (old.prePatch or "") + ''
-          substituteInPlace meson-scripts/build_bpftool \
-            --replace '/bin/bash' '${prev.bash}/bin/bash'
-          substituteInPlace meson-scripts/build_bpftool \
-            --replace '/usr/bin/env' '${prev.coreutils}/bin/env'
-        '';
-        buildInputs = (old.buildInputs or []) ++ [ prev.linuxPackages_cachyos-lto.kernelHeaders ];
-      });
-    })
   ];
 }
