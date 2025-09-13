@@ -3,7 +3,7 @@
     font-weight: 500;
     font-size: 16px;
  
-    border-radius: 16px;
+    border-radius: 10px;
     text-shadow: none;
  
     transition-property: background;
@@ -37,6 +37,7 @@ window#waybar.hidden  {
 #custom-poweroff,
 #custom-reboot,
 #custom-search,
+#custom-hibernate,
 #custom-caffeine,
 #workspaces button,
 #tray,
@@ -76,6 +77,8 @@ window#waybar.hidden  {
 #custom-reboot { color: #e8c55d; }
 
 #custom-search { color: #ffffff; }
+
+#custom-hibernate { color: #78abdc; }
 
 #custom-caffeine { color: #deb49f; }
 
