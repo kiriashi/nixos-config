@@ -24,6 +24,12 @@
       enable = true;
       package = pkgs.scx_git.full.overrideAttrs (old: {
   postPatch = (old.postPatch or "") + ''
+    substituteInPlace meson.build \
+      --replace-fail /bin/bash ${pkgs.bash}/bin/bash
+
+    substituteInPlace meson-scripts/* \
+      --replace-fail /bin/bash ${pkgs.bash}/bin/bash
+
     patchShebangs meson-scripts
   '';
 });
