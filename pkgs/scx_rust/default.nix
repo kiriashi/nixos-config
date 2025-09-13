@@ -1,4 +1,13 @@
-{ lib, stdenv, rustPlatform, sources, pkg-config, clang, llvm, makeWrapper }:
+{
+  lib,
+  stdenv,
+  rustPlatform,
+  sources,
+  pkg-config,
+  clang,
+  llvm,
+  makeWrapper,
+}:
 
 rustPlatform.buildRustPackage rec {
   pname = "scx_rust";
@@ -6,7 +15,7 @@ rustPlatform.buildRustPackage rec {
   src = sources.scx.src;
 
   cargoLock = {
-    lockFile = "${src}/Cargo.lock";
+    lockFile = ./Cargo.lock;
   };
 
   nativeBuildInputs = [
