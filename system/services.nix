@@ -23,15 +23,29 @@
     scx = {
       enable = true;
       package = pkgs.scx_git.full.overrideAttrs (old: {
-  postPatch = (old.postPatch or "") + ''
-    # 把 meson.build 里的 /bin/bash 替换成 nix store 里的 bash
-    substituteInPlace meson.build \
-      --replace "/bin/bash" "${lib.getExe pkgs.bash}"
-
-    # 修正 meson-scripts 下所有脚本的 shebang
-    patchShebangs meson-scripts
-  '';
-});
+      # 禁用有问题的 bpftool 构建
+      mesonFlags = (old.mesonFlags or []) ++ [
+        "-Dbpftool=disabled"
+      ];
+      
+      # 添加必要的构建依赖
+      nativeBuildInputs = (old.nativeBuildInputs or []) ++ [
+        pkgs.bpftool  # 提供系统级 bpftool
+        pkgs.gnused   # 用于脚本修复
+      ];
+      
+      # 创建必要的环境
+      preConfigure = (old.preConfigure or "") + ''
+        # 创建虚拟 /bin 目录
+        mkdir -p bin
+        ln -sf ${pkgs.bash}/bin/bash bin/bash
+        ln -sf ${pkgs.bash}/bin/sh bin/sh
+        export PATH="$PWD/bin:$PATH"
+        
+        # 修复所有脚本
+        patchShebangs .
+      '';
+    });
       scheduler = "scx_rusty";
     };
 
