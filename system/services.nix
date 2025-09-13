@@ -22,7 +22,7 @@
 
     scx = {
       enable = true;
-      package = pkgs.scx.full.overrideAttrs (old: {
+      package = pkgs.scx_git.full.overrideAttrs (old: {
   postPatch = (old.postPatch or "") + ''
     substituteInPlace meson.build \
       --replace-fail '/bin/bash' '${lib.getExe pkgs.bash}'
