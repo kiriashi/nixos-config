@@ -46,9 +46,9 @@
 
     # ------------------- scx_full /bin/bash fixed -------------------
     (final: prev: {
-      scx.full = prev.scx.full.overrideAttrs (old: {
+      scx_full = prev.scx_full.overrideAttrs (old: {
         prePatch = (old.prePatch or "") + ''
-          echo "Patching scx.full build scripts to use Nix paths..."
+          echo "Patching scx_full build scripts to use Nix paths..."
 
           # replace /bin/bash
           substituteInPlace meson-scripts/build_bpftool \
