@@ -2,8 +2,8 @@
 src.git = "https://github.com/kiriashi/wallpaper.git"
 fetch.github = "kiriashi/wallpaper"
 
-[lx-music-desktop]
-src.github = "lyswhut/lx-music-desktop"
+[scx]
+src.github = "sched-ext/scx"
 src.from_pattern = "v(.*)"
 src.to_pattern = "\\1"
-fetch.url = "https://github.com/lyswhut/lx-music-desktop/releases/download/v$ver/lx-music-desktop_$ver_x64.AppImage"
+fetch.url = "https://codeload.github.com/sched-ext/scx/zip/refs/tags/v$ver"

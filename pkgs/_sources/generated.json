@@ -1,18 +1,18 @@
 {
-    "lx-music-desktop": {
+    "scx": {
         "cargoLocks": null,
         "date": null,
         "extract": null,
-        "name": "lx-music-desktop",
+        "name": "scx",
         "passthru": null,
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-CjsTJhT0WXo4SR7Ub8D3+L3xTsItXDcTZUcvmo1t6bU=",
+            "sha256": "sha256-wLNc2Zl2s1HmMFtwQpzovGAULdp3i3S7WqHK1p5eiyE=",
             "type": "url",
-            "url": "https://github.com/lyswhut/lx-music-desktop/releases/download/v2.11.0/lx-music-desktop_2.11.0_x64.AppImage"
+            "url": "https://codeload.github.com/sched-ext/scx/zip/refs/tags/v1.0.16"
         },
-        "version": "2.11.0"
+        "version": "1.0.16"
     },
     "wallpaper": {
         "cargoLocks": null,

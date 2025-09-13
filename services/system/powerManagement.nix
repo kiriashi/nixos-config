@@ -7,11 +7,11 @@
   services.smartd.enable = true;
 
   # 自动 CPU 调频
-  services.auto-cpufreq.enable = true;
+  services.auto-cpufreq.enable = false;
 
   # SCX 调频
   services.scx = {
-    enable = false;
+    enable = true;
     package = pkgs.scx_git.full;
     scheduler = "scx_rusty";
   };
