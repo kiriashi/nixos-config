@@ -1,16 +1,29 @@
 { ... }:
 {
   nixpkgs.overlays = [
-    (self: super: {
-      scx_full = super.scx_full.overrideAttrs (old: {
-        # 修复 bash 路径问题
-        preConfigure = ''
-          patchShebangs .
-          substituteInPlace meson-scripts/build_bpftool \
-            --replace "/bin/bash" "${super.bash}/bin/bash"
-        '';
-      });
-    })
+ (self: super: {
+  scx_full = super.scx_full.overrideAttrs (old: {
+    preConfigure = (old.preConfigure or "") + ''
+      # 创建虚拟/bin目录
+      mkdir -p bin
+      ln -sf ${super.bash}/bin/bash bin/bash
+      ln -sf ${super.bash}/bin/sh bin/sh
+      export PATH="$PWD/bin:$PATH"
+      
+      # 修复所有脚本
+      patchShebangs .
+      find . -type f -exec sed -i 's|/bin/bash|${super.bash}/bin/bash|g' {} +
+      find . -type f -exec sed -i 's|/bin/sh|${super.bash}/bin/sh|g' {} +
+    '';
+    
+    # 添加必要依赖
+    buildInputs = (old.buildInputs or []) ++ [
+      super.bash
+      super.gnused
+    ];
+  });
+})
+
 
     (final: prev: {
       niri-stable = prev.niri-stable.overrideAttrs (_: {
