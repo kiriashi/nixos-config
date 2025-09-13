@@ -38,18 +38,30 @@
         }
       );
 
-    # HACK: no more gtk2
-    gnome-themes-extra = (prev.gnome-themes-extra.override { gtk2 = null; }).overrideAttrs {
-      configureFlags = [ "--disable-gtk2-engine" ];
-    };
+      # HACK: no more gtk2
+      gnome-themes-extra = (prev.gnome-themes-extra.override { gtk2 = null; }).overrideAttrs {
+        configureFlags = [ "--disable-gtk2-engine" ];
+      };
 
-    # HACK:
-    xdg-desktop-portal-gtk =
-      (prev.xdg-desktop-portal-gtk.override {
-        gnome-settings-daemon = null;
-        gnome-desktop = null;
-        gsettings-desktop-schemas = null;
-      }).overrideAttrs
-        { mesonFlags = [ (prev.lib.mesonEnable "wallpaper" false) ]; };
-    })];
+      # HACK:
+      xdg-desktop-portal-gtk =
+        (prev.xdg-desktop-portal-gtk.override {
+          gnome-settings-daemon = null;
+          gnome-desktop = null;
+          gsettings-desktop-schemas = null;
+        }).overrideAttrs
+          { mesonFlags = [ (prev.lib.mesonEnable "wallpaper" false) ]; };
+    })
+    
+    # 添加 scx_full 修复
+    (final: prev: {
+      scx_full = prev.scx_full.overrideAttrs (old: {
+        preBuild = (old.preBuild or "") + ''
+          mkdir -p $NIX_BUILD_TOP/bin
+          ln -sf ${prev.bash}/bin/bash $NIX_BUILD_TOP/bin/bash
+          export PATH=$NIX_BUILD_TOP/bin:$PATH
+        '';
+      });
+    })
+  ];
 }
