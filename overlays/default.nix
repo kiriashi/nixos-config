@@ -2,15 +2,6 @@
 {
   nixpkgs.overlays = [
     (final: prev: {
-      scx_full = prev.scx_full.overrideAttrs (old: {
-        prePatch = (old.prePatch or "") + ''
-          substituteInPlace meson-scripts/build_bpftool \
-            --replace '/bin/bash' '${prev.bash}/bin/bash'
-        '';
-      });
-    })
-
-    (final: prev: {
       niri-stable = prev.niri-stable.overrideAttrs (_: {
         doCheck = false;
       });
