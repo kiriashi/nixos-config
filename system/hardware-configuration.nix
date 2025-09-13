@@ -14,37 +14,37 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/fa5b131b-f632-4141-8115-1e707933accd";
+    { device = "/dev/disk/by-uuid/3e1e8a7d-3845-4752-8a36-56678b5b8b07";
       fsType = "btrfs";
       options = [ "subvol=@" "compress=zstd" "noatime" ];
     };
 
   fileSystems."/home" =
-    { device = "/dev/disk/by-uuid/fa5b131b-f632-4141-8115-1e707933accd";
+    { device = "/dev/disk/by-uuid/3e1e8a7d-3845-4752-8a36-56678b5b8b07";
       fsType = "btrfs";
       options = [ "subvol=@home" "compress=zstd" "noatime" ];
     };
 
   fileSystems."/nix" =
-    { device = "/dev/disk/by-uuid/fa5b131b-f632-4141-8115-1e707933accd";
+    { device = "/dev/disk/by-uuid/3e1e8a7d-3845-4752-8a36-56678b5b8b07";
       fsType = "btrfs";
       options = [ "subvol=@nix" "compress=zstd" "noatime" ];
     };
 
   fileSystems."/var" =
-    { device = "/dev/disk/by-uuid/fa5b131b-f632-4141-8115-1e707933accd";
+    { device = "/dev/disk/by-uuid/3e1e8a7d-3845-4752-8a36-56678b5b8b07";
       fsType = "btrfs";
       options = [ "subvol=@var" "compress=zstd" ];
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/7A87-B501";
+    { device = "/dev/disk/by-uuid/4FA1-20A5";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
     };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/ebfe7aad-5067-4435-ba3e-c34d40ce6830"; }
+    [ { device = "/dev/disk/by-uuid/f92e8657-f575-4798-be82-69b16a45e50a"; }
     ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
