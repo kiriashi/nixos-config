@@ -10,7 +10,7 @@
 
     kernelPackages = pkgs.linuxPackages_cachyos-lto;
 
-    resumeDevice = "/dev/disk/by-uuid/ebfe7aad-5067-4435-ba3e-c34d40ce6830";
+    resumeDevice = "/dev/disk/by-uuid/f92e8657-f575-4798-be82-69b16a45e50a";
 
     kernel.sysctl = {
       "vm.max_map_count" = 262144000;
