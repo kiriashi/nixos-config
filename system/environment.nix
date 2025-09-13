@@ -8,14 +8,12 @@
     fastfetch
     git
     uv
-    jq
     gcc
     wget
     python3
     nvfetcher
     nix-output-monitor
     wlr-randr
-    xorg.xrandr
 
     unzip
     unrar
