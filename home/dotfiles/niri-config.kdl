@@ -50,12 +50,6 @@ input {
         // disabled-on-external-mouse
     }
 
-    mouse {
-        accel-speed 0.6
-        accel-profile "flat"
-    }
-}
-
 output "eDP-1" {
     scale 2.0
 }
@@ -63,6 +57,12 @@ output "eDP-1" {
 output "HDMI-A-1" {
     scale 1.25
     mode "2560x1440@144.001999"
+}
+
+    mouse {
+        accel-speed 0.6
+        accel-profile "flat"
+    }
 }
 
 layout {
@@ -88,7 +88,7 @@ layout {
 
     border {
         off
-        width 4
+        width 3
         active-color "#ffc87f"
         inactive-color "#7fc8ff"
     }
@@ -96,7 +96,7 @@ layout {
     shadow {
         on
         softness 20
-        spread 3
+        spread 2
         offset x=0 y=0
         draw-behind-window false
         color "#000000"
@@ -121,21 +121,14 @@ window-rule {
 }
 
 window-rule {
-    match app-id=r#"zen*."#
-    opacity 0.95
-}
-
-window-rule {
-    geometry-corner-radius 18
+    geometry-corner-radius 10
     clip-to-geometry true
     draw-border-with-background false
 }
 
 workspace "Browser"
 window-rule {
-    match app-id=r#"zen*."#
-    match app-id="librewolf"
-    match app-id="brave-browser"
+    match app-id="firefox"
     
     open-maximized true
     open-on-workspace "Browser"
@@ -143,10 +136,8 @@ window-rule {
 
 workspace "Code"
 window-rule {
-    match app-id="kitty"
     match title=r#".*Lapce$"#
-    match app-id="code"
-    match app-id="cursor"
+    match app-id="Code"
     match app-id="dev.zed.Zed-Dev"
     
     open-on-workspace "Code"
@@ -158,7 +149,6 @@ window-rule {
     match app-id="wechat"
     match app-id="org.telegram.desktop"
     match app-id="QQ"
-    match app-id="chatgpt"
     
     open-on-workspace "Chat"
 }
@@ -202,7 +192,7 @@ window-rule {
     match app-id="labwc"
     
     match title=r#".*Lapce$"#  
-    match app-id="code"
+    match app-id="Code"
 
     open-maximized true
 }
@@ -213,6 +203,11 @@ window-rule {
     match app-id=r#"steam_app*."#
 
     open-fullscreen true
+}
+
+window-rule {
+    match app-id="kitty"
+    default-column-width { proportion 0.5; }
 }
 
 window-rule {
@@ -236,16 +231,16 @@ binds {
     Mod+Ctrl+R      hotkey-overlay-title="随机壁纸"                            { spawn "waypaper" "--random"; }
 
     Mod+T        hotkey-overlay-title="打开终端"      repeat=false  { spawn "kitty"; }
-    Mod+S        hotkey-overlay-title="打开搜索"      repeat=false  { spawn "fuzzel"; }
+    Mod+D        hotkey-overlay-title="打开搜索"      repeat=false  { spawn "fuzzel"; }
+    Mod+C        hotkey-overlay-title="打开剪切板"    repeat=false  { spawn "sh" "-c" "cliphist list | fuzzel --dmenu | cliphist decode | wl-copy"; }
+    Mod+Escape   hotkey-overlay-title="总览"          repeat=false  { toggle-overview; }
+    Super+Alt+L  hotkey-overlay-title="锁屏"          repeat=false  { spawn "gtklock"; }
     Mod+E        hotkey-overlay-title="打开文件"      repeat=false  { spawn "nautilus"; }
     Mod+Y        hotkey-overlay-title="打开Yazi"    repeat=false  { spawn "kitty" "-e" "yazi"; }
     Mod+O        hotkey-overlay-title="打开录屏"    repeat=false  { spawn "obs"; }
     Mod+B        hotkey-overlay-title="打开浏览器"    repeat=false  { spawn "librewolf"; }
     Mod+C        hotkey-overlay-title="打开code"      repeat=false  { spawn "code"; }
     Mod+M        hotkey-overlay-title="打开音乐"      repeat=false  { spawn "splayer"; }
-    Mod+X        hotkey-overlay-title="打开剪切板"    repeat=false  { spawn "sh" "-c" "cliphist list | fuzzel --dmenu | cliphist decode | wl-copy"; }
-    Mod+Escape   hotkey-overlay-title="总览"          repeat=false  { toggle-overview; }
-    Super+Alt+L  hotkey-overlay-title="锁屏"          repeat=false  { spawn "gtklock"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }
@@ -335,7 +330,7 @@ binds {
     Mod+R         hotkey-overlay-title="更改窗口大小"     { switch-preset-column-width; }
     Mod+F         hotkey-overlay-title="窗口最大化"       { maximize-column; }
     Mod+Shift+F   hotkey-overlay-title="窗口全屏"         { fullscreen-window; }
-    Mod+Ctrl+C    hotkey-overlay-title="将窗口移至中央"   { center-column; }
+    Mod+Ctrl+C         hotkey-overlay-title="将窗口移至中央"   { center-column; }
 
     Mod+Minus   hotkey-overlay-title="减小窗口宽度"       { set-column-width "-5%"; }
     Mod+Equal   hotkey-overlay-title="增大窗口宽度"       { set-column-width "+5%"; }
@@ -343,9 +338,9 @@ binds {
     Mod+Shift+Minus   hotkey-overlay-title="减小窗口高度" { set-window-height "-5%"; }
     Mod+Shift+Equal   hotkey-overlay-title="增大窗口高度" { set-window-height "+5%"; }
 
-    Print      hotkey-overlay-title="截取自由选择区域"   { screenshot; }
-    Ctrl+Print hotkey-overlay-title="截取全屏区域"  { screenshot-screen; }
-    Alt+Print  hotkey-overlay-title="截取当前窗口"   { screenshot-window; }
+    Print      hotkey-overlay-title=null   { screenshot; }
+    Ctrl+Print hotkey-overlay-title=null   { screenshot-screen; }
+    Alt+Print  hotkey-overlay-title=null   { screenshot-window; }
 
     Alt+Tab       repeat=false hotkey-overlay-title="显示当前窗口"    { spawn "niriswitcherctl" "show" "--window"; }
     Alt+Shift+Tab repeat=false hotkey-overlay-title="显示当前工作区"  { spawn "niriswitcherctl" "show" "--workspace"; }
