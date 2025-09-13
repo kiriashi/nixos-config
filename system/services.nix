@@ -22,11 +22,10 @@
 
     scx = {
       enable = true;
-      package = pkgs.scx_git.full.overrideAttrs (old: {
+      package = pkgs.scx.full.overrideAttrs (old: {
   postPatch = (old.postPatch or "") + ''
     substituteInPlace meson.build \
-      --replace-fail '/bin/bash' '${lib.getExe pkgs.bash}' \
-      --replace-fail '/usr/bin/env' '${lib.getExe pkgs.coreutils}/bin/env'
+      --replace-fail '/bin/bash' '${lib.getExe pkgs.bash}'
   '';
 });
       scheduler = "scx_rusty";
