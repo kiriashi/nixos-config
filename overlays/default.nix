@@ -1,64 +1,71 @@
 { ... }:
 {
   nixpkgs.overlays = [
+
+    # ------------------- niri-flake doCheck hack -------------------
     (final: prev: {
-      niri-stable = prev.niri-stable.overrideAttrs (_: {
-        doCheck = false;
-      });
-      niri-unstable = prev.niri-unstable.overrideAttrs (_: {
-        doCheck = false;
-      });
-      xwayland-satellite-stable = prev.xwayland-satellite-stable.overrideAttrs (_: {
-        doCheck = false;
-      });
-      xwayland-satellite-unstable = prev.xwayland-satellite-unstable.overrideAttrs (_: {
-        doCheck = false;
-      });
+      niri-stable = prev.niri-stable.overrideAttrs (_: { doCheck = false; });
+      niri-unstable = prev.niri-unstable.overrideAttrs (_: { doCheck = false; });
+      xwayland-satellite-stable = prev.xwayland-satellite-stable.overrideAttrs (_: { doCheck = false; });
+      xwayland-satellite-unstable = prev.xwayland-satellite-unstable.overrideAttrs (_: { doCheck = false; });
     })
 
+    # ------------------- Qt / GTK / fcitx hack -------------------
     (final: prev: {
       qt6Packages = prev.qt6Packages.overrideScope (
         _final': prev': {
-          # HACK: no more qt5
           fcitx5-with-addons = prev'.fcitx5-with-addons.override { libsForQt5.fcitx5-qt = null; };
-
-          # HACK: no more kde stuff
           fcitx5-configtool = prev'.fcitx5-configtool.override { kcmSupport = false; };
-
-          # HACK: no more qtwebengine, opencc
           fcitx5-chinese-addons =
             (prev'.fcitx5-chinese-addons.override {
               curl = null;
               opencc = null;
               qtwebengine = null;
-            }).overrideAttrs
-              (oldAttrs: {
-                buildInputs = oldAttrs.buildInputs ++ [
-                  prev.gettext
-                  prev'.qtbase
-                ];
-                cmakeFlags = oldAttrs.cmakeFlags ++ [
-                  (prev.lib.cmakeBool "ENABLE_BROWSER" false)
-                  (prev.lib.cmakeBool "ENABLE_CLOUDPINYIN" false)
-                  (prev.lib.cmakeBool "ENABLE_OPENCC" false)
-                ];
-              });
+            }).overrideAttrs (oldAttrs: {
+              buildInputs = oldAttrs.buildInputs ++ [ prev.gettext prev'.qtbase ];
+              cmakeFlags = oldAttrs.cmakeFlags ++ [
+                (prev.lib.cmakeBool "ENABLE_BROWSER" false)
+                (prev.lib.cmakeBool "ENABLE_CLOUDPINYIN" false)
+                (prev.lib.cmakeBool "ENABLE_OPENCC" false)
+              ];
+            });
         }
       );
 
-      # HACK: no more gtk2
       gnome-themes-extra = (prev.gnome-themes-extra.override { gtk2 = null; }).overrideAttrs {
         configureFlags = [ "--disable-gtk2-engine" ];
       };
 
-      # HACK:
       xdg-desktop-portal-gtk =
         (prev.xdg-desktop-portal-gtk.override {
           gnome-settings-daemon = null;
           gnome-desktop = null;
           gsettings-desktop-schemas = null;
-        }).overrideAttrs
-          { mesonFlags = [ (prev.lib.mesonEnable "wallpaper" false) ]; };
+        }).overrideAttrs { mesonFlags = [ (prev.lib.mesonEnable "wallpaper" false) ]; };
     })
+
+    # ------------------- scx_full /bin/bash fixed -------------------
+    (final: prev: {
+      scx_full = prev.scx_full.overrideAttrs (old: {
+        prePatch = (old.prePatch or "") + ''
+          echo "Patching scx_full build scripts to use Nix paths..."
+
+          # replace /bin/bash
+          substituteInPlace meson-scripts/build_bpftool \
+            --replace "/bin/bash" "${prev.bash}/bin/bash"
+
+          # replace /bin/sh
+          find . -type f -exec sed -i \
+            -e "s|/bin/sh|${prev.bash}/bin/sh|g" \
+            {} +
+
+          # replace /usr/bin/env
+          find . -type f -exec sed -i \
+            -e "s|/usr/bin/env|${prev.coreutils}/bin/env|g" \
+            {} +
+        '';
+      });
+    })
+
   ];
 }
