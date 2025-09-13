@@ -24,12 +24,11 @@
       enable = true;
       package = pkgs.scx_git.full.overrideAttrs (old: {
   postPatch = (old.postPatch or "") + ''
+    # meson.build 里有硬编码
     substituteInPlace meson.build \
-      --replace-fail /bin/bash ${pkgs.bash}/bin/bash
+      --replace /bin/bash ${pkgs.bash}/bin/bash
 
-    substituteInPlace meson-scripts/* \
-      --replace-fail /bin/bash ${pkgs.bash}/bin/bash
-
+    # 只 patch shebang，不强制匹配 /bin/bash
     patchShebangs meson-scripts
   '';
 });
