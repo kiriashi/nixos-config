@@ -65,7 +65,10 @@
   ]);
 
   # Zen-Browser
-  programs.zen-browser.enable = true;
+  programs.zen-browser = {
+    enable = true;
+    languagePacks = [ "zh-CN" ];
+  };
 
   # OBS Studio：录屏/直播
   programs.obs-studio = {
@@ -121,10 +124,10 @@
     indicator = true;
   };
 
-  # Firefox（使用 LibreWolf 包）与策略配置
+  # Firefox 
   programs.firefox = {
     enable = true;
-    package = pkgs.librewolf;
+    package = pkgs.firefox;
     languagePacks = [ "zh-CN" ];
     nativeMessagingHosts = with pkgs; [
       keepassxc

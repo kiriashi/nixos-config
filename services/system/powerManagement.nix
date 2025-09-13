@@ -9,6 +9,13 @@
   # 自动 CPU 调频
   services.auto-cpufreq.enable = true;
 
+  # SCX 调频
+  services.scx = {
+    enable = false;
+    package = pkgs.scx_git.full;
+    scheduler = "scx_rusty";
+  };
+
   # 智能进程调度，游戏桌面优化
   services.ananicy = {
     enable = true;

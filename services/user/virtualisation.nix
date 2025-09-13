@@ -39,7 +39,6 @@
     distrobox_git
     distroshelf
     pods
-    podman-desktop
 
     virglrenderer
     virtualgl

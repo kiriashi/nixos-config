@@ -20,12 +20,6 @@
       interval = "weekly";
     };
 
-    scx = {
-      enable = false;
-      package = pkgs.scx_git.full;
-      scheduler = "scx_rusty";
-    };
-
     xserver = {
       excludePackages = [ pkgs.xterm ];
       upscaleDefaultCursor = true;
