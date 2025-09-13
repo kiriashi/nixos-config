@@ -19,9 +19,6 @@
     unzip
     unrar
     p7zip
-
-    bibata-cursors
-    adwaita-icon-theme
   ];
 
   environment.localBinInPath = true;
