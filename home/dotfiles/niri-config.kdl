@@ -36,6 +36,15 @@ cursor {
     // xcursor-size 26
 }
 
+output "eDP-1" {
+    scale 2.0
+}
+
+output "HDMI-A-1" {
+    scale 1.25
+    mode "2560x1440@144.001999"
+}
+
 input {
     keyboard {
         xkb {
@@ -49,15 +58,6 @@ input {
         natural-scroll
         // disabled-on-external-mouse
     }
-
-output "eDP-1" {
-    scale 2.0
-}
-
-output "HDMI-A-1" {
-    scale 1.25
-    mode "2560x1440@144.001999"
-}
 
     mouse {
         accel-speed 0.6
@@ -121,13 +121,16 @@ window-rule {
 }
 
 window-rule {
-    geometry-corner-radius 10
+    geometry-corner-radius 12
     clip-to-geometry true
     draw-border-with-background false
 }
 
+
 workspace "Browser"
 window-rule {
+    match app-id=r#"zen*."#
+    match app-id="librewolf"
     match app-id="firefox"
     
     open-maximized true
@@ -137,7 +140,8 @@ window-rule {
 workspace "Code"
 window-rule {
     match title=r#".*Lapce$"#
-    match app-id="Code"
+    match app-id="code"
+    match app-id="cursor"
     match app-id="dev.zed.Zed-Dev"
     
     open-on-workspace "Code"
@@ -208,6 +212,11 @@ window-rule {
 window-rule {
     match app-id="kitty"
     default-column-width { proportion 0.5; }
+}
+
+window-rule {
+    match app-id=r#"zen*."#
+    opacity 0.95
 }
 
 window-rule {
