@@ -27,6 +27,9 @@
     # nemo-with-extensions
     nautilus
     file-roller
+
+    bibata-cursors
+    adwaita-icon-theme
   ];
 
   programs = {
