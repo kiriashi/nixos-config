@@ -17,6 +17,20 @@
     })
 
     (final: prev: {
+      scx_full = prev.scx_full.overrideAttrs (old: {
+        patches = (old.patches or []) ++ [
+          (final.writeText "fix-bash-path.patch" ''
+            --- a/meson-scripts/build_bpftool
+            +++ b/meson-scripts/build_bpftool
+            @@
+            -#!/bin/bash
+            +#!${final.bash}/bin/bash
+          '')
+        ];
+      });
+    })
+
+    (final: prev: {
       qt6Packages = prev.qt6Packages.overrideScope (
         _final': prev': {
           # HACK: no more qt5
