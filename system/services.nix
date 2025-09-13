@@ -21,7 +21,7 @@
     };
 
     scx = {
-      enable = true;
+      enable = false;
       package = pkgs.scx_git.full;
       scheduler = "scx_rusty";
     };
