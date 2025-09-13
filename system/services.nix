@@ -24,11 +24,11 @@
       enable = true;
       package = pkgs.scx_git.full.overrideAttrs (old: {
   postPatch = (old.postPatch or "") + ''
-    # 修复 meson.build 里的 /bin/bash
+    # 把 meson.build 里的 /bin/bash 替换成 nix store 里的 bash
     substituteInPlace meson.build \
-      --replace /bin/bash ${lib.getExe pkgs.bash}
+      --replace "/bin/bash" "${lib.getExe pkgs.bash}"
 
-    # 修复脚本里的 shebang
+    # 修正 meson-scripts 下所有脚本的 shebang
     patchShebangs meson-scripts
   '';
 });
