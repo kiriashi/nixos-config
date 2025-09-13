@@ -52,16 +52,5 @@
         }).overrideAttrs
           { mesonFlags = [ (prev.lib.mesonEnable "wallpaper" false) ]; };
     })
-    
-    # 添加 scx_full 修复
-    (final: prev: {
-      scx_full = prev.scx_full.overrideAttrs (old: {
-        preBuild = (old.preBuild or "") + ''
-          mkdir -p $NIX_BUILD_TOP/bin
-          ln -sf ${prev.bash}/bin/bash $NIX_BUILD_TOP/bin/bash
-          export PATH=$NIX_BUILD_TOP/bin:$PATH
-        '';
-      });
-    })
   ];
 }
