@@ -6,10 +6,7 @@
   # 硬盘健康监控
   services.smartd.enable = true;
 
-  # 自动 CPU 调频
-  services.auto-cpufreq.enable = false;
-
-  # tlp 电源管理
+  # tlp 高级电源管理
   services.tlp = {
     enable = true;
     settings = {
@@ -24,9 +21,9 @@
       CPU_MIN_PERF_ON_BAT = 0;
       CPU_MAX_PERF_ON_BAT = 20;
 
-      # Optional helps save long term battery health
-      START_CHARGE_THRESH_BAT0 = 40; # 40 and bellow it starts to charge
-      STOP_CHARGE_THRESH_BAT0 = 80; # 80 and above it stops charging
+      # 自动电量充放
+      START_CHARGE_THRESH_BAT0 = 40;
+      STOP_CHARGE_THRESH_BAT0 = 80;
 
     };
   };
