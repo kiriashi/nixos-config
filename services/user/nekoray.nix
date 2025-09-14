@@ -4,9 +4,9 @@
 }:
 
 {
-  programs.clash-verge = {
+  programs.nekoray = {
     enable = true;
-    package = pkgs.clash-verge-rev;
+    package = pkgs.nekoray;
     tunMode = true;
     serviceMode = true;
   };

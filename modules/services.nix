@@ -15,9 +15,9 @@
     ../services/system/others.nix
     ../services/system/plymouth.nix
     ../services/system/powerManagement.nix
-
-    ../services/user/clash-verge.nix
+    
     ../services/user/fcitx5.nix
+    ../services/user/nekoray.nix
     ../services/user/qt6ct.nix
     ../services/user/poweralertd.nix
     ../services/user/steam.nix

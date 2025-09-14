@@ -12,7 +12,7 @@
   # SCX 调频
   services.scx = {
     enable = false;
-    package = pkgs.scx_git.full;
+    package = pkgs.scx-full_git;
     scheduler = "scx_rusty";
   };
 

@@ -11,11 +11,6 @@
 
   nix = {
     package = pkgs.lixPackageSets.latest.lix;
-    gc = {
-      automatic = true;
-      dates = "daily";
-      options = "--delete-older-than 7d";
-    };
     settings = {
       auto-optimise-store = true;
       trusted-users = [
@@ -34,7 +29,6 @@
         # "https://mirrors.sustech.edu.cn/nix-channels/store"
         # "https://mirrors.sjtug.edu.cn/nix-channels/store"
 
-
         "https://nix-community.cachix.org"
       ];
       trusted-public-keys = [
@@ -42,5 +36,15 @@
       ];
     };
   };
+
+  programs.nh = {
+    enable = true;
+    clean = {
+      enable = true;
+      dates = "weekly";
+      extraArgs = "--delete-older-than 7d --keep 5";
+    };
+    flake = "/home/kiriashi/Documents/Git/nixos-configs";
+  };  
 
 }
