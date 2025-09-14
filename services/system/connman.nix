@@ -1,18 +1,9 @@
 { 
   pkgs, 
-  lib, 
   ...
 }:
 
 {
-  networking = {
-    networkmanager.enable = lib.mkForce false;
-    wireless = {
-      enable = lib.mkForce false;
-      iwd.enable = lib.mkForce true;
-    };
-  };
-
   services.connman = {
     enable = true;
     enableVPN = true;

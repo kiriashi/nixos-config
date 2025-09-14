@@ -24,7 +24,15 @@
       excludePackages = [ pkgs.xterm ];
       upscaleDefaultCursor = true;
     };
-    
+
+    openssh = {
+      enable = true;
+      settings = {
+        PermitRootLogin = "no";
+        PasswordAuthentication = true;
+      };
+    };
+
     flatpak.enable = true;
 
     usbguard.dbus.enable = true;
