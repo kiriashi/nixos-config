@@ -47,6 +47,7 @@
     xserver.desktopManager.runXdgAutostartIfNone = true;
     gvfs.enable = true;
     seatd.enable = true;
+    gnome.sushi.enable =true;
     gnome.gnome-keyring.enable = lib.mkForce false;
   };
 

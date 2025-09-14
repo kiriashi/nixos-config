@@ -1,19 +1,4 @@
 {
-    "rime_wanxiang": {
-        "cargoLocks": null,
-        "date": null,
-        "extract": null,
-        "name": "rime_wanxiang",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "name": null,
-            "sha256": "sha256-VZQhq828DXQTShSyrHN2VZyQ67DSmT4ZHZkMIoC+fSs=",
-            "type": "url",
-            "url": "https://github.com/amzxyz/rime_wanxiang/releases/download/v12.3.4/rime-wanxiang-base.zip"
-        },
-        "version": "dict-nightly"
-    },
     "wallpaper": {
         "cargoLocks": null,
         "date": "2025-09-10",
@@ -34,6 +19,21 @@
             "type": "github"
         },
         "version": "0b36e219d57f4db93ef6b2ad147b5d7422d44470"
+    },
+    "wanxiang_base": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "wanxiang_base",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-VZQhq828DXQTShSyrHN2VZyQ67DSmT4ZHZkMIoC+fSs=",
+            "type": "url",
+            "url": "https://github.com/amzxyz/rime_wanxiang/releases/download/v12.3.4/rime-wanxiang-base.zip"
+        },
+        "version": "dict-nightly"
     },
     "wanxiang_gram": {
         "cargoLocks": null,

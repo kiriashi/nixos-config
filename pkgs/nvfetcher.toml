@@ -2,10 +2,11 @@
 src.git = "https://github.com/kiriashi/wallpaper.git"
 fetch.github = "kiriashi/wallpaper"
 
-[rime_wanxiang]
+[wanxiang_base]
 src.github = "amzxyz/rime_wanxiang"
-src.from_pattern = "v([0-9]+(?:\\.[0-9]+)*)"
+src.from_pattern = "v(.*)"
 src.to_pattern = "\\1"
+fetch.type = "json"
 fetch.url = "https://github.com/amzxyz/rime_wanxiang/releases/download/v$ver/rime-wanxiang-base.zip"
 
 [wanxiang_gram]
