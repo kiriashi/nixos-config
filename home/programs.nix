@@ -17,7 +17,6 @@
     gimp3-with-plugins
     inkscape-with-extensions
     kdePackages.kdenlive
-    krita
     ffmpeg
     imagemagick
     nomacs
@@ -33,7 +32,6 @@
     thunderbird
     bilibili
     splayer
-    amberol
     #实用工具
     coppwr
     dutree

@@ -1,0 +1,10 @@
+# 文件本身
+custom/user_exclude_file.txt
+# 用户数据库
+lua/sequence.userdb
+zc.userdb
+# custom 文件
+default.custom.yaml
+wanxiang_pro.custom.yaml
+wanxiang_reverse.custom.yaml
+wanxiang_mixedcode.custom.yaml

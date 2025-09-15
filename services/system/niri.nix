@@ -26,6 +26,11 @@
 
     # nemo-with-extensions
     nautilus
+    gdk-pixbuf
+    gdk-pixbuf-xlib
+    libheif
+    libwebp
+    libtiff
     file-roller
 
     bibata-cursors

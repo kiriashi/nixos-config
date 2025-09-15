@@ -16,6 +16,7 @@ environment {
     XMODIFIERS "@im=fcitx"
     GLFW_IM_MODULE "fcitx"
     QT_IM_MODULE "fcitx"
+    GTK_IM_MODULE "fcitx"
     INPUT_METHOD "fcitx"
     QT_AUTO_SCREEN_SCALE_FACTOR "1"
 }
@@ -242,7 +243,7 @@ binds {
     Mod+E        hotkey-overlay-title="打开文件"      repeat=false  { spawn "nautilus"; }
     Mod+Y        hotkey-overlay-title="打开Yazi"    repeat=false  { spawn "kitty" "-e" "yazi"; }
     Mod+O        hotkey-overlay-title="打开录屏"    repeat=false  { spawn "obs"; }
-    Mod+B        hotkey-overlay-title="打开浏览器"    repeat=false  { spawn "zen-beta"; }
+    Mod+B        hotkey-overlay-title="打开浏览器"    repeat=false  { spawn "firefox"; }
     Mod+C        hotkey-overlay-title="打开code"      repeat=false  { spawn "code"; }
     Mod+M        hotkey-overlay-title="打开音乐"      repeat=false  { spawn "splayer"; }
 

@@ -44,7 +44,7 @@
       dates = "weekly";
       extraArgs = "--delete-older-than 7d --keep 5";
     };
-    flake = "/home/kiriashi/Documents/Git/nixos-configs";
+    flake = "/home/kiriashi/Documents/Git/nixos";
   };  
 
 }
