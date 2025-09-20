@@ -241,8 +241,9 @@ binds {
     Mod+Escape   hotkey-overlay-title="总览"          repeat=false  { toggle-overview; }
     Super+Alt+L  hotkey-overlay-title="锁屏"          repeat=false  { spawn "gtklock"; }
     Mod+E        hotkey-overlay-title="打开文件"      repeat=false  { spawn "nautilus"; }
-    Mod+Y        hotkey-overlay-title="打开Yazi"    repeat=false  { spawn "kitty" "-e" "yazi"; }
-    Mod+O        hotkey-overlay-title="打开录屏"    repeat=false  { spawn "obs"; }
+    Mod+Y        hotkey-overlay-title="打开Yazi"      repeat=false  { spawn "kitty" "-e" "yazi"; }
+    Mod+N        hotkey-overlay-title="打开Nekoray"   repeat=false  { spawn "nekoray"; }
+    Mod+O        hotkey-overlay-title="打开录屏"      repeat=false  { spawn "obs"; }
     Mod+B        hotkey-overlay-title="打开浏览器"    repeat=false  { spawn "firefox"; }
     Mod+C        hotkey-overlay-title="打开code"      repeat=false  { spawn "code"; }
     Mod+M        hotkey-overlay-title="打开音乐"      repeat=false  { spawn "splayer"; }
@@ -343,9 +344,9 @@ binds {
     Mod+Shift+Minus   hotkey-overlay-title="减小窗口高度" { set-window-height "-5%"; }
     Mod+Shift+Equal   hotkey-overlay-title="增大窗口高度" { set-window-height "+5%"; }
 
-    Print      hotkey-overlay-title=null   { screenshot; }
-    Ctrl+Print hotkey-overlay-title=null   { screenshot-screen; }
-    Alt+Print  hotkey-overlay-title=null   { screenshot-window; }
+    Print      hotkey-overlay-title="截屏选择区域"   { screenshot; }
+    Ctrl+Print hotkey-overlay-title="截屏整个屏幕"   { screenshot-screen; }
+    Alt+Print  hotkey-overlay-title="截屏当前窗口"  { screenshot-window; }
 
     Alt+Tab       repeat=false hotkey-overlay-title="显示当前窗口"    { spawn "niriswitcherctl" "show" "--window"; }
     Alt+Shift+Tab repeat=false hotkey-overlay-title="显示当前工作区"  { spawn "niriswitcherctl" "show" "--workspace"; }

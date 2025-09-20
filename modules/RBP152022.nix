@@ -23,10 +23,6 @@
     bluez
     blueman
     sof-firmware
-
-    libva-utils
-    vulkan-loader
-    vulkan-tools
   ];
 
   systemd.user.services.mpris-proxy = {
@@ -44,6 +40,10 @@
       mesa
       libva
       amdvlk
+
+      libva-utils
+      vulkan-loader
+      vulkan-tools
     ];
     extraPackages32 = with pkgs.pkgsi686Linux; [
       mesa
