@@ -9,6 +9,7 @@
     ../services/system/gnupg.nix
     ../services/system/greetd.nix
     ../services/system/grub.nix
+    ../services/system/mihomo.nix
     ../services/system/niri.nix
     ../services/system/nix.nix
     ../services/system/nix-ld.nix
@@ -16,7 +17,6 @@
     ../services/system/plymouth.nix
     ../services/system/powerManagement.nix
 
-    ../services/user/clash-verge.nix   
     ../services/user/fcitx5.nix
     ../services/user/qt6ct.nix
     ../services/user/poweralertd.nix
