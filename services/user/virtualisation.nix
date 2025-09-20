@@ -19,6 +19,7 @@
           pkgs.OVMFFull.fd
         ];
       };
+
       vhostUserPackages = with pkgs; [
         virtiofsd
         virglrenderer

@@ -1,6 +1,6 @@
 spawn-at-startup "fcitx5" "-d"
 spawn-at-startup "waypaper" "--restore"
-spawn-at-startup "nekoray"
+spawn-at-startup "clash-verge"
 spawn-at-startup "niriswitcher"
 spawn-at-startup "wl-paste" "--watch" "cliphist" "store"
 spawn-at-startup "systemctl" "--user" "restart" "clipboard-sync.service"
@@ -212,6 +212,7 @@ window-rule {
 
 window-rule {
     match app-id=r#"zen*."#
+    match app-id="typora"
     opacity 0.95
 }
 
