@@ -1,11 +1,14 @@
 { config, pkgs, ... }:
-
+let
+  userHome = "/home/kiriashi";
+  mihomoConfigPath = "${userHome}/.config/mihomo/config.yaml";
+in
 {
   services.mihomo = {
     enable = true;
     package = pkgs.mihomo;
     webui = pkgs.zashboard;
-    configFile = /home/kiriashi/.config/mihomo/config.yaml;
+    configFile = mihomoConfigPath;
     extraOpts = ''
       --mode rule
       --ipv6 true
