@@ -1,55 +1,19 @@
 { config, pkgs, ... }:
-
 let
-  updateScript = pkgs.writeShellScriptBin "update-mihomo-config" ''
-    #!/bin/sh
-    curl -sL "https://sub.furina.ren/OfYj5LV9jRec9oKRwAOp/api/file/Mihomo" -o ${config.home.homeDirectory}/.config/mihomo/config.yaml
-    
-    if ${pkgs.mihomo}/bin/mihomo check -d ${config.home.homeDirectory}/.config/mihomo/config.yaml; then
-      systemctl --user restart mihomo.service
-      echo "配置文件更新成功并已重新加载服务"
-    else
-      echo "配置文件无效，使用旧配置"
-      rm -f ${config.home.homeDirectory}/.config/mihomo/config.yaml
-    fi
-  '';
+  mihomoConfigUrl = "https://sub.furina.ren/OfYj5LV9jRec9oKRwAOp/api/file/Mihomo";
+  mihomoConfigPath = "/etc/mihomo/config.yaml";
 in
 {
-  systemd.user = {
-    services.update-mihomo-config = {
-      Unit = {
-        Description = "Update Mihomo configuration";
-      };
-      Service = {
-        Type = "oneshot";
-        ExecStart = "${updateScript}/bin/update-mihomo-config";
-      };
-    };
-
-    timers.update-mihomo-config = {
-      Unit = {
-        Description = "Timer for Mihomo config update";
-      };
-      Timer = {
-        OnCalendar = "daily"; 
-        Persistent = true;
-      };
-      Install = {
-        WantedBy = ["timers.target"];
-      };
-    };
-  };
-
-  home.services.mihomo = {
+  services.mihomo = {
     enable = true;
     package = pkgs.mihomo;
     webui = pkgs.zashboard;
-    configFile = "${config.home.homeDirectory}/.config/mihomo/config.yaml";
+    configFile = mihomoConfigPath;
     extraOpts = [
-    # 基本设置
+    # 基本设置/etc
     "--mode" "rule"
     "--ipv6" "true"
-    "--log-level" "info"
+    "--log-level" "info"/etc
     "--allow-lan" "true"
     "--mixed-port" "7890"
     "--unified-delay" "true"
@@ -122,5 +86,33 @@ in
     "--dns.nameserver-policy" "geosite:cn,private=https://doh.pub/dns-query,https://dns.alidns.com/dns-query"
     "--dns.nameserver-policy" "geosite:!cn,!private=tls://dns.google,tls://cloudflare-dns.com"
   ];
+  };
+    systemd.services.mihomo-config-update = {
+    description = "Update Mihomo config from remote URL";
+    wants = [ "network-online.target" ];
+    after = [ "network-online.target" ];
+    serviceConfig = {
+      Type = "oneshot";
+      ExecStart = ''
+        tmpfile=$(mktemp)
+        curl -fsSL ${mihomoConfigUrl} -o "$tmpfile" || exit 0
+        if ! cmp -s "$tmpfile" "${mihomoConfigPath}"; then
+          mv "$tmpfile" "${mihomoConfigPath}"
+          chown mihomo:mihomo "${mihomoConfigPath}" || true
+          systemctl restart mihomo.service
+        else
+          rm "$tmpfile"
+        fi
+      '';
+    };
+  };
+
+  systemd.timers.mihomo-config-update = {
+    description = "Daily update Mihomo config";
+    wantedBy = [ "timers.target" ];
+    timerConfig = {
+      OnCalendar = "daily";
+      Persistent = true;
+    };
   };
 }

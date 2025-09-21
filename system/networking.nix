@@ -14,10 +14,10 @@
     };
 
     firewall = {
-    enable = false;
+    enable = true;
     # 放行端口
     allowedTCPPorts = [ 7890 9090 ];
-    allowedUDPPorts = [ 7890 9090 ];
+    allowedUDPPorts = [ 1053 ];
     # Kde Connect
     allowedTCPPortRanges = [ { from = 1714; to = 1764; } ];
     allowedUDPPortRanges = [ { from = 1714; to = 1764; } ];

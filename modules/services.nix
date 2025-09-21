@@ -9,6 +9,7 @@
     ../services/system/gnupg.nix
     ../services/system/greetd.nix
     ../services/system/grub.nix
+    ../services/system/mihomo.nix
     ../services/system/niri.nix
     ../services/system/nix.nix
     ../services/system/nix-ld.nix

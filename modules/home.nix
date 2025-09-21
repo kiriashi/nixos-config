@@ -12,7 +12,6 @@
     ../home/file.nix
     ../home/fonts.nix
     ../home/git.nix
-    ../home/mihomo.nix
     ../home/programs.nix
     ../home/theme.nix
     ../home/wm-related.nix
