@@ -1,6 +1,7 @@
 {
   lib,
   pkgs,
+  config,
   ...
 }:
 {
@@ -10,7 +11,7 @@
     wheelNeedsPassword = true;
     extraRules = [
       {
-        users = [ "kiriashi" ];
+        users = [ "${config.profile.userName}" ];
         noPass = false;
         keepEnv = true;
         persist = true;

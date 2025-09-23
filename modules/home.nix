@@ -1,6 +1,7 @@
 {
   lib,
   pkgs,
+  config,
   ...
 }:
 
@@ -11,7 +12,6 @@
     ../home/dotfiles.nix
     ../home/file.nix
     ../home/fonts.nix
-    ../home/git.nix
     ../home/programs.nix
     ../home/theme.nix
     ../home/wm-related.nix
@@ -23,8 +23,8 @@
   clipboardSync.enable = true;
 
   home = {
-    username = "kiriashi";
-    homeDirectory = "/home/kiriashi";
+    username = "${config.profile.userName}";
+    homeDirectory = "/home/${config.profile.userName}";
     stateVersion = "25.11";
     shell.enableFishIntegration = true;
     preferXdgDirectories = true;

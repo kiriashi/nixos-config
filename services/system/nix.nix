@@ -1,5 +1,6 @@
 { 
-  pkgs, 
+  pkgs,
+  config,
   ...
 }:
 
@@ -15,7 +16,7 @@
       auto-optimise-store = true;
       trusted-users = [
         "root"
-        "kiriashi"
+        "${config.profile.userName}"
       ];
       experimental-features = [
         "nix-command"
@@ -44,7 +45,7 @@
       dates = "weekly";
       extraArgs = "--delete-older-than 7d --keep 5";
     };
-    flake = "/home/kiriashi/Documents/Git/nixos";
+    flake = "/home/${config.profile.userName}/Documents/Git/nixos";
   };  
 
 }

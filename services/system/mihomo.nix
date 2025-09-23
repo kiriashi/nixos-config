@@ -1,8 +1,8 @@
 { config, pkgs, ... }:
 let
-  mihomoConfig = pkgs.fetchurl {
-    url = "https://sub.furina.ren/OfYj5LV9jRec9oKRwAOp/api/file/config.yaml";
-    sha256 = "sha256-iFuc0IOcN4nZPSaNBaWHFN+RzHINpj9Dzmm/WrnxHRs=";
+  mihomoConfig = pkgs.lib.makeHomeDirPath {
+    user = config.profile.userName;
+    path = ".config/mihomo/config.yaml";
   };
 in
 {

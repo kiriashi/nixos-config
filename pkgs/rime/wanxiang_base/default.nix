@@ -1,4 +1,4 @@
-{ stdenv, sources, fcitx5 }:
+{ stdenv, sources, unzip }:
 
 stdenv.mkDerivation rec {
   pname = "wanxiang_base";
@@ -6,10 +6,14 @@ stdenv.mkDerivation rec {
   
   src = sources.wanxiang_base.src;
 
-  dontBuild = true;
+  buildInputs = [ unzip ];
+
+  unpackPhase = ''
+    unzip ${src} -d $PWD
+  '';
 
   installPhase = ''
     mkdir -p $out/share/fcitx5/rime
-    cp -r ${src}/* $out/share/fcitx5/rime/
+    cp -r $PWD/* $out/share/fcitx5/rime/
   '';
 }

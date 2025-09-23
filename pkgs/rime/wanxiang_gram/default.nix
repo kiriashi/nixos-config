@@ -1,13 +1,19 @@
-{ stdenv, sources }:
+{ stdenv, sources, fetchurl }:
 
 stdenv.mkDerivation rec {
   pname = "wanxiang_gram";
   version = "1.0.0";
   
-  src = sources.wanxiang_gram.src;
+  src = fetchurl {
+    url = "https://github.com/amzxyz/RIME-LMDG/releases/download/LTS/wanxiang-lts-zh-hans.gram";
+    sha256 = "sha256-yFOtlP4vsFkj3jMeuQwIH/PuH3nScsODlawW35Nq3EA=";
+  };
+
+  dontBuild = true;
+  dontUnpack = true;
 
   installPhase = ''
     mkdir -p $out/share/fcitx5/rime
-    cp -r * $out/share/fcitx5/rime/
+    cp -r ${src} $out/share/fcitx5/rime/wanxiang-lts-zh-hans.gram
   '';
 }

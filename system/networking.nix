@@ -4,6 +4,8 @@
 
 { 
   networking = {
+    hostName = "RBP152022";
+    
     nftables.enable = true;
 
     networkmanager.enable = false;

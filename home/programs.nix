@@ -3,6 +3,7 @@
   pkgs,
   myPkgs,
   inputs,
+  config,
   ...
 }:
 
@@ -66,6 +67,17 @@
   programs.zen-browser = {
     enable = true;
     languagePacks = [ "zh-CN" ];
+  };
+
+  # git用户设置
+  programs.git = {
+    enable = true;
+    userName  = "${config.profile.userName}";
+    userEmail = "${config.profile.userEmail}";
+    extraConfig = {
+      credential.helper = "store";
+      init.defaultBranch = "main";
+    };
   };
 
   # OBS Studio：录屏/直播

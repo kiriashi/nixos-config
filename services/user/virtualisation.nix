@@ -1,5 +1,6 @@
 {
   pkgs,
+  config,
   ...
 }:
 
@@ -32,7 +33,7 @@
 
   programs.virt-manager.enable = true;
 
-  users.users.kiriashi.extraGroups = [ "libvirtd" ];
+  users.users.${config.profile.userName}.extraGroups = [ "libvirtd" ];
 
   boot.extraModprobeConfig = "options kvm_amd nested=1";
 

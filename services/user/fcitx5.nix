@@ -1,6 +1,5 @@
 { 
   pkgs,
-  myPkgs,
   ... 
 }:
 
@@ -9,16 +8,12 @@
     enable = true;
     type = "fcitx5";
     fcitx5 = {
-      addons = (with pkgs; [
+      addons = with pkgs; [
         fcitx5-rime
         librime
         librime-lua
         librime-octagram
-      ]) ++
-      (with myPkgs; [
-        rime.wanxiang_base
-        rime.wanxiang_gram
-      ]);
+      ];
       waylandFrontend = true;
     };
   };

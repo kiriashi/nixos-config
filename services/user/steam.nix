@@ -1,5 +1,6 @@
 {
   pkgs,
+  config,
   ...
 }:
 
@@ -49,7 +50,7 @@
     };
   };
 
-  users.users.kiriashi.extraGroups = [ "gamemode" ];
+  users.users.${config.profile.userName}.extraGroups = [ "gamemode" ];
 
   hardware.steam-hardware.enable = true;
 

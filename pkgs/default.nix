@@ -4,9 +4,9 @@ let
     inherit (pkgs) fetchgit fetchurl fetchFromGitHub dockerTools;
   };
 
-  loadDir = dir: pkgs.callPackage dir { sources = sources; };
+  loadDir = dir: extraArgs: pkgs.callPackage dir extraArgs;
 
-  loadSubdirs = baseDir:
+  loadSubdirs = baseDir: extraArgs:
     let
       entries = builtins.readDir baseDir;
       isDir = name: entries.${name} == "directory";
@@ -14,12 +14,12 @@ let
     in
     builtins.listToAttrs (builtins.map (name: {
       inherit name;
-      value = loadDir (baseDir + "/${name}");
+      value = loadDir (baseDir + "/${name}") extraArgs;
     }) dirNames);
 in
 {
-  wallpaper = loadDir ./wallpaper;
+  wallpaper = loadDir ./wallpaper { inherit sources; };
 
-  rime = loadSubdirs ./rime;
-  Themes = loadSubdirs ./Themes;
+  rime = loadSubdirs ./rime { inherit sources; };
+  Themes = loadSubdirs ./Themes {};
 }

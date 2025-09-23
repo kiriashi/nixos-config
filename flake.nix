@@ -69,7 +69,7 @@ outputs =
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.backupFileExtension = "backup";
-          home-manager.users."kiriashi".imports = [ ./modules/home.nix ];
+          home-manager.users."${config.profile.userName}".imports = [ ./modules/home.nix ];
           home-manager.extraSpecialArgs = { 
             inherit inputs;
             myPkgs = self.packages.${system}; 

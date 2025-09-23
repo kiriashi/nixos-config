@@ -4,7 +4,11 @@
   ...
 }:
 {
-  home.packages = [ myPkgs.wallpaper ];
+  home.packages = with myPkgs; [ 
+    wallpaper 
+    wanxiang_base
+    wanxiang_pram
+    ];
 
   home.file = {
     nix-profile = {
@@ -12,14 +16,14 @@
       target = ".nix-profile";
     };
 
-    rime-wanxiang = {
-      source = ../home/fcitx5/rime/user_exclude_file.txt;
-      target = ".local/share/fcitx5/rime/custom/user_exclude_file.txt";
+    wanxiang_base = {
+      source = ${myPkgs.rime.wanxiang_base}/share/fcitx5/rime;
+      target = ".local/share/fcitx5/rime";
     };
 
-    rime-wanxiang-update = {
-      source = ../home/fcitx5/rime/wanxiang-update.sh;
-      target = ".local/share/fcitx5/rime/wanxiang-update.sh";
+    wanxiang_pram = {
+      source = ${myPkgs.rime.wanxiang_pram}/share/fcitx5/rime/wanxiang-lts-zh-hans.gram;
+      target = ".local/share/fcitx5/rime/wanxiang-lts-zh-hans.gram";
     };
 
     wallpaper = {
