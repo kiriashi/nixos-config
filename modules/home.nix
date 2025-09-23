@@ -21,7 +21,7 @@
   programs.home-manager.enable = true;
 
   home = {
-    username = "${config.profile.userName}";
+    username = config.profile.userName;
     homeDirectory = "/home/${config.profile.userName}";
     stateVersion = "25.11";
     shell.enableFishIntegration = true;

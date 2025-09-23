@@ -10,6 +10,20 @@
     allowBroken = false;
   };
 
+  nixpkgs.config.permittedInsecurePackages = [
+
+  ];
+
+  programs.nh = {
+    enable = true;
+    clean = {
+      enable = true;
+      dates = "weekly";
+      extraArgs = "--delete-older-than 7d --keep 5";
+    };
+    flake = "/home/${config.profile.userName}/Documents/Git/nixos";
+  };  
+
   nix = {
     package = pkgs.lixPackageSets.latest.lix;
     settings = {
@@ -38,14 +52,9 @@
     };
   };
 
-  programs.nh = {
-    enable = true;
-    clean = {
-      enable = true;
-      dates = "weekly";
-      extraArgs = "--delete-older-than 7d --keep 5";
-    };
-    flake = "/home/${config.profile.userName}/Documents/Git/nixos";
-  };  
+  system = {
+    stateVersion = "25.11";
+    autoUpgrade.channel = "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/nixos-unstable";
+  };
 
 }

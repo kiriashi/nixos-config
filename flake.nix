@@ -44,7 +44,7 @@ outputs =
   {
     packages.${system} = myPkgs;
 
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
       inherit system;
       specialArgs = { 
         inherit inputs;
@@ -53,9 +53,8 @@ outputs =
       modules = [
         (import ./overlays)
         ./modules/profile.nix
-        ./modules/system.nix
-        ./modules/services.nix
-        ./modules/RBP152022.nix
+        ./modules/config.nix
+        ./modules/laptop.nix
 
 
         # Chaotic软件源
@@ -67,16 +66,18 @@ outputs =
         # Home Manager 配置
         home-manager.nixosModules.home-manager
         ({ config, ... }: {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.backupFileExtension = "backup";
-          home-manager.users.${config.profile.userName} = {
-            imports = [ ./modules/home.nix ];
-            _module.args.profile = config;
+          home-manager = {
+            useGlobalPkgs = true;
+            useUserPackages = true;
+            backupFileExtension = "backup";
+            sharedModules = [ ./modules/profile.nix ];
+            users.${config.profile.userName} = {
+              imports = [ ./modules/home.nix ];
+              };
+            extraSpecialArgs = { 
+              inherit inputs;
+              myPkgs = self.packages.${system}; 
             };
-          home-manager.extraSpecialArgs = { 
-            inherit inputs;
-            myPkgs = self.packages.${system}; 
           };
         })
 

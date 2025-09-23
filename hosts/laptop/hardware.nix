@@ -1,13 +1,5 @@
 { pkgs, ... }:
 {
-  # ===== AMD 内核模块 =====
-  boot.extraModprobeConfig = ''
-    options kvm_amd nested=1
-    options kvm ignore_msrs=1 report_ignored_msrs=0
-  '';
-
-  hardware.cpu.amd.updateMicrocode = true;
-
   # ===== 通用蓝牙设置 =====
   services.blueman.enable = true;
   hardware.bluetooth = {
@@ -51,6 +43,16 @@
       amdvlk
     ];
   };
+
+  enableAllFirmware = true;
+  enableRedistributableFirmware = true;
+  
+  # ===== AMD 内核模块 =====
+  boot.extraModprobeConfig = ''
+    options kvm_amd nested=1
+    options kvm ignore_msrs=1 report_ignored_msrs=0
+  '';
+  hardware.cpu.amd.updateMicrocode = true;
 
   # ===== AMD 内核参数 =====
   boot.kernelParams = [
