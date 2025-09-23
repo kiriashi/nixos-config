@@ -2,7 +2,7 @@
   ...
 }:
 
-{
+{ 
   networking = {
     nftables.enable = true;
 
@@ -14,25 +14,27 @@
     };
 
     firewall = {
-    enable = true;
-    # 放行端口
-    allowedTCPPorts = [ 7890 9090 ];
-    allowedUDPPorts = [ 1053 ];
-    # Kde Connect
-    allowedTCPPortRanges = [ { from = 1714; to = 1764; } ];
-    allowedUDPPortRanges = [ { from = 1714; to = 1764; } ];
+      enable = true;
+
+      allowedTCPPorts = [ 7890 9090 ];
+      allowedUDPPorts = [ 7890 53 1053 ];
+
+      allowedTCPPortRanges = [ { from = 1714; to = 1764; } ];
+      allowedUDPPortRanges = [ { from = 1714; to = 1764; } ];
+      
+      checkReversePath = "loose";
+
+      extraInputRules = ''
+        iifname "Meta" accept
+        iifname "lo" accept
+
+        ip protocol icmp accept
+        ip6 nexthdr icmpv6 accept
+      '';
+      extraForwardRules = ''
+        iifname "Meta" accept
+        oifname "Meta" accept
+      '';
     };
-  };
-
-  networking.firewall = {
-  checkReversePath = "loose";
-  extraInputRules = ''
-    iifname "Meta" accept
-  '';
-
-  extraForwardRules = ''
-    iifname "Meta" accept
-    oifname "Meta" accept
-  '';
   };
 }

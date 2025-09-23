@@ -244,6 +244,7 @@ binds {
     Mod+Y        hotkey-overlay-title="打开Yazi"      repeat=false  { spawn "kitty" "-e" "yazi"; }
     Mod+N        hotkey-overlay-title="打开Nekoray"   repeat=false  { spawn "nekoray"; }
     Mod+O        hotkey-overlay-title="打开录屏"      repeat=false  { spawn "obs"; }
+    Mod+K        hotkey-overlay-title="kdeconnect"    repeat=false  { spawn "kdeconnect-app"; }
     Mod+B        hotkey-overlay-title="打开浏览器"    repeat=false  { spawn "firefox"; }
     Mod+C        hotkey-overlay-title="打开code"      repeat=false  { spawn "code"; }
     Mod+M        hotkey-overlay-title="打开音乐"      repeat=false  { spawn "splayer"; }

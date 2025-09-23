@@ -29,11 +29,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-VZQhq828DXQTShSyrHN2VZyQ67DSmT4ZHZkMIoC+fSs=",
+            "sha256": "sha256-uZp4/EnLtEX24RvjFGrCihS3GupI2awFypaLfewbYO4=",
             "type": "url",
-            "url": "https://github.com/amzxyz/rime_wanxiang/releases/download/v12.3.4/rime-wanxiang-base.zip"
+            "url": "https://github.com/amzxyz/rime_wanxiang/releases/download/v12.6.5/rime-wanxiang-base.zip"
         },
-        "version": "dict-nightly"
+        "version": "12.6.5"
     },
     "wanxiang_gram": {
         "cargoLocks": null,

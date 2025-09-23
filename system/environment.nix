@@ -6,11 +6,13 @@
 {
   environment.systemPackages = with pkgs; [
     fastfetch
+    busybox
     git
     uv
     jq
     gcc
     wget
+    killall
     python3
     nvfetcher
     nix-output-monitor

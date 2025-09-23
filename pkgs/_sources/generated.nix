@@ -15,10 +15,10 @@
   };
   wanxiang_base = {
     pname = "wanxiang_base";
-    version = "dict-nightly";
+    version = "12.6.5";
     src = fetchurl {
-      url = "https://github.com/amzxyz/rime_wanxiang/releases/download/v12.3.4/rime-wanxiang-base.zip";
-      sha256 = "sha256-VZQhq828DXQTShSyrHN2VZyQ67DSmT4ZHZkMIoC+fSs=";
+      url = "https://github.com/amzxyz/rime_wanxiang/releases/download/v12.6.5/rime-wanxiang-base.zip";
+      sha256 = "sha256-uZp4/EnLtEX24RvjFGrCihS3GupI2awFypaLfewbYO4=";
     };
   };
   wanxiang_gram = {
