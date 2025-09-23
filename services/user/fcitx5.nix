@@ -16,8 +16,8 @@
         librime-octagram
       ]) ++
       (with myPkgs; [
-        wanxiang_base
-        wanxiang_gram
+        rime.wanxiang_base
+        rime.wanxiang_gram
       ]);
       waylandFrontend = true;
     };

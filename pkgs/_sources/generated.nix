@@ -26,7 +26,7 @@
     version = "dict-nightly";
     src = fetchurl {
       url = "https://github.com/amzxyz/RIME-LMDG/releases/download/LTS/wanxiang-lts-zh-hans.gram";
-      sha256 = "sha256-yvAcKdoU9dZ0kPVedNG88+DMSI8KVSMRBGKRVZ7EF1c=";
+      sha256 = "sha256-yFOtlP4vsFkj3jMeuQwIH/PuH3nScsODlawW35Nq3EA=";
     };
   };
 }

@@ -3,9 +3,9 @@ let
   sources = import ./_sources/generated.nix {
     inherit (pkgs) fetchgit fetchurl fetchFromGitHub dockerTools;
   };
-  
-  loadDir = dir: extraArgs: pkgs.callPackage dir extraArgs;
-  
+
+  loadDir = dir: pkgs.callPackage dir { sources = sources; };
+
   loadSubdirs = baseDir:
     let
       entries = builtins.readDir baseDir;
@@ -14,11 +14,12 @@ let
     in
     builtins.listToAttrs (builtins.map (name: {
       inherit name;
-      value = loadDir (baseDir + "/${name}") {};
+      value = loadDir (baseDir + "/${name}");
     }) dirNames);
 in
 {
-  wallpaper = loadDir ./wallpaper { inherit sources; };
+  wallpaper = loadDir ./wallpaper;
 
+  rime = loadSubdirs ./rime;
   Themes = loadSubdirs ./Themes;
 }
