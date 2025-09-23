@@ -1,9 +1,7 @@
 { config, pkgs, ... }:
 let
-  mihomoConfig = pkgs.lib.makeHomeDirPath {
-    user = config.profile.userName;
-    path = ".config/mihomo/config.yaml";
-  };
+  userHome = config.users.users.${config.profile.userName}.home;
+  mihomoConfig = "${userHome}/.config/mihomo/config.yaml";
 in
 {
   services.mihomo = {

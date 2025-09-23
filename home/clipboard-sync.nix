@@ -75,7 +75,11 @@ let
 in {
   options = {
     clipboardSync = {
-      enable = lib.mkEnableOption "Enable clipboard sync between Wayland and X11" {default = true; };
+      enable = lib.mkOption {
+        type = lib.types.bool;
+        default = true;
+        description = "Enable clipboard sync between Wayland and X11";
+      };
     };
   };
 
