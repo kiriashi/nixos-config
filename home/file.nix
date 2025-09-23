@@ -17,12 +17,12 @@
     };
 
     wanxiang_base = {
-      source = ${myPkgs.rime.wanxiang_base}/share/fcitx5/rime;
+      source = "${myPkgs.rime.wanxiang_base}/share/fcitx5/rime";
       target = ".local/share/fcitx5/rime";
     };
 
     wanxiang_pram = {
-      source = ${myPkgs.rime.wanxiang_pram}/share/fcitx5/rime/wanxiang-lts-zh-hans.gram;
+      source = "${myPkgs.rime.wanxiang_pram}/share/fcitx5/rime/wanxiang-lts-zh-hans.gram";
       target = ".local/share/fcitx5/rime/wanxiang-lts-zh-hans.gram";
     };
 

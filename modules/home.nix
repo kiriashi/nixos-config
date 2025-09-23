@@ -20,8 +20,6 @@
 
   programs.home-manager.enable = true;
 
-  clipboardSync.enable = true;
-
   home = {
     username = "${config.profile.userName}";
     homeDirectory = "/home/${config.profile.userName}";

@@ -52,6 +52,7 @@ outputs =
       };
       modules = [
         (import ./overlays)
+        ./modules/profile.nix
         ./modules/system.nix
         ./modules/services.nix
         ./modules/RBP152022.nix
@@ -65,16 +66,17 @@ outputs =
 
         # Home Manager 配置
         home-manager.nixosModules.home-manager
-        {
+        ({ config, ... }: {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.backupFileExtension = "backup";
-          home-manager.users."${config.profile.userName}".imports = [ ./modules/home.nix ];
+          home-manager.users."kiriashi".imports = [ ./modules/home.nix ];
           home-manager.extraSpecialArgs = { 
             inherit inputs;
+            systemConfig = config;
             myPkgs = self.packages.${system}; 
           };
-        }
+        })
 
         # nix-index 数据库
         nix-index-database.nixosModules.nix-index

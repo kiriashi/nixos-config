@@ -9,7 +9,6 @@
     ../system/hardware-configuration.nix
     ../system/i18n.nix
     ../system/networking.nix
-    ../system/profile.nix
     ../system/security.nix
     ../system/services.nix
     ../system/user.nix
