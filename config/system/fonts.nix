@@ -5,7 +5,7 @@
 }:
 
 {
-  imports = [ ../home/fonts.nix ];
+  imports = [ ../../home/fonts.nix ];
 
   fonts = lib.mkForce {
     enableDefaultPackages = false;

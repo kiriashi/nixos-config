@@ -6,8 +6,6 @@
   networking = {
     hostName = "RBP152022";
     
-    nftables.enable = true;
-
     networkmanager.enable = false;
 
     wireless = {
@@ -15,9 +13,12 @@
       iwd.enable = true;
     };
 
+    nftables = {
+      enable = true;
+    };
+
     firewall = {
       enable = true;
-
 
       allowedTCPPorts = [ 7890 9090 ];
       allowedUDPPorts = [ 7890 53 1053 ];
@@ -26,17 +27,14 @@
       allowedUDPPortRanges = [ { from = 1714; to = 1764; } ];
       
       checkReversePath = "loose";
+      
+      trustedInterfaces = [ "Meta" ];
 
-      extraInputRules = ''
-        iifname "Meta" accept
-        iifname "lo" accept
-
-        ip protocol icmp accept
-        ip6 nexthdr icmpv6 accept
+      extraCommands = ''
+        ip6tables -A nixos-fw -p ipv6-icmp -j ACCEPT
       '';
-      extraForwardRules = ''
-        iifname "Meta" accept
-        oifname "Meta" accept
+      networking.firewall.extraStopCommands = ''
+        ip6tables -D nixos-fw -p ipv6-icmp -j ACCEPT || true
       '';
     };
   };

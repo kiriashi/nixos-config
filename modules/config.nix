@@ -6,7 +6,7 @@
     ../config/system/fonts.nix
     ../config/system/grub.nix
     ../config/system/i18n.nix
-    ../config/system/networking.nix
+    ../config/system/network.nix
     ../config/system/nix.nix
     ../config/system/security.nix
     ../config/system/services.nix

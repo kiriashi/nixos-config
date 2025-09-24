@@ -44,8 +44,8 @@
     ];
   };
 
-  enableAllFirmware = true;
-  enableRedistributableFirmware = true;
+  hardware.enableAllFirmware = true;
+  hardware.enableRedistributableFirmware = true;
   
   # ===== AMD 内核模块 =====
   boot.extraModprobeConfig = ''
