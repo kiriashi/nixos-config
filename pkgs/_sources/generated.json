@@ -1,9 +1,9 @@
 {
-    "wallpaper": {
+    "MonoLisa-NF": {
         "cargoLocks": null,
-        "date": "2025-09-10",
+        "date": "2025-09-25",
         "extract": null,
-        "name": "wallpaper",
+        "name": "MonoLisa-NF",
         "passthru": null,
         "pinned": false,
         "src": {
@@ -12,13 +12,34 @@
             "leaveDotGit": false,
             "name": null,
             "owner": "kiriashi",
-            "repo": "wallpaper",
-            "rev": "0b36e219d57f4db93ef6b2ad147b5d7422d44470",
-            "sha256": "sha256-vrrnRmV3h5CkU7fCdSQMQw5fU9C4cBX9AWmOu5ieOdQ=",
+            "repo": "MonoLisa-NF",
+            "rev": "f8aae20e6b2f664f07b9f36bb5af43155de6f087",
+            "sha256": "sha256-lwWfVSIwg9pwRzKC2qvHUS/oLIwfLVnI8W7q4nBeIpQ=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "0b36e219d57f4db93ef6b2ad147b5d7422d44470"
+        "version": "f8aae20e6b2f664f07b9f36bb5af43155de6f087"
+    },
+    "wallpapers": {
+        "cargoLocks": null,
+        "date": "2025-09-25",
+        "extract": null,
+        "name": "wallpapers",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "kiriashi",
+            "repo": "wallpapers",
+            "rev": "a1ad4e27ad2b0f037e60b6e429f9d60af0d301cf",
+            "sha256": "sha256-dsOh39ARUh3IaRnG270bgqvj+ausDygKpNNoJeSiAok=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "a1ad4e27ad2b0f037e60b6e429f9d60af0d301cf"
     },
     "wanxiang_base": {
         "cargoLocks": null,
@@ -29,11 +50,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-uZp4/EnLtEX24RvjFGrCihS3GupI2awFypaLfewbYO4=",
+            "sha256": "sha256-8clfQAS0X6cs/lYD8XxZx+PwvyjAYQUxKZqB6hDi1A0=",
             "type": "url",
-            "url": "https://github.com/amzxyz/rime_wanxiang/releases/download/v12.6.5/rime-wanxiang-base.zip"
+            "url": "https://github.com/amzxyz/rime_wanxiang/releases/download/v12.6.6/rime-wanxiang-base.zip"
         },
-        "version": "12.6.5"
+        "version": "12.6.6"
     },
     "wanxiang_gram": {
         "cargoLocks": null,
@@ -48,6 +69,6 @@
             "type": "url",
             "url": "https://github.com/amzxyz/RIME-LMDG/releases/download/LTS/wanxiang-lts-zh-hans.gram"
         },
-        "version": "dict-nightly"
+        "version": "v3n2"
     }
 }

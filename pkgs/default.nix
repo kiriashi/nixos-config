@@ -20,6 +20,7 @@ in
 {
   wallpapers = loadDir ./wallpapers { inherit sources; };
 
+  fonts = loadSubdirs ./fonts { inherit sources; };
   rime = loadSubdirs ./rime { inherit sources; };
   Themes = loadSubdirs ./Themes {};
 }

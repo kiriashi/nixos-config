@@ -5,7 +5,7 @@
 }:
 {
   home.packages = with myPkgs; [ 
-    wallpaper
+    wallpapers
     rime.wanxiang_base
     rime.wanxiang_gram 
     ];
@@ -27,8 +27,8 @@
       target = ".local/share/fcitx5/rime/wanxiang-lts-zh-hans.gram";
     };
 
-    wallpaper = {
-      source = "${myPkgs.wallpaper}/share/wallpapers";
+    wallpapers = {
+      source = "${myPkgs.wallpapers}/share/wallpapers";
       target = "Pictures/wallpapers";
     };
 

@@ -123,6 +123,22 @@
         "type": "github"
       }
     },
+    "monaco": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1733447155,
+        "narHash": "sha256-J1kH0a7BASf3T/eTn+GY/T2Uj49Rp7XRD3H/3VGzLgk=",
+        "owner": "thep0y",
+        "repo": "monaco-nerd-font",
+        "rev": "98374f79b2c910c82bfb9b310d07a6862a3fbe1d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "thep0y",
+        "repo": "monaco-nerd-font",
+        "type": "github"
+      }
+    },
     "niri-flake": {
       "inputs": {
         "niri-stable": "niri-stable",
@@ -289,6 +305,7 @@
       "inputs": {
         "chaotic": "chaotic",
         "home-manager": "home-manager_2",
+        "monaco": "monaco",
         "niri-flake": "niri-flake",
         "nix-index-database": "nix-index-database",
         "nixpkgs": "nixpkgs_2",

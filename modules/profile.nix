@@ -30,7 +30,7 @@ with lib;
     
     hostname = mkOption {
       type = types.str;
-      default = "RBP152022";
+      default = "RBP15-2022";
       description = "系统主机名";
     };
     
@@ -42,25 +42,25 @@ with lib;
     
     locale = mkOption {
       type = types.str;
-      default = "en_US.UTF-8";
+      default = "zh_CN.UTF-8";
       description = "系统区域设置";
     };
     
-    wifiSSID = mkOption {
+    hotspotSSID = mkOption {
       type = types.str;
-      default = "MyWiFi";
-      description = "默认 WiFi SSID";
+      default = "Nixos";
+      description = "移动热点 SSID";
     };
     
     wifiPassword = mkOption {
       type = types.str;
-      default = "securepassword";
-      description = "默认 WiFi 密码";
+      default = "12345678";
+      description = "移动热点 密码";
     };
     
     defaultShell = mkOption {
       type = types.str;
-      default = "${pkgs.fish}/bin/fish";
+      default = "${pkgs.kitty}/bin/kitty";
       description = "默认 shell";
     };
     
@@ -70,16 +70,5 @@ with lib;
       description = "默认编辑器";
     };
     
-  };
-  
-  config = {
-    profile = {
-      userName = mkDefault "kiriashi";
-      userEmail = mkDefault "2244193927@qq.com";
-      hashedPassword = mkDefault "$6$8/ZJ0jr/BWf4at92$PmRuEML2eiCHcRe/vuc54xgSkU.T7bO6ljUqczhkpw3kAv1mTl.PLMOhRuG.yIiEklJGwcHq3szit4PPkZaEM0";
-      hostname = mkDefault "RBP152022";
-      timezone = mkDefault "Asia/Shanghai";
-      locale = mkDefault "zh_CN.UTF-8";
-    };
   };
 }

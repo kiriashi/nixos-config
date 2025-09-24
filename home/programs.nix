@@ -39,6 +39,7 @@
     btop
     yazi
     mission-center
+    fontforge-gtk
     #开发工具
     typora
     nixd

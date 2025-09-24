@@ -14,6 +14,7 @@
     wget
     killall
     python3
+    gnumake
     nvfetcher
     nix-output-monitor
     wlr-randr

@@ -13,7 +13,6 @@
     ../config/system/user.nix
     ../config/system/zram.nix
 
-    ../config/services/connman.nix
     ../config/services/doas.nix
     ../config/services/fcitx5.nix
     ../config/services/fish.nix

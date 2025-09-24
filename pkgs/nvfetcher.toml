@@ -1,15 +1,23 @@
 [wallpapers]
-src.git = "https://github.com/kiriashi/wallpaper.git"
+src.git = "https://github.com/kiriashi/wallpapers.git"
 fetch.github = "kiriashi/wallpapers"
 
+[MonoLisa-NF]
+src.git = "https://github.com/kiriashi/monolisa-nerd-font.git"
+fetch.github = "kiriashi/monolisa-nerd-font"
+
+[Monaco-NF]
+src.git = "https://github.com/kiriashi/monaco-nerd-font.git"
+fetch.github = "kiriashi/monolisa-nerd-font"
+
 [wanxiang_base]
-src.github = "amzxyz/rime_wanxiang"
-src.from_pattern = "^v[0-9]+\\.[0-9]+\\.[0-9]+.*$"
+src.github_tag = "amzxyz/rime_wanxiang"
+src.from_pattern = "^v([0-9]+\\.[0-9]+\\.[0-9]+.*)$"
 src.to_pattern = "\\1"
 fetch.url = "https://github.com/amzxyz/rime_wanxiang/releases/download/v$ver/rime-wanxiang-base.zip"
 
 [wanxiang_gram]
-src.github = "amzxyz/RIME-LMDG"
-src.from_pattern = "v(.*)"
+src.github_tag = "amzxyz/RIME-LMDG"
+src.from_pattern = "^(LTS)$"
 src.to_pattern = "\\1"
 fetch.url = "https://github.com/amzxyz/RIME-LMDG/releases/download/LTS/wanxiang-lts-zh-hans.gram"
