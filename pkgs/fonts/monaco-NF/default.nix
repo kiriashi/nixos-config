@@ -1,7 +1,7 @@
 { stdenv, sources }:
 
 stdenv.mkDerivation rec {
-  pname = monaco-NF;
+  pname = "monaco-NF";
   version = "1.0.0";
   
   src = sources.monaco-NF.src;

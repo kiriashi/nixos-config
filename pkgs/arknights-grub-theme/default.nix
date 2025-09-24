@@ -1,8 +1,8 @@
 { stdenv }:
 
 stdenv.mkDerivation rec {
-  pname = "grub";
-  version = "1.0";
+  pname = "arknights-grub-theme";
+  version = "1.0.0";
 
   src =./Arknights;
 
