@@ -2,13 +2,13 @@
 src.git = "https://github.com/kiriashi/wallpapers.git"
 fetch.github = "kiriashi/wallpapers"
 
-[MonoLisa-NF]
-src.git = "https://github.com/kiriashi/monolisa-nerd-font.git"
-fetch.github = "kiriashi/monolisa-nerd-font"
+[monolisa-NF]
+src.git = "https://github.com/kiriashi/monolisa-NF.git"
+fetch.github = "kiriashi/monolisa-NF"
 
-[Monaco-NF]
-src.git = "https://github.com/kiriashi/monaco-nerd-font.git"
-fetch.github = "kiriashi/monolisa-nerd-font"
+[monaco-NF]
+src.git = "https://github.com/kiriashi/monaco-NF.git"
+fetch.github = "kiriashi/monaco-NF"
 
 [wanxiang_base]
 src.github_tag = "amzxyz/rime_wanxiang"

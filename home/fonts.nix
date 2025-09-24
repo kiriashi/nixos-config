@@ -5,8 +5,8 @@
 
 {
   home.packages = with myPkgs; [
-    fonts.MonoLisa-NF
-    fonts.Monaco-NF
+    fonts.monolisa-NF
+    fonts.monaco-NF
   ];
 
   fonts.fontconfig = {

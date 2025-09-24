@@ -1,9 +1,9 @@
 {
-    "MonoLisa-NF": {
+    "monaco-NF": {
         "cargoLocks": null,
         "date": "2025-09-25",
         "extract": null,
-        "name": "MonoLisa-NF",
+        "name": "monaco-NF",
         "passthru": null,
         "pinned": false,
         "src": {
@@ -12,7 +12,28 @@
             "leaveDotGit": false,
             "name": null,
             "owner": "kiriashi",
-            "repo": "MonoLisa-NF",
+            "repo": "monaco-NF",
+            "rev": "27dd08bfcadcc84d2df02178d7bf05d413eab0dd",
+            "sha256": "sha256-ynzO1my+XeXm9Zex7wxJ9ldRrMNTcuQmDuQtuNHoJa4=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "27dd08bfcadcc84d2df02178d7bf05d413eab0dd"
+    },
+    "monolisa-NF": {
+        "cargoLocks": null,
+        "date": "2025-09-25",
+        "extract": null,
+        "name": "monolisa-NF",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "kiriashi",
+            "repo": "monolisa-NF",
             "rev": "f8aae20e6b2f664f07b9f36bb5af43155de6f087",
             "sha256": "sha256-lwWfVSIwg9pwRzKC2qvHUS/oLIwfLVnI8W7q4nBeIpQ=",
             "sparseCheckout": [],

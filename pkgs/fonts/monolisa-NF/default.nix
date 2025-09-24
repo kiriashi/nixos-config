@@ -1,10 +1,10 @@
 { stdenv, sources }:
 
 stdenv.mkDerivation rec {
-  pname = MonoLisa-NF;
+  pname = monolisa-NF;
   version = "1.0.0";
   
-  src = sources.MonoLisa-NF.src;
+  src = sources.monolisa-NF.src;
 
   dontBuild = true;
 
