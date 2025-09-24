@@ -1,14 +1,8 @@
 {
-  myPkgs,
   ...
 }:
 
 {
-  home.packages = with myPkgs; [
-    fonts.monolisa-NF
-    fonts.monaco-NF
-  ];
-
   fonts.fontconfig = {
     enable = true;
     defaultFonts = {

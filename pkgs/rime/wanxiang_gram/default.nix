@@ -4,10 +4,7 @@ stdenv.mkDerivation rec {
   pname = "wanxiang_gram";
   version = sources.wanxiang_gram.version;
   
-  src = fetchurl {
-    url = "https://github.com/amzxyz/RIME-LMDG/releases/download/LTS/wanxiang-lts-zh-hans.gram";
-    sha256 = "sha256-yFOtlP4vsFkj3jMeuQwIH/PuH3nScsODlawW35Nq3EA=";
-  };
+  src = sources.wanxiang_gram.src;
 
   dontBuild = true;
   dontUnpack = true;
