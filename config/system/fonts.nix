@@ -6,11 +6,8 @@
 }:
 
 {
-  imports = [ ../../home/fonts.nix ]; 
-
   fonts = lib.mkForce {
     enableDefaultPackages = false;
-    fontconfig.enable = true;
     fontDir.enable = true;
     packages = (with pkgs; [
       maple-mono.NF-CN
@@ -24,5 +21,30 @@
     fonts.monolisa-NF
     fonts.monaco-NF
     ]);
+
+    fontconfig = {
+      enable = true;
+      defaultFonts = {
+        serif = [
+          "WenQuanYi Micro Hei"
+          "NotoSerif Nerd Font"
+          "Noto Serif CJK SC"
+        ];
+        sansSerif = [
+          "WenQuanYi Micro Hei"
+          "NotoSans Nerd Font"
+          "Noto Sans CJK SC"
+        ];
+        monospace = [
+          # "Maple Mono NF CN"
+          "MonoLisa Nerd Font"
+          # Monaco Nerd Font
+        ];
+        emoji = [
+          "Noto Color Emoji"
+          "Blobmoji"
+        ];
+      };
+    };
   };
 }

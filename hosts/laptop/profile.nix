@@ -22,46 +22,34 @@ with lib;
       description = "用户密码哈希";
     };
     
-    sshPublicKey = mkOption {
-      type = types.str;
-      default = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC...";
-      description = "用户 SSH 公钥";
-    };
-    
-    hostname = mkOption {
+    hostName = mkOption {
       type = types.str;
       default = "RBP15-2022";
       description = "系统主机名";
     };
     
-    timezone = mkOption {
-      type = types.str;
-      default = "Asia/Shanghai";
-      description = "系统时区";
-    };
-    
-    locale = mkOption {
-      type = types.str;
-      default = "zh_CN.UTF-8";
-      description = "系统区域设置";
-    };
-    
     hotspotSSID = mkOption {
       type = types.str;
       default = "Nixos";
-      description = "移动热点 SSID";
+      description = "移动热点名称";
     };
     
-    wifiPassword = mkOption {
+    hotspotPasswd = mkOption {
       type = types.str;
       default = "12345678";
-      description = "移动热点 密码";
+      description = "移动热点密码";
     };
     
-    defaultShell = mkOption {
+    terminal = mkOption {
       type = types.str;
-      default = "${pkgs.kitty}/bin/kitty";
-      description = "默认 shell";
+      default = "kitty.desktop";
+      description = "默认终端模拟器";
+    };
+
+    shell = mkOption {
+      type = types.package;
+      default = pkgs.fish;
+      description = "默认shell";
     };
     
     editor = mkOption {

@@ -52,10 +52,8 @@ outputs =
       };
       modules = [
         (import ./overlays)
-        ./modules/profile.nix
         ./modules/config.nix
         ./modules/laptop.nix
-
 
         # Chaotic软件源
         chaotic.nixosModules.default
@@ -70,7 +68,7 @@ outputs =
             useGlobalPkgs = true;
             useUserPackages = true;
             backupFileExtension = "backup";
-            sharedModules = [ ./modules/profile.nix ];
+            sharedModules = [ ./hosts/laptop/profile.nix ];
             users.${config.profile.userName} = {
               imports = [ ./modules/home.nix ];
               };

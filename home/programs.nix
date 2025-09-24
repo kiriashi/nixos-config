@@ -197,6 +197,8 @@
     };
     themeFile = "tokyo_night_night";
     settings = {
+      italic_font = "auto";
+      bold_italic_font = "auto";
       cursor_shape = "beam";
       background_opacity = 0.8;
       background_blur = 10;

@@ -11,7 +11,6 @@
     ../home/dconf.nix
     ../home/dotfiles.nix
     ../home/file.nix
-    ../home/fonts.nix
     ../home/programs.nix
     ../home/theme.nix
     ../home/wm-related.nix

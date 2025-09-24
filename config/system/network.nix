@@ -1,5 +1,6 @@
 { 
   pkgs,
+  config,
   ...
 }:
 
@@ -19,7 +20,7 @@
   };
 
   networking = {
-    hostName = "RBP15-2022";
+    hostName = config.profile.hostName;
 
     nameservers = [ "119.29.29.29" "8.8.8.8" ];
     

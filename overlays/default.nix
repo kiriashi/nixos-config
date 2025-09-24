@@ -1,6 +1,7 @@
 { ... }:
 {
   nixpkgs.overlays = [
+    # Skip niri-flake test
     (final: prev: {
       niri-stable = prev.niri-stable.overrideAttrs (_: { doCheck = false; });
       niri-unstable = prev.niri-unstable.overrideAttrs (_: { doCheck = false; });
