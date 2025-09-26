@@ -44,51 +44,49 @@ outputs =
   {
     packages.${system} = myPkgs;
 
-    nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
-      inherit system;
-      specialArgs = { 
-        inherit inputs;
-        myPkgs = self.packages.${system}; 
-      };
-      modules = [
-        (import ./overlays)
-        ./modules/config.nix
-        ./modules/laptop.nix
+    nixosConfigurations = {
+      laptop = nixpkgs.lib.nixosSystem {
+        inherit system;
+        specialArgs = { 
+          inherit inputs;
+          myPkgs = self.packages.${system}; 
+        };
+        modules = [
+          (import ./overlays)
+          ./modules/config.nix
+          ./modules/laptop.nix
+          ./modules/profile.laptop.nix
 
-        # Chaotic软件源
-        chaotic.nixosModules.default
-        ({ lib, ... }: {
-          chaotic.mesa-git.enable = true;
-        })
-
-        # Home Manager 配置
-        home-manager.nixosModules.home-manager
-        ({ config, ... }: {
-          home-manager = {
-            useGlobalPkgs = true;
-            useUserPackages = true;
-            backupFileExtension = "backup";
-            sharedModules = [ ./hosts/laptop/profile.nix ];
-            users.${config.profile.userName} = {
-              imports = [ ./modules/home.nix ];
+          # Chaotic软件源
+          chaotic.nixosModules.default
+          ({ lib, ... }: {
+            chaotic.mesa-git.enable = true;
+          })
+          # Home Manager 配置
+          home-manager.nixosModules.home-manager
+          ({ config, ... }: {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              backupFileExtension = "backup";
+              sharedModules = [ ./modules/profile/laptop.nix ];
+              users.${config.profile.userName}.imports = [ ./home ];
+              extraSpecialArgs = { 
+                inherit inputs;
+                myPkgs = self.packages.${system}; 
               };
-            extraSpecialArgs = { 
-              inherit inputs;
-              myPkgs = self.packages.${system}; 
             };
-          };
-        })
-
-        # nix-index 数据库
-        nix-index-database.nixosModules.nix-index
-        {
-          programs.nix-index.enable = true;
-          programs.nix-index-database.comma.enable = true;
-        }
-
-        # 加入版本信息
-        genRev
-      ];
+          })
+          # nix-index 数据库
+          nix-index-database.nixosModules.nix-index
+          {
+            programs.nix-index.enable = true;
+            programs.nix-index-database.comma.enable = true;
+          }
+          # 加入版本信息
+          genRev
+        ];
+      };
     };
   };
 }

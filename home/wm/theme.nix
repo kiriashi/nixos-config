@@ -1,11 +1,22 @@
-{ 
-  pkgs, 
-  ... 
+{
+  pkgs,
+  ...
 }:
 
 {
-  qt.platformTheme.name = "qt5ct";
-  
+  qt = {
+    enable = true;
+    platformTheme.name = "qtct";
+  };
+
+  home.packages = with pkgs; [
+    libsForQt5.qt5ct
+    libsForQt5.qtstyleplugin-kvantum
+    kdePackages.qtstyleplugin-kvantum
+    kdePackages.qt6ct
+    adwaita-icon-theme
+  ];
+
   gtk = {
     enable = true;
     iconTheme = {
@@ -13,12 +24,12 @@
       name = "Papirus-Dark";
     };
     theme = {
-      package = pkgs.orchis-theme;
-      name = "Orchis-Teal-Dark";
+      package = pkgs.colloid-gtk-theme;
+      name = "Colloid-Dark";
     };
     font = {
-      package = pkgs.noto-fonts-cjk-sans;
-      name = "Noto Sans CJK SC";
+      package = pkgs.sarasa-gothic;
+      name = "Sarasa Gothic SC";
     };
     gtk2.extraConfig = ''
       gtk-cursor-theme-size = 0
@@ -59,6 +70,15 @@
       defaultCursor = "default";
     };
   };
-  
-  home.packages = with pkgs; [ adwaita-icon-theme ];
+
+  dconf = {
+    enable = true;
+    settings = {
+      "org/gnome/desktop/interface" = {
+        color-scheme = "prefer-dark";
+        document-font-name = "Sarasa Mono SC 11";
+        monospace-font-name = "Maple Mono NF CN 11";
+      };
+    };
+  };
 }

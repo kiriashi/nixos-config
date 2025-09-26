@@ -7,7 +7,7 @@
 
 {
   imports = [
-    ../home/clipman.nix
+    ../home/clipsync.nix
     ../home/dconf.nix
     ../home/dotfiles.nix
     ../home/file.nix

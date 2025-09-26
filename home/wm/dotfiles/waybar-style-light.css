@@ -1,0 +1,90 @@
+* {
+    font-family: "Iosevka Nerd Font Propo";
+    font-weight: 500;
+    font-size: 16px;
+ 
+    border-radius: 12px;
+    text-shadow: none;
+ 
+    transition-property: background;
+    transition-duration: 0.2s;
+}
+ 
+window#waybar {
+    background-color: transparent;
+    font-family: inherit;
+}
+ 
+window#waybar.hidden  {
+    opacity: 0.2;
+}
+
+tooltip {
+    background: @theme_base_color;
+    border-bottom: 1px solid @unfocused_borders;
+    color: #ffffff;
+}
+
+tooltip label {
+  color: rgb(0, 0, 0);
+}
+
+.modules-left {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 6px 0px;
+}
+ 
+.modules-center {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 6px 0px;
+}
+ 
+.modules-right {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 6px 0px;
+}
+
+#custom-lock,
+#custom-poweroff,
+#custom-reboot,
+#custom-search,
+#custom-hibernate,
+#custom-caffeine,
+#workspaces button,
+#tray,
+#backlight,
+#battery,
+#cpu,
+#memory,
+#network,
+#wireplumber,
+#clock 
+{
+    padding: 4px 0px;
+    color: #222222;
+}
+
+#backlight { color: #ff7c38; }
+
+#battery { color: #00b8a9; }
+
+#clock { color: #222222; }
+
+#cpu { color: #c0392b; }
+
+#memory { color: #b9795f; }
+
+#network { color: #3a6bc7; }
+
+#wireplumber { color: #2a796d; }
+
+#workspaces button.focused { color: #27907d; }
+
+#custom-caffeine { color: #4ea47e; }
+#custom-lock { color: #5e5e5e; }
+#custom-poweroff { color: #f06868; }
+#custom-reboot { color: #ec8f43; }
+#custom-search { color: #000000; }
+#custom-hibernate { color: #506a82; }
+
+

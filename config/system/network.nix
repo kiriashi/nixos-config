@@ -7,7 +7,7 @@
 { 
   environment.systemPackages = with pkgs; [
     dig
-    networkmanagerapplet
+    nmgui
   ];
 
   networking = {
@@ -64,7 +64,7 @@
       bind = "[::]:53";
       # Upstream
       server = [
-        "119.29.29.29 -group domestic -exclude-default-group"
+        "211.138.245.180 -group domestic -exclude-default-group"
       ];
       server-tls = [
         "223.5.5.5 -b -group domestic -exclude-default-group"

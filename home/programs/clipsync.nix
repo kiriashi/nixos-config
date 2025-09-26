@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }:
 
 let
-  clipboardSyncScript = pkgs.writeShellScriptBin "clipboard-sync" ''
+  clipsyncScript = pkgs.writeShellScriptBin "clipsync" ''
     #!/usr/bin/env bash
     # Clipboard sync for Wayland <-> XWayland + cliphist
 
@@ -52,13 +52,13 @@ let
   '';
 
   # Systemd 服务定义
-  clipboardSyncService = {
+  clipsyncService = {
     Unit = {
       Description = "Clipboard sync between Wayland and X11";
       After = [ "graphical.target" ];
     };
     Service = {
-      ExecStart = "${clipboardSyncScript}/bin/clipboard-sync";
+      ExecStart = "${clipsyncScript}/bin/clipsync";
       Restart = "always";
       RestartSec = "5s";
       Environment = [
@@ -71,10 +71,10 @@ let
       WantedBy = [ "graphical.target" ];
     };
   };
-
-in {
+in 
+{
   options = {
-    clipboardSync = {
+    clipSync = {
       enable = lib.mkOption {
         type = lib.types.bool;
         default = true;
@@ -92,6 +92,6 @@ in {
     ];
 
     # 添加 systemd 用户服务
-    systemd.user.services.clipboard-sync = clipboardSyncService;
+    systemd.user.services.clipsync = clipsyncService;
   };
 }

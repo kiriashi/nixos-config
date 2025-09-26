@@ -3,15 +3,15 @@
     "position": "left",
     "spacing": 0,
     "weight": 24,
-    "margin": "14 0 14 -14",
+    "margin": "12 -2 12 8",
     
     "modules-left": ["custom/search","group/power","niri/workspaces"],
     "modules-center": ["clock"],
     "modules-right": ["tray","group/status"],
 
     "tray": {
-        "icon-size": 16,
-        "spacing": 18
+        "icon-size": 14,
+        "spacing": 12
     },
     
     "niri/workspaces": {
@@ -58,8 +58,7 @@
     "cpu": {
         "interval": 1,
         "format": "",
-        "tooltip": true,
-        "on-click": "missioncenter",
+        "tooltip": true
     },
 
     "battery": {
@@ -102,7 +101,7 @@
         "format-linked": "",
         "format-disconnected": "",
         "tooltip-format": "{ifname} {ipaddr}/{cidr}\nIP: {gwaddr}\n信号强度: {signalStrength}%",
-        "on-click": "nm-connection-editor",
+        "on-click": "nmgui",
     },
     
     "wireplumber": {

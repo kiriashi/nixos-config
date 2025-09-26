@@ -7,9 +7,7 @@
   environment.systemPackages = with pkgs; [
     uv
     jq
-    gcc
     python3
-    gnumake
     nvfetcher
     nix-output-monitor
 

@@ -1,9 +1,7 @@
+// spawn-at-startup "dms" "run"
+spawn-at-startup "bash" "-c" "wl-paste --watch cliphist store &"
+spawn-at-startup "systemctl" "--user" "restart" "clipsync.service"
 spawn-at-startup "fcitx5" "-d"
-spawn-at-startup "waypaper" "--restore"
-spawn-at-startup "nm-applet" "--indicator"
-spawn-at-startup "niriswitcher"
-spawn-at-startup "wl-paste" "--watch" "cliphist" "store"
-spawn-at-startup "systemctl" "--user" "restart" "clipboard-sync.service"
 
 prefer-no-csd
 
@@ -16,7 +14,6 @@ environment {
     XMODIFIERS "@im=fcitx"
     GLFW_IM_MODULE "fcitx"
     QT_IM_MODULE "fcitx"
-    GTK_IM_MODULE "fcitx"
     INPUT_METHOD "fcitx"
     QT_AUTO_SCREEN_SCALE_FACTOR "1"
 }
@@ -127,7 +124,6 @@ window-rule {
     draw-border-with-background false
 }
 
-
 workspace "Browser"
 window-rule {
     match app-id=r#"zen*."#
@@ -174,7 +170,9 @@ window-rule {
 }
 
 window-rule {
-    match app-id="nm-connection-editor"
+    match app-id="pwvucontrol"
+    match app-id="missioncenter"
+    match app-id="nmgui"
     match app-id="mpv"
     match app-id="waypaper"
     match app-id=r#".*\.exe$"#
@@ -184,10 +182,10 @@ window-rule {
     match app-id="org.gnome.FileRoller"
     match app-id="org.kde.polkit-kde-authentication-agent-1"
     match app-id="org.keepassxc.KeePassXC"
+    match app-id="fcitx"
     
     open-floating true
 }
-
 
 window-rule {
     match app-id="org.kde.kdenlive"
@@ -197,7 +195,7 @@ window-rule {
     match app-id="labwc"
     
     match title=r#".*Lapce$"#  
-    match app-id="Code"
+    match app-id="code"
 
     open-maximized true
 }
@@ -229,6 +227,7 @@ window-rule {
 }
 
 switch-events {
+    lid-close { spawn "sh" "-c" "niri msg action power-off-monitors"; }
     lid-open  { spawn "sh" "-c" "niri msg action power-on-monitors"; }
 }
 
@@ -257,7 +256,7 @@ binds {
 
     XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "set" "5%-"; }
     XF86MonBrightnessUp   allow-when-locked=true { spawn "brightnessctl" "set" "5%+"; }
-	
+
     Mod+Q  hotkey-overlay-title="关闭窗口"   { close-window; }
 
     Mod+Left    hotkey-overlay-title="向左"   { focus-column-left; }
@@ -346,11 +345,10 @@ binds {
     Mod+Shift+Minus   hotkey-overlay-title="减小窗口高度" { set-window-height "-5%"; }
     Mod+Shift+Equal   hotkey-overlay-title="增大窗口高度" { set-window-height "+5%"; }
 
-    Print      hotkey-overlay-title="截屏选择区域"   { screenshot; }
-    Ctrl+Print hotkey-overlay-title="截屏整个屏幕"   { screenshot-screen; }
-    Alt+Print  hotkey-overlay-title="截屏当前窗口"  { screenshot-window; }
+    Print      hotkey-overlay-title=null   { screenshot; }
+    Ctrl+Print hotkey-overlay-title=null   { screenshot-screen; }
+    Alt+Print  hotkey-overlay-title=null   { screenshot-window; }
 
     Alt+Tab       repeat=false hotkey-overlay-title="显示当前窗口"    { spawn "niriswitcherctl" "show" "--window"; }
     Alt+Shift+Tab repeat=false hotkey-overlay-title="显示当前工作区"  { spawn "niriswitcherctl" "show" "--workspace"; }
-
 }

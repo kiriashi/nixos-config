@@ -20,7 +20,7 @@
         "seat"
       ];
       useDefaultShell = true;
-      hashedPassword = "${config.profile.hashedPassword}";
+      hashedPassword = "${config.profile.userPasswd}";
     };
   };
 }

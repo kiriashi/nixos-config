@@ -1,9 +1,9 @@
 * {
-    font-family: "NotoSans Nerd Font Propo";
+    font-family: "Iosevka Nerd Font Propo";
     font-weight: 500;
     font-size: 16px;
  
-    border-radius: 10px;
+    border-radius: 12px;
     text-shadow: none;
  
     transition-property: background;
@@ -12,25 +12,36 @@
  
 window#waybar {
     background-color: transparent;
+    font-family: inherit;
 }
  
 window#waybar.hidden  {
     opacity: 0.2;
 }
- 
+
+tooltip {
+    background: @theme_base_color;
+    border-bottom: 1px solid @unfocused_borders;
+    color: @theme_text_color;
+}
+
+tooltip label {
+  color: white;
+}
+
 .modules-left {
-    background-color: rgba(32, 32, 32, 0.8);
-    padding: 12px 6px;
+    background-color: rgba(41, 62, 83, 0.8);
+    padding: 6px 0px;
 }
  
 .modules-center {
-    background-color: rgba(32, 32, 32, 0.8);
-    padding: 12px 6px;
+    background-color: rgba(41, 62, 83, 0.8);
+    padding: 6px 0px;
 }
  
 .modules-right {
-    background-color: rgba(32, 32, 32, 0.8);
-    padding: 12px 6px;
+    background-color: rgba(41, 62, 83, 0.8);
+    padding: 6px 0px;
 }
 
 #custom-lock,
@@ -49,16 +60,13 @@ window#waybar.hidden  {
 #wireplumber,
 #clock 
 {
-    margin-top: 2px;
-    margin-bottom: 2px;
-    margin-left: 12px;
-    padding: 5px 2px;
+    padding: 4px 0px;
 }
 
 
 #battery { color: #93abbe; }
 
-#clock { color: #eefff1; }
+#clock { color: #ffffff; }
 
 #cpu { color: #FE968B; }
 
