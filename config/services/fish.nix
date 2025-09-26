@@ -7,7 +7,11 @@
   users.defaultUserShell = pkgs.fish;
 
   environment.systemPackages = with pkgs; [
+    fastfetch
+    git
+    wget
     bat
+    busybox
     tealdeer
     du-dust
     fd
@@ -26,20 +30,18 @@
       clean = "sudo nix-collect-garbage -d && nix-collect-garbage -d";
       shutdown = "systemctl poweroff";
       reboot = "systemctl reboot";
-      nf = "nvfetcher";
 
       cat = "bat";
       du = "dust";
       find = "fd";
       df = "duf";
       cd = "z";
+      nf = "nvfetcher";
 
       nvim = "hx";
       vim = "hx";
       vi = "hx";
       helix = "hx";
-
-      rime-wanxiang-update = "bash ~/.local/share/fcitx5/rime/wanxiang-update.sh";
     };
     interactiveShellInit = ''
       fastfetch

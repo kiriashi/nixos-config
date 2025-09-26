@@ -7,7 +7,7 @@
 
 {
   imports = [
-    ../home/clipboard-sync.nix
+    ../home/clipman.nix
     ../home/dconf.nix
     ../home/dotfiles.nix
     ../home/file.nix

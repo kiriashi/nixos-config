@@ -1,5 +1,6 @@
 spawn-at-startup "fcitx5" "-d"
 spawn-at-startup "waypaper" "--restore"
+spawn-at-startup "nm-applet" "--indicator"
 spawn-at-startup "niriswitcher"
 spawn-at-startup "wl-paste" "--watch" "cliphist" "store"
 spawn-at-startup "systemctl" "--user" "restart" "clipboard-sync.service"
@@ -173,7 +174,7 @@ window-rule {
 }
 
 window-rule {
-    match app-id="connman-gtk"
+    match app-id="nm-connection-editor"
     match app-id="mpv"
     match app-id="waypaper"
     match app-id=r#".*\.exe$"#

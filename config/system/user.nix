@@ -10,6 +10,7 @@
       isNormalUser = true;
       extraGroups = [
         "wheel"
+        "networkmanager"
         "adbuser"
         "uucp"
         "audio"

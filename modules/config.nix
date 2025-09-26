@@ -14,7 +14,6 @@
     ../config/system/zram.nix
 
     ../config/services/doas.nix
-    ../config/services/fcitx5.nix
     ../config/services/fish.nix
     ../config/services/git.nix
     ../config/services/gnupg.nix

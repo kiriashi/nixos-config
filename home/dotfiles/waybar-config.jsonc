@@ -58,7 +58,8 @@
     "cpu": {
         "interval": 1,
         "format": "",
-        "tooltip": true
+        "tooltip": true,
+        "on-click": "missioncenter",
     },
 
     "battery": {
@@ -101,7 +102,7 @@
         "format-linked": "",
         "format-disconnected": "",
         "tooltip-format": "{ifname} {ipaddr}/{cidr}\nIP: {gwaddr}\n信号强度: {signalStrength}%",
-        "on-click": "connman-gtk",
+        "on-click": "nm-connection-editor",
     },
     
     "wireplumber": {

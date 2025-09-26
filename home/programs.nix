@@ -193,7 +193,7 @@
     font = {
       package = pkgs.maple-mono.NF-CN;
       name = "Maple Mono NF CN";
-      size = 11;
+      size = 12;
     };
     themeFile = "tokyo_night_night";
     settings = {

@@ -1,7 +1,6 @@
 { config, pkgs, ... }:
 let
-  userHome = config.users.users.${config.profile.userName}.home;
-  mihomoConfig = "${userHome}/.config/mihomo/config.yaml";
+  mihomoConfig = "${config.profile.homeDir}/.config/mihomo/mihomo.yaml";
 in
 {
   services.mihomo = {

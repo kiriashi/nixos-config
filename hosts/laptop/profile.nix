@@ -21,7 +21,13 @@ with lib;
       default = "$6$8/ZJ0jr/BWf4at92$PmRuEML2eiCHcRe/vuc54xgSkU.T7bO6ljUqczhkpw3kAv1mTl.PLMOhRuG.yIiEklJGwcHq3szit4PPkZaEM0";
       description = "用户密码哈希";
     };
-    
+
+    homeDir = mkOption {
+      type = types.str;
+      default = config: "/home/${config.profile.userName}";
+      description = "默认用户目录";
+    };
+ 
     hostName = mkOption {
       type = types.str;
       default = "RBP15-2022";

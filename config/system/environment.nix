@@ -5,19 +5,13 @@
 
 {
   environment.systemPackages = with pkgs; [
-    fastfetch
-    busybox
-    git
     uv
     jq
     gcc
-    wget
-    killall
     python3
     gnumake
     nvfetcher
     nix-output-monitor
-    wlr-randr
 
     unzip
     unrar
