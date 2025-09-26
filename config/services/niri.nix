@@ -7,79 +7,77 @@
 }:
 
 {
-  config = lib.mkIf config.optional.niri {
-    imports = [ inputs.niri-flake.nixosModules.niri ];
+  imports = [ inputs.niri-flake.nixosModules.niri ];
 
-    nixpkgs.overlays = [ inputs.niri-flake.overlays.niri ];
-    niri-flake.cache.enable = true;
+  nixpkgs.overlays = [ inputs.niri-flake.overlays.niri ];
+  niri-flake.cache.enable = true;
 
-    environment.systemPackages = with pkgs; [
-      pwvucontrol
-      brightnessctl
-      libnotify
-      labwc
+  environment.systemPackages = with pkgs; [
+    pwvucontrol
+    brightnessctl
+    libnotify
+    labwc
 
-      swww
-      mpvpaper
-      waypaper
-      socat
+    swww
+    mpvpaper
+    waypaper
+    socat
 
-      xwayland-satellite-unstable
+    xwayland-satellite-unstable
 
-      # nemo-with-extensions
-      nautilus
-      file-roller
+    # nemo-with-extensions
+    nautilus
+    file-roller
 
-      bibata-cursors
-      adwaita-icon-theme
-    ];
+    bibata-cursors
+    adwaita-icon-theme
+  ];
 
-    programs = {
-      xwayland.enable = true;
-      niri = {
-        enable = true;
-        package = pkgs.niri-unstable;
-      };
-      nautilus-open-any-terminal = {
-        enable = true;
-        terminal = "kitty";
-      };
-      gtklock.enable = true;
+  programs = {
+    xwayland.enable = true;
+    niri = {
+      enable = true;
+      package = pkgs.niri-unstable;
     };
-
-    security.pam.services.gtklock.text = lib.readFile "${pkgs.gtklock}/etc/pam.d/gtklock";
-
-    services = {
-      xserver.desktopManager.runXdgAutostartIfNone = true;
-      gvfs.enable = true;
-      seatd.enable = true;
-      gnome.sushi.enable =true;
-      gnome.gnome-keyring.enable = lib.mkForce false;
+    nautilus-open-any-terminal = {
+      enable = true;
+      terminal = "kitty";
     };
+    gtklock.enable = true;
+  };
 
-    xdg = {
-      portal = {
-        enable = true;
-        config = {
-          niri = {
-            default = [ "gnome" ];
-            "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ];
-          };
+  security.pam.services.gtklock.text = lib.readFile "${pkgs.gtklock}/etc/pam.d/gtklock";
+
+  services = {
+    xserver.desktopManager.runXdgAutostartIfNone = true;
+    gvfs.enable = true;
+    seatd.enable = true;
+    gnome.sushi.enable =true;
+    gnome.gnome-keyring.enable = lib.mkForce false;
+  };
+
+  xdg = {
+    portal = {
+      enable = true;
+      config = {
+        niri = {
+          default = [ "gnome" ];
+          "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ];
         };
-        extraPortals = [
-          pkgs.xdg-desktop-portal-gnome
-          pkgs.xdg-desktop-portal-gtk
+      };
+      extraPortals = [
+        pkgs.xdg-desktop-portal-gnome
+        pkgs.xdg-desktop-portal-gtk
+      ];
+    };
+    terminal-exec = {
+      enable = true;
+      settings = {
+        default = [
+          "kitty.desktop"
         ];
       };
-      terminal-exec = {
-        enable = true;
-        settings = {
-          default = [
-            "kitty.desktop"
-          ];
-        };
-      };
-      autostart.enable = true;
     };
+    autostart.enable = true;
   };
 }

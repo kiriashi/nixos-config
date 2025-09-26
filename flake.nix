@@ -55,7 +55,7 @@ outputs =
           (import ./overlays)
           ./modules/config.nix
           ./modules/laptop.nix
-          ./modules/profile.laptop.nix
+          ./modules/profile/laptop.nix
 
           # Chaotic软件源
           chaotic.nixosModules.default

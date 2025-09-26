@@ -15,6 +15,10 @@
 
     networkmanager = {
       enable = true;
+      wifi = {
+        macAddress = "random";
+        backend = "iwd";
+      };
       # dns = "none";
     };
 
