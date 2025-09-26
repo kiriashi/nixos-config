@@ -6,8 +6,8 @@
       bilibili
       ffmpeg
       nomacs
-      inkscape-with-extensions
       imagemagick
+      inkscape-with-extensions
       pwvucontrol
     ];
   };
