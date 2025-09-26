@@ -74,7 +74,7 @@ let
 in 
 {
   options = {
-    clipSync = {
+    clipsync = {
       enable = lib.mkOption {
         type = lib.types.bool;
         default = true;
@@ -83,7 +83,7 @@ in
     };
   };
 
-  config = lib.mkIf config.clipboardSync.enable {
+  config = lib.mkIf config.clipsync.enable {
     # 确保所有依赖包已安装
     home.packages = with pkgs; [
       wl-clipboard

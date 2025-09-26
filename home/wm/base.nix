@@ -11,7 +11,9 @@
     waypaper
 
     socat
-  ]) ++ myPkgs.wallpapers;
+  ]) ++ (with myPkgs; [
+    wallpapers
+  ]);
 
   home.file.wallpapers = {
       source = "${myPkgs.wallpapers}/share/wallpapers";

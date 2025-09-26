@@ -11,7 +11,7 @@
   };
 
   nixpkgs.config.permittedInsecurePackages = [
-    "mihomo-party"
+
   ];
 
   programs.nh = {

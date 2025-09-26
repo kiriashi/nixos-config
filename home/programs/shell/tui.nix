@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-      exiftoo
+      exiftool
       # search
       ripgrep
 

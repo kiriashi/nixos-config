@@ -15,7 +15,6 @@
 
   home.packages = with pkgs; [
     xdg-utils
-    mihomo-party
 
     # Social Apps
     telegram-desktop

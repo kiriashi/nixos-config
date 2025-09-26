@@ -5,11 +5,11 @@
 }:
 {
   home.packages = with myPkgs; [ 
-    wallpapers
     rime.wanxiang_base
     rime.wanxiang_gram 
     ];
-
+    
+  home.file = {
     wanxiang_base = {
       source = "${myPkgs.rime.wanxiang_base}/share/fcitx5/rime";
       target = ".local/share/fcitx5/rime";
@@ -20,4 +20,5 @@
       source = "${myPkgs.rime.wanxiang_gram}/share/fcitx5/rime/wanxiang-lts-zh-hans.gram";
       target = ".local/share/fcitx5/rime/wanxiang-lts-zh-hans.gram";
     };
+  };
 }
