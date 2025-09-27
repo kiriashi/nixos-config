@@ -13,7 +13,7 @@ lib.mkIf config.optional.niri
     };    
     xwayland = {
       enable = true;
-      package = pkgs.wayland-satellite-unstable;
+      package = pkgs.xwayland-satellite-unstable;
     };
     nautilus-open-any-terminal = {
       enable = true;

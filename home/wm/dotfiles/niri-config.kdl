@@ -17,12 +17,7 @@ environment {
     QT_IM_MODULE "fcitx"
     INPUT_METHOD "fcitx"
     QT_AUTO_SCREEN_SCALE_FACTOR "1"
-
-    QT_QPA_PLATFORM "wayland";
-    XDG_CURRENT_DESKTOP "niri";
-    XDG_SESSION_TYPE "wayland";
     MOZ_ENABLE_WAYLAND "1";
-    QT_WAYLAND_DISABLE_WINDOWDECORATION "1";
 }
 
 xwayland-satellite {

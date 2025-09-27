@@ -5,88 +5,131 @@
     enableFishIntegration = true;
 
     settings = {
-      # Custom format
       format = ''
         $all$username$character
       ''; 
 
-      # Username
-      username = {
-        format = "[$user]($style) ";
-        style_user = "blue";
-        show_always = true;
+      localip = {
+        ssh_only = false;
+        format = "📟 [$localipv4](bold red) ";
+        disabled = true;
       };
 
-      # Replaced symbol - Nerd Font
+      hostname = {
+        ssh_only = false;
+        format = "on [$hostname](bold yellow) ";
+        trim_at = ".";
+        disabled = true;
+      };
+
+      username = {
+        format = "[$user]($style) ";
+        style_user = "blue bold";
+        style_root = "red bold";
+        show_always = true;
+        disabled = false;
+      };
+
       character = {
         success_symbol = "[›](bold green)";
         error_symbol = "[›](bold red)";
       };
-      # Git status
+
+      nix_shell = {
+        symbol = " ";
+        heuristic = true;
+      };
+
+      directory = {
+        read_only = " ";
+        truncation_length = 10;
+        truncate_to_repo = true;
+        style = "bold italic blue";
+      };
+
+      git_branch = { symbol = " "; };
+      hg_branch = { symbol = " "; };
+      aws = { symbol = " "; };      
+      package = { symbol = "󰏗 "; };
+      shlvl = { symbol = " "; };  
+
       git_status = {
         deleted = " 󰍵 ";
         modified = "  ";
         staged = "  ";
         stashed = "  ";
-      };
-
-      nix_shell = {
-        symbol = " ";  # Nix
-        heuristic = true;
+        ahead = " ⬆ ";
+        behind  = " ⬇ ";
+        diverged = " ↹ ";
       };
 
       docker_context = {
-        format = "[ $symbol ]($style)";
-        symbol = "";  # Docker
+        format = "[$symbol]($style)";
+        symbol = " ";
         style = "bold blue";
-        only_with_files = false;
+        only_with_files = true;
+        detect_files = [ 
+          "podman-compose.yml" 
+          "podman-compose.yaml" 
+          "docker-compose.yml" 
+          "docker-compose.yaml" 
+          "Podmanfile" 
+          "Dockerfile" 
+        ];
+        detect_folders = [ ];
+        disabled = false;
+      };
+
+      nodejs = {
+        format = "[$symbol $version ]($style)";
+        symbol = "";
+        style = "bold green";
+        detect_files = [ "package.json" ".node-version" ];
+        detect_folders = [ "node_modules" ];
+      };
+
+      python = {
+        format = "[$symbol $version ]($style)";
+        style = "bold yellow";
+        symbol = "";
+        pyenv_prefix = "venv ";
+        python_binary = [ "./venv/bin/python" "python" "python3" "python2" ];
+        detect_extensions = [ "py" ];
       };
 
       golang = {
-        format = "[ $symbol ]($style)";
-        symbol = "";  # Go
+        format = "[$symbol $version ]($style)";
+        symbol = "";
         style = "bold blue";
       };
       
       java = {
-        format = "[ $symbol ]($style)";
-        symbol = "";  # Java
+        format = "[$symbol $version ]($style)";
+        symbol = "";
         style = "bold yellow";
       };
 
       lua = {
-        format = "[ $symbol ]($style)";
-        symbol = "";  # Lua
+        format = "[$symbol $version ]($style)";
+        symbol = "";
         style = "bold red";
       }; 
-
-      nodejs = {
-        format = "[ $symbol ]($style)";
-        symbol = "";  # Node.js
-        style = "bold green";
-      };
       
       php = {
-        format = "[ $symbol ]($style)";
-        symbol = "";  # PHP
-        style = "bold purple";
+        format = "[$symbol $version ]($style)";
+        symbol = "";
+        style = "bold blue";
       }; 
 
-      python = {
-        format = "[ $symbol ]($style)";
-        symbol = "";  # Python
-        style = "bold blue";
-      };
-      
       ruby = {
-        format = "[ $symbol ]($style)";
-        symbol = "";  # Ruby
+        format = "[$symbol $version ]($style)";
+        symbol = ""; 
         style = "bold red";
       };
       
       rust = {
-        format = "[ $symbol ]($style)";
-        symbol = "";  # Rust
+        format = "[$symbol $version ]($style)";
+        symbol = "";  
         style = "bold yellow";
       };
     };
