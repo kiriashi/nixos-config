@@ -1,5 +1,5 @@
 {
-  myPkgs,
+  selfPkgs,
   pkgs,
   ...
 }:
@@ -11,12 +11,12 @@
     waypaper
 
     socat
-  ]) ++ (with myPkgs; [
+  ]) ++ (with selfPkgs; [
     wallpapers
   ]);
 
   home.file.wallpapers = {
-      source = "${myPkgs.wallpapers}/share/wallpapers";
+      source = "${selfPkgs.wallpapers}/share/wallpapers";
       target = "Pictures/wallpapers";
   };
 

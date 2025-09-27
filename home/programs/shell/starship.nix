@@ -75,14 +75,10 @@
       container = {
         format = "[$symbol]($style) ";
         symbol = "";
-        # style = "bold white";
-        # style_map = {
-        #   docker = "bold blue";
-        #   podman = "bold purple";
-        # };
-        symbol_map = {
-          docker = "";
-          podman = "󰡨";
+        style = "bold yellow";
+        style_map = {
+          docker = "bold blue";
+          podman = "bold purple";
         };
       };
     };

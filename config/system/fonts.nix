@@ -1,6 +1,6 @@
 {
   pkgs,
-  myPkgs,
+  selfPkgs,
   lib,
   ...
 }:
@@ -16,7 +16,7 @@
       noto-fonts-emoji-blob-bin
       sarasa-gothic
       corefonts
-      ]) ++ (with myPkgs; [
+      ]) ++ (with selfPkgs; [
       fonts.monolisa-NF
       fonts.monaco-NF
       ]);

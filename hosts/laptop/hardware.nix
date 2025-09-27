@@ -33,6 +33,7 @@
       libva
       amdvlk
 
+      mesa-demos
       libva-utils
       vulkan-loader
       vulkan-tools
