@@ -39,9 +39,6 @@
     "waybar/config.jsonc".source = ./dotfiles/waybar-config.jsonc;
     "waybar/style.css".source = ./dotfiles/waybar-style-dark.css;
     # "waybar/style.css".source = ./dotfiles/waybar-style-light.css;
-
-    "fastfetch/config.jsonc".source = ./dotfiles/fastfetch-config.jsonc;
-    "fastfetch/nix-corner.png".source = ./dotfiles/nix-corner1.png;
   };
 
   programs.fuzzel = {
