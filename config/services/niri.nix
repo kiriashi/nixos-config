@@ -6,30 +6,14 @@
 }:
 lib.mkIf config.optional.niri
 {
-  environment.systemPackages = with pkgs; [
-    pwvucontrol
-    brightnessctl
-    libnotify
-    labwc
-
-    swww
-    mpvpaper
-    waypaper
-    socat
-
-    xwayland-satellite-unstable
-
-    file-roller
-
-    bibata-cursors
-    adwaita-icon-theme
-  ];
-
   programs = {
-    xwayland.enable = true;
     niri = {
       enable = true;
       package = pkgs.niri-unstable;
+    };    
+    xwayland = {
+      enable = true;
+      package = wayland-satellite-unstable;
     };
     nautilus-open-any-terminal = {
       enable = true;

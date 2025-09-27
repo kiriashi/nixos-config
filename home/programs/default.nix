@@ -20,19 +20,22 @@
     telegram-desktop
     qq
     wechat
+    wemeet
     thunderbird
 
     claude-code
     gemini-cli
     code-cursor-fhs
-
-    wemeet
-    libreoffice
+    
+    onlyoffice-desktopeditors
+    # libreoffice
     wpsoffice-cn
 
     nautilus
+    code-nautilus
     sushi
     loupe
+
     typora
     mission-center
     fontforge-gtk

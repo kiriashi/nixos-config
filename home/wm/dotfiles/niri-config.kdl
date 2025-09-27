@@ -199,7 +199,6 @@ window-rule {
     match app-id="org.inkscape.Inkscape"
     match app-id="gimp"
     match app-id="krita"
-    match app-id="labwc"
     
     match title=r#".*Lapce$"#  
     match app-id="code"

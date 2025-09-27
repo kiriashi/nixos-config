@@ -47,11 +47,10 @@ let
             echo -n "$NEW_X11" | $CLIPHIST_CMD
         fi
 
-        sleep 0.3
+        sleep 0.5
     done
   '';
 
-  # Systemd 服务定义
   clipsyncService = {
     Unit = {
       Description = "Clipboard sync between Wayland and X11";
@@ -84,14 +83,6 @@ in
   };
 
   config = lib.mkIf config.clipsync.enable {
-    # 确保所有依赖包已安装
-    home.packages = with pkgs; [
-      wl-clipboard
-      xclip
-      cliphist
-    ];
-
-    # 添加 systemd 用户服务
     systemd.user.services.clipsync = clipsyncService;
   };
 }
