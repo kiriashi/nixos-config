@@ -1,4 +1,5 @@
 {
+  lib,
   pkgs,
   ...
 }:
@@ -9,7 +10,7 @@
   ];
 
   xdg.configFile = {
-    "fastfetch/config.jsonc".source = ./dotfiles/fastfetch-config.jsonc;
-    "fastfetch/nix-corner.png".source = ./dotfiles/nix-corner1.png;
+    "fastfetch/config.jsonc".source = lib.mkForce ./dotfiles/fastfetch-config.jsonc;
+    "fastfetch/nix-corner.png".source = lib.mkForce ./dotfiles/nix-corner1.png;
   };
 }
