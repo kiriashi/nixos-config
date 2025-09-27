@@ -5,7 +5,7 @@
     nixpkgs.url = "nixpkgs/nixos-unstable"; 
 
     niri-flake = {
-      url = github:sodiboo/niri-flake;
+      url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

@@ -1,5 +1,7 @@
 {
+  lib,
   pkgs,
+  config,
   ...
 }:
 lib.mkIf config.optional.niri

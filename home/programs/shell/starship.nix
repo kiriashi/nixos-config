@@ -5,6 +5,18 @@
     enableFishIntegration = true;
 
     settings = {
+      # Custom format
+      format = """
+      $all\
+      $fill\
+      $username$character
+      """;
+      
+      # Fill empty area
+      fill = {
+        symbol = " ";
+      };
+
       # Username
       username = {
         format = "[$user]($style) ";
@@ -75,12 +87,8 @@
       container = {
         format = "[$symbol]($style) ";
         symbol = "";
-        style = "bold yellow";
-        style_map = {
-          docker = "bold blue";
-          podman = "bold purple";
-        };
+        style = "bold blue";
       };
     };
   };
-}
+} 
