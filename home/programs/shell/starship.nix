@@ -24,10 +24,10 @@
       };
       # Git status
       git_status = {
-        deleted = "󰍵";
-        modified = "";
-        staged = "";
-        stashed = "";
+        deleted = " 󰍵 ";
+        modified = "  ";
+        staged = "  ";
+        stashed = "  ";
       };
 
       nix_shell = {
