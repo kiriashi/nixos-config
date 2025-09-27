@@ -6,16 +6,9 @@
 
     settings = {
       # Custom format
-      format = """
-      $all\
-      $fill\
-      $username$character
-      """;
-      
-      # Fill empty area
-      fill = {
-        symbol = " ";
-      };
+      format = ''
+        $all$username$character
+      ''; 
 
       # Username
       username = {
@@ -36,58 +29,11 @@
         staged = "";
         stashed = "";
       };
+
       # nix-shell
       nix_shell = {
-        format = "[$symbol]($style) ";
         symbol = " ";
         heuristic = true;
-      };
-
-      # Python
-      python = {
-        format = "[$symbol $version]($style) ";
-        symbol = "";
-      };
-      # Node.js
-      nodejs = {
-        format = "[$symbol $version]($style) ";
-        symbol = "";
-      };
-      # Rust
-      rust = {
-        format = "[$symbol $version]($style) ";
-        symbol = "";
-      };
-      # Go
-      golang = {
-        format = "[$symbol $version]($style) ";
-        symbol = "";
-      };
-      # Java
-      java = {
-        format = "[$symbol $version]($style) ";
-        symbol = "";
-      };
-      # Lua
-      lua = {
-        format = "[$symbol $version]($style) ";
-        symbol = "";
-      };
-      # Ruby
-      ruby = {
-        format = "[$symbol $version]($style) ";
-        symbol = "";
-      };
-      # PHP
-      php = {
-        format = "[$symbol $version]($style) ";
-        symbol = "";
-      };
-      # Docker/Podman
-      container = {
-        format = "[$symbol]($style) ";
-        symbol = "";
-        style = "bold blue";
       };
     };
   };
