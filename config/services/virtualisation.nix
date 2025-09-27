@@ -4,7 +4,7 @@
   config,
   ...
 }:
-lib.mkIf config.optional.vir 
+lib.mkIf config.optional.vir
 {
   virtualisation.spiceUSBRedirection.enable = true;
 

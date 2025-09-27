@@ -1,5 +1,5 @@
 {
-  description = "Self-using configuration.";
+  description = "Self configuration.";
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
@@ -71,7 +71,7 @@ outputs =
               backupFileExtension = "backup";
               sharedModules = [ ./modules/profile/laptop.nix ];
               users.${config.profile.userName}.imports = [ ./home ];
-              extraSpecialArgs = { 
+              extraSpecialArgs = {
                 inherit inputs;
                 myPkgs = self.packages.${system}; 
               };

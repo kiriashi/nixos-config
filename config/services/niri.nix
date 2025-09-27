@@ -5,13 +5,11 @@
   inputs,
   ...
 }:
-
+lib.mkIf config.optional.niri
 {
   imports = [ inputs.niri-flake.nixosModules.niri ];
-
   nixpkgs.overlays = [ inputs.niri-flake.overlays.niri ];
   niri-flake.cache.enable = true;
-
   environment.systemPackages = with pkgs; [
     pwvucontrol
     brightnessctl

@@ -12,10 +12,6 @@
         keepassxc
       ];
 
-      extraEnvVars = {
-        MOZ_ENABLE_WAYLAND = "1";
-      };
-
       policies = {
         AutofillAddressEnabled = true;
         AutofillCreditCardEnabled = false;
