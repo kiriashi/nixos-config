@@ -25,8 +25,6 @@
 
     xwayland-satellite-unstable
 
-    # nemo-with-extensions
-    nautilus
     file-roller
 
     bibata-cursors

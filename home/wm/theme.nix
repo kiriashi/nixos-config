@@ -76,8 +76,8 @@
     settings = {
       "org/gnome/desktop/interface" = {
         color-scheme = "prefer-dark";
-        document-font-name = "Sarasa Mono SC 11";
-        monospace-font-name = "Maple Mono NF CN 11";
+        document-font-name = "Sarasa Mono SC 12";
+        monospace-font-name = "Maple Mono NF CN 12";
       };
     };
   };
