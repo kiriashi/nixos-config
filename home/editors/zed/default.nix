@@ -12,7 +12,7 @@ in
 lib.mkIf config.optional.dev.zed {
   programs.zed-editor = {
     enable = true;
-    packages = pkgs.zed-editor-fhs;
+    package = pkgs.zed-editor-fhs;
     extensions = [
       "nix"
       "toml"
