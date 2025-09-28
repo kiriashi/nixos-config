@@ -9,10 +9,8 @@ with lib;
       wm = lib.mkEnableOption "wm profile" // {
         default = true;
       };
-      hypr = {
-        enable = lib.mkEnableOption "hyprland profile" // {
+      hypr  = lib.mkEnableOption "hyprland profile" // {
           default = false;
-        };
       };
       niri = lib.mkEnableOption "niri profile" // {
         default = true;

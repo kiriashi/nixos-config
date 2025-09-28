@@ -61,6 +61,7 @@ outputs =
         modules = [ 
           ./modules/system.nix 
           ./modules/laptop.nix 
+          ./modules/options/laptop.nix
 
           (import ./overlays) 
           ./modules/outputs/chaotic.nix
@@ -73,7 +74,7 @@ outputs =
               useGlobalPkgs = true; 
               useUserPackages = true; 
               backupFileExtension = "backup"; 
-              sharedModules = [ ./modules/profile/laptop.nix ]; 
+              sharedModules = [ ./modules/options/laptop.nix ]; 
               users.${config.profile.userName}.imports = [ ./home ]; 
               extraSpecialArgs = { 
                 inherit inputs; 
