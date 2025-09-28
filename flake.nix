@@ -44,19 +44,16 @@ outputs =
   } 
   @inputs: 
   let 
-    system = "x86_64-linux"; 
-    pkgs = nixpkgs.legacyPackages.${system};  
-    selfPkgs = import ./pkgs { inherit pkgs; }; 
+    system = "x86_64-linux";
+    selfPkgs = import ./pkgs;
+    pkgs = import nixpkgs { inherit system; };
   in 
   { 
-    packages.${system} = selfPkgs; 
-
     nixosConfigurations = { 
       laptop = nixpkgs.lib.nixosSystem { 
         inherit system; 
         specialArgs = { 
           inherit inputs; 
-          selfPkgs = self.packages.${system}; 
         }; 
         modules = [
           ./modules/options/laptop.nix 
@@ -75,22 +72,16 @@ outputs =
               useUserPackages = true; 
               backupFileExtension = "backup"; 
               sharedModules = [ ./modules/options/laptop.nix ]; 
-              users.${config.profile.userName} = {
-                imports = [ 
-                  ./home 
-                  inputs.sops-nix.homeManagerModules.sops
-                  ];
-              };
+              users.${config.profile.userName}.imports = [ ./home ];
               extraSpecialArgs = { 
                 inherit inputs; 
-                selfPkgs = self.packages.${system}; 
               }; 
             }; 
           }) 
         ]; 
       }; 
     }; 
-    
+
     devShells.${system}.default = pkgs.mkShell {
       packages = with pkgs; [
         just
