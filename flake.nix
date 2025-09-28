@@ -44,16 +44,19 @@ outputs =
   } 
   @inputs: 
   let 
-    system = "x86_64-linux";
-    selfPkgs = import ./pkgs;
-    pkgs = import nixpkgs { inherit system; };
+    system = "x86_64-linux"; 
+    pkgs = nixpkgs.legacyPackages.${system};  
+    selfPkgs = import ./pkgs { inherit pkgs; }; 
   in 
   { 
+    packages.${system} = selfPkgs; 
+
     nixosConfigurations = { 
       laptop = nixpkgs.lib.nixosSystem { 
         inherit system; 
         specialArgs = { 
           inherit inputs; 
+          selfPkgs = self.packages.${system}; 
         }; 
         modules = [
           ./modules/options/laptop.nix 
@@ -75,13 +78,14 @@ outputs =
               users.${config.profile.userName}.imports = [ ./home ];
               extraSpecialArgs = { 
                 inherit inputs; 
+                selfPkgs = self.packages.${system}; 
               }; 
             }; 
           }) 
         ]; 
       }; 
     }; 
-
+    
     devShells.${system}.default = pkgs.mkShell {
       packages = with pkgs; [
         just
@@ -92,4 +96,4 @@ outputs =
       ];
     };
   }; 
-} 
+}

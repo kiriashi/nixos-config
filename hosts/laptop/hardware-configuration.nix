@@ -33,7 +33,6 @@
     options = [
       "subvol=@"
       "compress=zstd"
-      "noatime"
     ];
   };
 
@@ -42,6 +41,15 @@
     fsType = "btrfs";
     options = [
       "subvol=@home"
+      "compress=zstd"
+    ];
+  };
+
+  fileSystems."/var" = {
+    device = "/dev/disk/by-uuid/32917e03-469e-4484-8e9a-cbf7a3d12063";
+    fsType = "btrfs";
+    options = [
+      "subvol=@var"
       "compress=zstd"
       "noatime"
     ];
@@ -54,18 +62,10 @@
       "subvol=@nix"
       "compress=zstd"
       "noatime"
+      "nodiratime"
     ];
   };
-
-  fileSystems."/var" = {
-    device = "/dev/disk/by-uuid/32917e03-469e-4484-8e9a-cbf7a3d12063";
-    fsType = "btrfs";
-    options = [
-      "subvol=@var"
-      "compress=zstd"
-    ];
-  };
-
+  
   fileSystems."/boot" = {
     device = "/dev/disk/by-uuid/B8D2-C7F3";
     fsType = "vfat";

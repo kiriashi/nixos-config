@@ -3,6 +3,8 @@
   home = {
     packages = with pkgs; [
       splayer
+      qqmusic
+      pliplus
       bilibili
       ffmpeg
       nomacs
