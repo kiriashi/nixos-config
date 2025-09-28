@@ -1,8 +1,9 @@
 {
+  ppkgs,
   ...
 }:
 
-{
+{ 
   programs = {
     eza = {
       enable = true;

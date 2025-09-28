@@ -4,7 +4,7 @@
     packages = with pkgs; [
       splayer
       qqmusic
-      pliplus
+      piliplus
       bilibili
       ffmpeg
       nomacs
