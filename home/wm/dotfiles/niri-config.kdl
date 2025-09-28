@@ -248,7 +248,7 @@ binds {
     Mod+K        hotkey-overlay-title="kdeconnect"    repeat=false  { spawn "kdeconnect-app"; }
     Mod+B        hotkey-overlay-title="打开浏览器"    repeat=false  { spawn "firefox"; }
     Mod+C        hotkey-overlay-title="打开code"      repeat=false  { spawn "code"; }
-    Mod+G        hotkey-overlay-title="打开Gemini"      repeat=false  { spawn "gemini"; }
+    Mod+G        hotkey-overlay-title="打开Gemini"      repeat=false  { spawn "kitty" "-e" "gemini"; }
     Mod+M        hotkey-overlay-title="打开音乐"      repeat=false  { spawn "splayer"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }

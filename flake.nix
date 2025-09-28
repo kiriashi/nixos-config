@@ -75,7 +75,12 @@ outputs =
               useUserPackages = true; 
               backupFileExtension = "backup"; 
               sharedModules = [ ./modules/options/laptop.nix ]; 
-              users.${config.profile.userName}.imports = [ ./home ]; 
+              users.${config.profile.userName} = {
+                imports = [ 
+                  ./home 
+                  inputs.sops-nix.homeManagerModules.sops
+                  ];
+              };
               extraSpecialArgs = { 
                 inherit inputs; 
                 selfPkgs = self.packages.${system}; 

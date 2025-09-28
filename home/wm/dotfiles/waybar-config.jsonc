@@ -91,7 +91,7 @@
         "format": "",
         "tooltip": true,
         "tooltip-format": "RAM: {used}G / {total}G\nSwap: {swapUsed}G / {swapTotal}G",
-		"on-click": "kitty btop",
+		"on-click": "kitty -e btop",
     },
     
     "network": {

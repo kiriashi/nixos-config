@@ -14,7 +14,9 @@
   ];
 
   home.packages = with pkgs; [
-    xdg-utils
+    # System tools
+    xdg-utils 
+    mission-center
 
     # Social Apps
     telegram-desktop
@@ -23,31 +25,28 @@
     wemeet
     thunderbird
 
+    # AI
     claude-code
     gemini-cli-bin
     code-cursor-fhs
     
+    # Office
+    typora
     onlyoffice-desktopeditors
-    # libreoffice
     wpsoffice-cn
 
+    # File manager
+    loupe
     nautilus
     code-nautilus
-    sushi
-    loupe
-
-    typora
-    mission-center
     fontforge-gtk
- 
+    
     # Games tool
     mangojuice
     mangohud_git
-    # games wine
     (bottles.override {
       removeWarningPopup = true;
     })
-    # epic
     (heroic.override {
       extraPkgs = pkgs: with pkgs; [
         proton-cachyos_x86_64_v4
@@ -56,13 +55,13 @@
     })
   ];
 
-  # KDE Connect：与移动设备互联
+  # KDE Connect
   services.kdeconnect = {
     enable = true;
     indicator = true;
   };
 
-  # Secret Service（以 pass 提供）与 KeePassXC
+  # Secret Service
   services.pass-secret-service.enable = true;
   programs.keepassxc.enable = true;
 }
