@@ -59,9 +59,8 @@ outputs =
           selfPkgs = self.packages.${system}; 
         }; 
         modules = [ 
-          ./modules/config.nix 
+          ./modules/system.nix 
           ./modules/laptop.nix 
-          ./modules/profile/laptop.nix 
 
           (import ./overlays) 
           ./modules/outputs/chaotic.nix

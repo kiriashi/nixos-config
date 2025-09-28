@@ -24,7 +24,7 @@
     thunderbird
 
     claude-code
-    gemini-cli
+    gemini-cli-bin
     code-cursor-fhs
     
     onlyoffice-desktopeditors

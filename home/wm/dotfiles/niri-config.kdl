@@ -141,7 +141,7 @@ window-rule {
     match title=r#".*Lapce$"#
     match app-id="code"
     match app-id="cursor"
-    match app-id="dev.zed.Zed-Dev"
+    match app-id="zeditor"
     
     open-on-workspace "Code"
 }
@@ -152,6 +152,7 @@ window-rule {
     match app-id="wechat"
     match app-id="org.telegram.desktop"
     match app-id="QQ"
+    match app-id="gemini"
     
     open-on-workspace "Chat"
 }
@@ -193,7 +194,6 @@ window-rule {
     match app-id="org.kde.kdenlive"
     match app-id="org.inkscape.Inkscape"
     match app-id="gimp"
-    match app-id="krita"
     
     match title=r#".*Lapce$"#  
     match app-id="code"
@@ -248,6 +248,7 @@ binds {
     Mod+K        hotkey-overlay-title="kdeconnect"    repeat=false  { spawn "kdeconnect-app"; }
     Mod+B        hotkey-overlay-title="打开浏览器"    repeat=false  { spawn "firefox"; }
     Mod+C        hotkey-overlay-title="打开code"      repeat=false  { spawn "code"; }
+    Mod+G        hotkey-overlay-title="打开Gemini"      repeat=false  { spawn "gemini"; }
     Mod+M        hotkey-overlay-title="打开音乐"      repeat=false  { spawn "splayer"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }

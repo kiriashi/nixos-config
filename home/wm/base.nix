@@ -1,9 +1,11 @@
 {
+  lib,
+  pkgs, 
+  config,
   selfPkgs,
-  pkgs,
   ...
 }:
-
+lib.mkIf config.optional.wm
 {
   home.packages = (with pkgs; [
     pwvucontrol
