@@ -58,11 +58,11 @@ outputs =
           inherit inputs; 
           selfPkgs = self.packages.${system}; 
         }; 
-        modules = [ 
+        modules = [
+          ./modules/options/laptop.nix 
           ./modules/system.nix 
           ./modules/laptop.nix 
-          ./modules/options/laptop.nix
-
+          
           (import ./overlays) 
           ./modules/outputs/chaotic.nix
           ./modules/outputs/niri-flake.nix

@@ -1,7 +1,5 @@
 { lib, config, ... }:
-
 with lib;
-
 {
   # 自定义默认加载程序 - 布伦值控制
   options = {
@@ -25,6 +23,8 @@ with lib;
         zed = lib.mkEnableOption "zed profile";
         vscode = lib.mkEnableOption "vscode profile";
 
+        go = lib.mkEnableOption "go profile";
+        rust = lib.mkEnableOption "rust profile";
         node = lib.mkEnableOption "node profile";
       };
     }; 
@@ -56,6 +56,11 @@ with lib;
         default = "RBP15-2022";
       };
 
+      darkMode = mkOption {
+        type = types.bool;
+        default = true;
+      };
+
       font = mkOption {
         type = types.str;
         default = "JetBrains Mono";
@@ -69,6 +74,11 @@ with lib;
       shell = mkOption {
         type = types.package;
         default = pkgs.fish;
+      };
+
+      browser = mkOption {
+        type = types.str;
+        default = "firefox";
       };
     
       editor = mkOption {

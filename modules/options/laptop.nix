@@ -1,9 +1,13 @@
 { ... }:
 
 {
+  imports = [ ./default.nix ];
+
   profile = {
     editor = "hx";
     font = "Maple Mono NF CN";
+    darkMode = false;
+    browser = "firefox";
   };
 
   optional = {
@@ -22,6 +26,8 @@
       zed = true;
       vscode = true;
 
+      go = true;
+      rust = true;
       node = true;
     };
   };
