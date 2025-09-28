@@ -9,6 +9,7 @@
   imports = [
     ./editors
     ./programs
+    ./secrets
     ./wm
   ];
 
