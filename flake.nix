@@ -90,5 +90,15 @@ outputs =
         ]; 
       }; 
     }; 
+    
+    devShells.${system}.default = pkgs.mkShell {
+      packages = with pkgs; [
+        just
+        nix-output-monitor
+        age
+        sops
+        nvfetcher
+      ];
+    };
   }; 
 } 
