@@ -1,17 +1,13 @@
-{ config, pkgs, ... }:
+{ lib, config, pkgs, ... }:
 lib.mkIf config.optional.dev.php
 {
-
   home.packages = with pkgs.php83Packages; [
-    phpEnv
     composer
     # phpmd
     # phpstan
     # psalm
     php-codesniffer
-    ];  
-
-    phpEnv = pkgs.php83.buildEnv {
+    (pkgs.php83.buildEnv {
       extensions = ({ enabled, all }: enabled ++ (with all; [
         xdebug
         ctype
@@ -55,5 +51,6 @@ lib.mkIf config.optional.dev.php
     extraConfig = ''
         xdebug.mode=coverage
     '';
-  };
+    })   
+    ];  
 }

@@ -1,12 +1,18 @@
-{ pkgs, config, lib, ... }:
+{
+  pkgs,
+  config,
+  lib,
+  ...
+}:
 
 lib.mkIf config.optional.dev.rust {
-  programs.rustup = {
-    enable = true;
-  };
-
   home.packages = with pkgs; [
+    # rustc
+    # cargo
+    # rust-analyzer
+    rustup
     cargo-nextest
+
     taplo
     vscode-extensions.vadimcn.vscode-lldb.adapter
   ];

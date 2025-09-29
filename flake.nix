@@ -52,7 +52,7 @@ outputs =
     packages.${system} = selfPkgs; 
 
     nixosConfigurations = { 
-      laptop = nixpkgs.lib.nixosSystem { 
+      RBP15-2022 = nixpkgs.lib.nixosSystem { 
         inherit system; 
         specialArgs = { 
           inherit inputs; 
