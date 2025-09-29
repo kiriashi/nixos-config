@@ -37,6 +37,14 @@
     };
     date = "2025-09-25";
   };
+  tableplus = {
+    pname = "tableplus";
+    version = "LTS";
+    src = fetchurl {
+      url = "https://tableplus.com/release/linux/x64/TablePlus-x64.AppImage";
+      sha256 = "sha256-3qMFdjtwnGyGTZqHgKRA9RKH4cQgOJ9RsS/0hzH+tKU=";
+    };
+  };
   wallpapers = {
     pname = "wallpapers";
     version = "a1ad4e27ad2b0f037e60b6e429f9d60af0d301cf";
@@ -55,14 +63,6 @@
     src = fetchurl {
       url = "https://github.com/amzxyz/rime_wanxiang/releases/download/v13.0.1/rime-wanxiang-base.zip";
       sha256 = "sha256-Qei+QongmDOrO7MA95TaDIEl11Cduk2FyZQxgLYmggQ=";
-    };
-  };
-  wanxiang_gram = {
-    pname = "wanxiang_gram";
-    version = "LTS";
-    src = fetchurl {
-      url = "https://github.com/amzxyz/RIME-LMDG/releases/download/LTS/wanxiang-lts-zh-hans.gram";
-      sha256 = "sha256-yvAcKdoU9dZ0kPVedNG88+DMSI8KVSMRBGKRVZ7EF1c=";
     };
   };
 }

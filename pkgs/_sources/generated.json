@@ -62,6 +62,21 @@
         },
         "version": "f8aae20e6b2f664f07b9f36bb5af43155de6f087"
     },
+    "tableplus": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "tableplus",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-3qMFdjtwnGyGTZqHgKRA9RKH4cQgOJ9RsS/0hzH+tKU=",
+            "type": "url",
+            "url": "https://tableplus.com/release/linux/x64/TablePlus-x64.AppImage"
+        },
+        "version": "LTS"
+    },
     "wallpapers": {
         "cargoLocks": null,
         "date": "2025-09-25",
@@ -97,20 +112,5 @@
             "url": "https://github.com/amzxyz/rime_wanxiang/releases/download/v13.0.1/rime-wanxiang-base.zip"
         },
         "version": "13.0.1"
-    },
-    "wanxiang_gram": {
-        "cargoLocks": null,
-        "date": null,
-        "extract": null,
-        "name": "wanxiang_gram",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "name": null,
-            "sha256": "sha256-yvAcKdoU9dZ0kPVedNG88+DMSI8KVSMRBGKRVZ7EF1c=",
-            "type": "url",
-            "url": "https://github.com/amzxyz/RIME-LMDG/releases/download/LTS/wanxiang-lts-zh-hans.gram"
-        },
-        "version": "LTS"
     }
 }
