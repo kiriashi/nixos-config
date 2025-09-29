@@ -26,11 +26,11 @@ with lib;
         go = lib.mkEnableOption "go profile";
         rust = lib.mkEnableOption "rust profile";
         node = lib.mkEnableOption "node profile";
-        python = lib.mkEnableOption "go profile";
-        php = lib.mkEnableOption "rust profile";
-        java = lib.mkEnableOption "node profile";
-        lua = lib.mkEnableOption "go profile";
-        ruby = lib.mkEnableOption "rust profile";
+        python = lib.mkEnableOption "python profile";
+        php = lib.mkEnableOption "php profile";
+        java = lib.mkEnableOption "java profile";
+        lua = lib.mkEnableOption "lua profile";
+        ruby = lib.mkEnableOption "ruby profile";
       };
     }; 
     
