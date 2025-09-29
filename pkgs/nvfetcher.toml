@@ -2,6 +2,10 @@
 src.git = "https://github.com/kiriashi/wallpapers.git"
 fetch.github = "kiriashi/wallpapers"
 
+[Grub-Theme-Arknights_Theresa]
+src.git = "https://github.com/Shelton786/Grub-Themes-Arknights_Theresa.git"
+fetch.github = "Shelton786/Grub-Themes-Arknights_Theresa"
+
 [monolisa-NF]
 src.git = "https://github.com/kiriashi/monolisa-NF.git"
 fetch.github = "kiriashi/monolisa-NF"

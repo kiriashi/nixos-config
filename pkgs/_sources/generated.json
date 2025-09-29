@@ -1,4 +1,25 @@
 {
+    "Grub-Theme-Arknights_Theresa": {
+        "cargoLocks": null,
+        "date": "2024-12-07",
+        "extract": null,
+        "name": "Grub-Theme-Arknights_Theresa",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "Shelton786",
+            "repo": "Grub-Themes-Arknights_Theresa",
+            "rev": "cff62f79bd14dd9375a07cfb0b0f3dc2d08db4ec",
+            "sha256": "sha256-a+mG2ibI6bbgKTr12EtaRLomzA5FaICcZAyzP7Grqhg=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "cff62f79bd14dd9375a07cfb0b0f3dc2d08db4ec"
+    },
     "monaco-NF": {
         "cargoLocks": null,
         "date": "2025-09-25",
@@ -71,11 +92,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-8clfQAS0X6cs/lYD8XxZx+PwvyjAYQUxKZqB6hDi1A0=",
+            "sha256": "sha256-cpFMraRlV7uav6PY+3ZHPKVM/WTYvwhLPU+H8Rtc8Dw=",
             "type": "url",
-            "url": "https://github.com/amzxyz/rime_wanxiang/releases/download/v12.6.6/rime-wanxiang-base.zip"
+            "url": "https://github.com/amzxyz/rime_wanxiang/releases/download/v12.6.13/rime-wanxiang-base.zip"
         },
-        "version": "12.6.6"
+        "version": "12.6.13"
     },
     "wanxiang_gram": {
         "cargoLocks": null,
