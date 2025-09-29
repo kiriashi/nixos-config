@@ -1,9 +1,8 @@
-{ inputs, lib, ... }:
+{ inputs, ... }:
 
 {
-  imports = [ inputs.niri-flake.nixosModules.niri ];
+  imports = [ inputs.nix-index-database.nixosModules.nix-index ];
 
-  niri-flake.cache.enable = true;
-  nixpkgs.overlays = [ inputs.niri-flake.overlays.niri ];
-  services.gnome.gnome-keyring.enable = lib.mkForce false;
+  programs.nix-index.enable = true;
+  programs.nix-index-database.comma.enable = true;
 }
