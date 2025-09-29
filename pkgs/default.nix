@@ -18,9 +18,9 @@ let
     }) dirNames);
 in
 {
-  arknights-grub-theme = loadDir ./arknights-grub-theme {};
   wallpapers = loadDir ./wallpapers { inherit sources; };
 
+  grub-themes = loadSubdirs ./grub-themes { inherit sources; };
   fonts = loadSubdirs ./fonts { inherit sources; };
   rime = loadSubdirs ./rime { inherit sources; };
 }
