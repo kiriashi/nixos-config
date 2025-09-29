@@ -128,7 +128,7 @@ window-rule {
 
 workspace "Browser"
 window-rule {
-    match app-id=r#"zen*."#
+    match app-id="zen-beta"
     match app-id="librewolf"
     match app-id="firefox"
     
@@ -152,7 +152,6 @@ window-rule {
     match app-id="wechat"
     match app-id="org.telegram.desktop"
     match app-id="QQ"
-    match app-id="gemini"
     
     open-on-workspace "Chat"
 }

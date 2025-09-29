@@ -30,7 +30,6 @@
       rust = true;
       node = true;
       python = true;
-      php = false;
       java = false;
     };
   };

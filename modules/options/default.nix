@@ -27,7 +27,6 @@ with lib;
         rust = lib.mkEnableOption "rust profile";
         node = lib.mkEnableOption "node profile";
         python = lib.mkEnableOption "python profile";
-        php = lib.mkEnableOption "php profile";
         java = lib.mkEnableOption "java profile";
       };
     }; 

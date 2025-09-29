@@ -36,9 +36,21 @@
     wpsoffice-cn
 
     # File manager
+    (nautilus.override {
+      extraPkgs = pkgs: with pkgs; [
+      code-nautilus
+      ];
+    })
+    nautilus.overrideAttrs (nsuper: {
+      buildInputs =
+        nsuper.buildInputs
+        ++ (with pkgs; [
+          gst_all_1.gst-plugins-good
+          gst_all_1.gst-plugins-bad
+          code-nautilus
+        ]);
+    })
     loupe
-    nautilus
-    code-nautilus
     fontforge-gtk
     
     # Games tool
@@ -51,6 +63,7 @@
       extraPkgs = pkgs: with pkgs; [
         proton-cachyos_x86_64_v4
         proton-ge-custom
+        gamescope
       ];
     })
   ];

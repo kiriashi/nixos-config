@@ -3,7 +3,6 @@
   imports = [
     ./go.nix
     ./java.nix
-    ./php.nix
     ./rust.nix
     ./node.nix
     ./python.nix
@@ -23,7 +22,9 @@
     markdown-oxide
 
     # database
+    tableplus
     mongosh
+    redli
 
     # lua
     lua-language-server
