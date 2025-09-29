@@ -48,6 +48,7 @@
           gst_all_1.gst-plugins-good
           gst_all_1.gst-plugins-bad
           code-nautilus
+          fcitx5-gtk
         ]);
     })
     loupe

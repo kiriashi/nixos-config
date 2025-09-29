@@ -1,4 +1,4 @@
-{ stdenv, fetchurl, ... }:
+{ stdenv, sources, fetchurl }:
 
 stdenv.mkDerivation rec {
   pname = "wanxiang_gram";
