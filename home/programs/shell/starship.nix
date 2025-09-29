@@ -54,13 +54,14 @@
       shlvl = { symbol = " "; };  
 
       git_status = {
-        deleted = " 󰍵 ";
-        modified = "  ";
-        staged = "  ";
-        stashed = "  ";
-        ahead = " ⬆ ";
-        behind  = " ⬇ ";
-        diverged = " ↹ ";
+        deleted   = " 󰍵 ";
+        modified  = "  ";
+        staged    = "  ";
+        stashed   = "  ";
+        untracked = "  ";
+        ahead     = " 󰁝 ";
+        behind    = " 󰁅 ";
+        diverged  = " 󰹹 ";
       };
 
       docker_context = {

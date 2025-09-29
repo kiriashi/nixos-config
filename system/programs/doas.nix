@@ -5,7 +5,6 @@
   ...
 }:
 {
-  security.sudo.enable = lib.mkForce false;
   security.doas = {
     enable = true;
     wheelNeedsPassword = true;
@@ -13,7 +12,7 @@
       {
         users = [ "${config.profile.userName}" ];
         noPass = false;
-        keepEnv = true;
+        keepEnv = false;
         persist = true;
       }
     ];

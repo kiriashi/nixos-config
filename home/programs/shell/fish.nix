@@ -17,12 +17,15 @@
       enable = true;
       shellAbbrs = {
         commit = "git commit --all";
+        staged = "git add . && git commit --all";
         push = "git push";
+
         rebuild = "nh os switch . --ask";
         rebuildb = "nh os boot . --ask";
         rebuildc = "nh os switch . && nh clean all && nh os switch .";
 
-        update = "nix flake update && git commit -a -m 'update.' && nh os boot . --ask";
+        update = "nvfetcher --config ./pkgs/nvfetcher.toml && nix flake update && git commit -a -m 'update.' && nh os boot . --ask";
+        sopsei =  "sops --encrypt --in-place";
         shutdown = "systemctl poweroff";
         reboot = "systemctl reboot";
 

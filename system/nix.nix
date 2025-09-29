@@ -21,7 +21,6 @@
       dates = "weekly";
       extraArgs = "--delete-older-than 7d --keep 5";
     };
-    flake = "${config.profile.homeDir}/nixos";
   };  
 
   nix = {

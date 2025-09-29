@@ -21,7 +21,6 @@
 
     chaotic = { 
       url = "github:chaotic-cx/nyx/nyxpkgs-unstable"; 
-      inputs.nixpkgs.follows = "nixpkgs"; 
     };
 
     home-manager = { 
@@ -60,8 +59,8 @@ outputs =
         }; 
         modules = [
           ./modules/options/laptop.nix 
+          ./modules/RBP15-2022.nix 
           ./modules/system.nix 
-          ./modules/laptop.nix 
           
           (import ./overlays) 
           ./modules/outputs/chaotic.nix

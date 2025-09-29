@@ -29,8 +29,6 @@ with lib;
         python = lib.mkEnableOption "python profile";
         php = lib.mkEnableOption "php profile";
         java = lib.mkEnableOption "java profile";
-        lua = lib.mkEnableOption "lua profile";
-        ruby = lib.mkEnableOption "ruby profile";
       };
     }; 
     

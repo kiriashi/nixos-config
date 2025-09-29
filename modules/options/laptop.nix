@@ -32,8 +32,6 @@
       python = true;
       php = false;
       java = false;
-      lua = false;
-      ruby = false;
     };
   };
   

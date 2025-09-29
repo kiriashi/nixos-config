@@ -4,7 +4,6 @@
     ./go.nix
     ./java.nix
     ./php.nix
-    ./lua.nix
     ./rust.nix
     ./node.nix
     ./python.nix
@@ -22,6 +21,9 @@
     markdownlint-cli
     markdownlint-cli2
     markdown-oxide
+
+    # database
+    mongosh
 
     # lua
     lua-language-server
