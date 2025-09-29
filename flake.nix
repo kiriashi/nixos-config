@@ -1,5 +1,5 @@
 { 
-  description = "Self configuration."; 
+  description = "Kiriashi's Nixos configuration."; 
 
   inputs = { 
     nixpkgs.url = "nixpkgs/nixos-unstable"; 

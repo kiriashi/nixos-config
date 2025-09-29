@@ -13,7 +13,6 @@
     ../system/user.nix
     ../system/zram.nix
 
-    ../system/programs/doas.nix
     ../system/programs/fish.nix
     ../system/programs/git.nix
     ../system/programs/gnupg.nix

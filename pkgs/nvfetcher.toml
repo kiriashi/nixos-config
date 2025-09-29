@@ -21,7 +21,7 @@ src.to_pattern = "\\1"
 fetch.url = "https://github.com/amzxyz/rime_wanxiang/releases/download/v$ver/rime-wanxiang-base.zip"
 
 [wanxiang_gram]
-src.github_tag = "amzxyz/RIME-LMDG"
-src.from_pattern = "^(LTS)$"
-src.to_pattern = "\\1"
+src.manual = "LTS"
 fetch.url = "https://github.com/amzxyz/RIME-LMDG/releases/download/LTS/wanxiang-lts-zh-hans.gram"
+fetch.curl_opts = ["-L"]
+fetch.name = "wanxiang-lts-zh-hans.gram"

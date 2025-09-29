@@ -31,13 +31,13 @@ let
     (processDirs loadDir) // (processSubdirs loadSubdirs);
 in
 combineOutput {
-  # 直接加载的目录
+  # 直接目录
   loadDir = [
     ./arknights-grub-theme
     ./wallpapers
   ];
   
-  # 加载子目录的目录
+  # 子集目录
   loadSubdirs = [
     ./fonts
     ./rime
