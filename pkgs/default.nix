@@ -33,13 +33,14 @@ in
 combineOutput {
   # 直接目录
   loadDir = [
-    ./arknights-grub-theme
     ./wallpapers
+    ./tableplus
   ];
   
   # 子集目录
   loadSubdirs = [
     ./fonts
     ./rime
+    ./grub-themes
   ];
 }

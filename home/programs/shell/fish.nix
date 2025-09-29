@@ -34,7 +34,7 @@
         find = "fd";
         df = "duf";
         cd = "z";
-        nf = "nvfetcher";
+        nf = "nvfetcher --config ./pkgs/nvfetcher.toml";
 
         nvim = "hx";
         vim = "hx";

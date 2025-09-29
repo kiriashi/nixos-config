@@ -20,8 +20,6 @@ src.from_pattern = "^v([0-9]+\\.[0-9]+\\.[0-9]+.*)$"
 src.to_pattern = "\\1"
 fetch.url = "https://github.com/amzxyz/rime_wanxiang/releases/download/v$ver/rime-wanxiang-base.zip"
 
-[wanxiang_gram]
+[tableplus]
 src.manual = "LTS"
-fetch.url = "https://github.com/amzxyz/RIME-LMDG/releases/download/LTS/wanxiang-lts-zh-hans.gram"
-fetch.curl_opts = ["-L"]
-fetch.name = "wanxiang-lts-zh-hans.gram"
+fetch.url = "https://tableplus.com/release/linux/x64/TablePlus-x64.AppImage"

@@ -36,11 +36,6 @@
     wpsoffice-cn
 
     # File manager
-    (nautilus.override {
-      extraPkgs = pkgs: with pkgs; [
-      code-nautilus
-      ];
-    })
     nautilus.overrideAttrs (nsuper: {
       buildInputs =
         nsuper.buildInputs
@@ -64,7 +59,6 @@
       extraPkgs = pkgs: with pkgs; [
         proton-cachyos_x86_64_v4
         proton-ge-custom
-        gamescope
       ];
     })
   ];
