@@ -29,6 +29,11 @@
       go = true;
       rust = true;
       node = true;
+      python = true;
+      php = false;
+      java = false;
+      lua = false;
+      ruby = false;
     };
   };
   

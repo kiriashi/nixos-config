@@ -5,9 +5,11 @@
 
 {
   environment.systemPackages = with pkgs; [
-    uv
-    jq
-    python3
+    age
+    git
+    wget
+    just
+    sops
     nvfetcher
     nix-output-monitor
 

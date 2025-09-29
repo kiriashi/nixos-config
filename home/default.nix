@@ -17,7 +17,7 @@
 
   home = {
     username = config.profile.userName;
-    homeDirectory = "/home/${config.profile.userName}";
+    homeDirectory = config.profile.homeDir;
     stateVersion = "25.11";
     shell.enableFishIntegration = true;
     preferXdgDirectories = true;

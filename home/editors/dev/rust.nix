@@ -1,39 +1,32 @@
-{
-  pkgs,
-  config,
-  lib,
-  ...
-}:
+{ pkgs, config, lib, ... }:
 
 lib.mkIf config.optional.dev.rust {
-  home.packages = with pkgs; [
-    # rustc
-    # cargo
-    # rust-analyzer
-    rustup
-    cargo-nextest
+  programs.rustup = {
+    enable = true;
+  };
 
+  home.packages = with pkgs; [
+    cargo-nextest
     taplo
     vscode-extensions.vadimcn.vscode-lldb.adapter
   ];
 
-  home.file = {
-    cargoConfig = {
-      text = ''
-        [source.crates-io]
-        replace-with = 'rsproxy-sparse'
-        [source.rsproxy]
-        registry = "https://rsproxy.cn/crates.io-index"
-        [source.rsproxy-sparse]
-        registry = "sparse+https://rsproxy.cn/index/"
-        [registries.rsproxy]
-        index = "https://rsproxy.cn/crates.io-index"
-        [net]
-        git-fetch-with-cli = true
-      '';
-      target = ".cargo/config.toml";
-    };
-  };
+  home.file.".cargo/config.toml".text = ''
+    [source.crates-io]
+    replace-with = 'rsproxy-sparse'
+
+    [source.rsproxy]
+    registry = "https://rsproxy.cn/crates.io-index"
+
+    [source.rsproxy-sparse]
+    registry = "sparse+https://rsproxy.cn/index/"
+
+    [registries.rsproxy]
+    index = "https://rsproxy.cn/crates.io-index"
+
+    [net]
+    git-fetch-with-cli = true
+  '';
 
   home.sessionVariables = {
     RUSTUP_DIST_SERVER = "https://rsproxy.cn";

@@ -2,8 +2,12 @@
 {
   imports = [
     ./go.nix
+    ./java.nix
+    ./php.nix
+    ./lua.nix
     ./rust.nix
     ./node.nix
+    ./python.nix
   ];
 
   home.packages = with pkgs; [
