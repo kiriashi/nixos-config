@@ -4,13 +4,10 @@
   inputs = { 
     nixpkgs.url = "nixpkgs/nixos-unstable"; 
 
+    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable"; 
+
     sops-nix = {
       url = "github:Mic92/sops-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    niri-flake = {
-      url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -19,8 +16,9 @@
       inputs.nixpkgs.follows = "nixpkgs"; 
     }; 
 
-    chaotic = { 
-      url = "github:chaotic-cx/nyx/nyxpkgs-unstable"; 
+    niri-flake = {
+      url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     home-manager = { 

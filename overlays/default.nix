@@ -1,13 +1,27 @@
 { ... }:
 {
   nixpkgs.overlays = [
-    # Skip niri-flake test
+    # Turnoff niri-flake doCheck
     (final: prev: {
       niri-stable = prev.niri-stable.overrideAttrs (_: { doCheck = false; });
       niri-unstable = prev.niri-unstable.overrideAttrs (_: { doCheck = false; });
       xwayland-satellite-stable = prev.xwayland-satellite-stable.overrideAttrs (_: { doCheck = false; });
       xwayland-satellite-unstable = prev.xwayland-satellite-unstable.overrideAttrs (_: { doCheck = false; });
     })
+    # Enable nautilus gstreamer support
+    (_final: prev: {
+      nautilus = prev.nautilus.overrideAttrs (nprev: {
+        buildInputs =
+          nprev.buildInputs
+          ++ (with pkgs.gst_all_1; [
+            gst-plugins-good
+            gst-plugins-bad
+          ]) ++ (with pkgs; [
+            code-nautilus
+            fcitx5-gtk
+          ]);
+      });
+    });
 
     (final: prev: {
       qt6Packages = prev.qt6Packages.overrideScope (

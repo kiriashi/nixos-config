@@ -6,9 +6,23 @@
 
 { 
   environment.systemPackages = with pkgs; [
+    iw
     dig
+    ethtool
     nmgui
   ];
+
+  # Enable WoWLAN for wareless cards
+  systemd.services.wowlan = {
+    description = "Enable WoWLAN on wareless card";
+    after = [ "network-online.target" ]; 
+    wantedBy = [ "multi-user.target" ];
+    serviceConfig = {
+      Type = "oneshot";
+      RemainAfterExit = "true";
+      ExecStart = "${pkgs.iw}/bin/iw wlan0 set wowlan magic-packet"; 
+    };
+  };
 
   networking = {
     hostName = config.profile.hostName;
@@ -19,7 +33,7 @@
         macAddress = "random";
         backend = "iwd";
       };
-      # dns = "none";
+      dns = "default";  # "default" | "none" | "systemd-resolved"
     };
 
     nameservers =
@@ -60,7 +74,6 @@
   };
 
   # DNS 服务器
-  services.resolved.enable = false;
   services.smartdns = {
     enable = false;
     settings = {

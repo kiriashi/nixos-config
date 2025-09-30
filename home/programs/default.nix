@@ -2,8 +2,9 @@
 
 {
   imports = [
+    ./browser    
     ./fcitx5
-    ./browser
+    ./games
     ./shell
 
     ./clipsync.nix
@@ -36,31 +37,9 @@
     wpsoffice-cn
 
     # File manager
-    nautilus.overrideAttrs (nsuper: {
-      buildInputs =
-        nsuper.buildInputs
-        ++ (with pkgs; [
-          gst_all_1.gst-plugins-good
-          gst_all_1.gst-plugins-bad
-          code-nautilus
-          fcitx5-gtk
-        ]);
-    })
+    nautilus
     loupe
     fontforge-gtk
-    
-    # Games tool
-    mangojuice
-    mangohud_git
-    (bottles.override {
-      removeWarningPopup = true;
-    })
-    (heroic.override {
-      extraPkgs = pkgs: with pkgs; [
-        proton-cachyos_x86_64_v4
-        proton-ge-custom
-      ];
-    })
   ];
 
   # KDE Connect

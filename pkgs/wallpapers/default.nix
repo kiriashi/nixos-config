@@ -9,7 +9,7 @@ stdenv.mkDerivation rec {
   dontBuild = true;
 
   installPhase = ''
-    mkdir -p $out/share/wallpapers
-    cp -r * $out/share/wallpapers/
+    mkdir -p $out/share/Wallpapers
+    cp -r * $out/share/Wallpapers/
   '';
 }

@@ -29,6 +29,7 @@
     enable = true;
     package = pkgs.gamescope_git;
     args = [
+      "--expose-wayland"
       "--borderless"
       "--backend auto"
       "--force-grab-cursor"

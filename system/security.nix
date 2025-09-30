@@ -25,10 +25,6 @@
     };
   };
 
-  programs.fish.shellAbbrs = {
-    sudo = "doas";
-  };
-
   services = {
     dbus.apparmor = "enabled";
 
@@ -36,7 +32,7 @@
       enable = true;
       settings = {
         PermitRootLogin = "no";
-        PasswordAuthentication = true;
+        PasswordAuthentication = false;
       };
     };
   };

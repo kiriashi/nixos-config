@@ -28,8 +28,8 @@ lib.mkIf config.optional.wm
   ]);
 
   home.file.wallpapers = {
-      source = "${selfPkgs.wallpapers}/share/wallpapers";
-      target = "Pictures/wallpapers";
+      source = "${selfPkgs.wallpapers}/share/Wallpapers";
+      target = "Pictures/ Wallpapers";
   };
 
   programs.waybar = {

@@ -19,7 +19,7 @@ let
         NEW_X11_CLIP=$(DISPLAY=:0 xclip -selection clipboard -o 2>/dev/null || echo "")
         NEW_X11_PRIMARY=$(DISPLAY=:0 xclip -selection primary -o 2>/dev/null || echo "")
         
-        # 合并 X11 剪贴板内容（优先使用 CLIPBOARD）
+        # 合并 X11 剪贴板内容（优先使用 CLIPBOARD)
         NEW_X11=$NEW_X11_CLIP
         [ -z "$NEW_X11" ] && NEW_X11=$NEW_X11_PRIMARY
 
