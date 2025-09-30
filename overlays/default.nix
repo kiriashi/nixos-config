@@ -8,17 +8,6 @@
       xwayland-satellite-stable = prev.xwayland-satellite-stable.overrideAttrs (_: { doCheck = false; });
       xwayland-satellite-unstable = prev.xwayland-satellite-unstable.overrideAttrs (_: { doCheck = false; });
     })
-    # Enable nautilus gstreamer support
-    (_final: prev: {
-      nautilus = prev.nautilus.overrideAttrs (nprev: {
-        buildInputs =
-          nprev.buildInputs
-          ++ (with pkgs.gst_all_1; [
-            gst-plugins-good
-            gst-plugins-bad
-          ]);
-      });
-    })
 
     (final: prev: {
       qt6Packages = prev.qt6Packages.overrideScope (

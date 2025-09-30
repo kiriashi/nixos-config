@@ -66,7 +66,7 @@
     };
   };
 
-  # DNS 服务器
+  # Another DNS Server
   services.smartdns = {
     enable = false;
     settings = {

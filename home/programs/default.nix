@@ -38,6 +38,7 @@
 
     # File manager
     nautilus
+    code-nautilus
     loupe
     fontforge-gtk
   ];
