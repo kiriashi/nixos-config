@@ -12,18 +12,6 @@
     nmgui
   ];
 
-  # Enable WoWLAN for wareless cards
-  systemd.services.wowlan = {
-    description = "Enable WoWLAN on wareless card";
-    after = [ "network-online.target" ]; 
-    wantedBy = [ "multi-user.target" ];
-    serviceConfig = {
-      Type = "oneshot";
-      RemainAfterExit = "true";
-      ExecStart = "${pkgs.iw}/bin/iw wlan0 set wowlan magic-packet"; 
-    };
-  };
-
   networking = {
     hostName = config.profile.hostName;
 
@@ -50,6 +38,11 @@
       iwd.enable = true;
     };
 
+    interfaces.wlan0.wakeOnLan = {
+      enable = true;
+      policy = "magic"; 
+    };
+    
     nftables = {
       enable = true;
     };

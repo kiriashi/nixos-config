@@ -2,13 +2,14 @@
   pkgs,
   lib,
   config,
+  inputs,
   ...
 }:
 {
   programs.mangohud = {
     enable = true;
     enableSessionWide = true;
-    package = pkgs.mangohud_git; # .overrideAttrs (_finalAttrs: previousAttrs: {
+    package = pkgs.mangohud; # .overrideAttrs (_finalAttrs: previousAttrs: {
     #  patches = previousAttrs.patches ++ [../../../pkgs/mangohud/media-player-fix.patch];
     # });
     
