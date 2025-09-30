@@ -40,9 +40,9 @@
 
     interfaces.wlan0.wakeOnLan = {
       enable = true;
-      policy = "magic"; 
+      policy = [ "magic" ]; 
     };
-    
+
     nftables = {
       enable = true;
     };
