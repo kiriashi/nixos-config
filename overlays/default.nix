@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
   nixpkgs.overlays = [
     # Turnoff niri-flake doCheck
@@ -16,12 +16,9 @@
           ++ (with pkgs.gst_all_1; [
             gst-plugins-good
             gst-plugins-bad
-          ]) ++ (with pkgs; [
-            code-nautilus
-            fcitx5-gtk
           ]);
       });
-    });
+    })
 
     (final: prev: {
       qt6Packages = prev.qt6Packages.overrideScope (

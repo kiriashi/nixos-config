@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, selfPkgs, ... }:
 {
   imports = [
     ./go.nix
@@ -8,7 +8,7 @@
     ./python.nix
   ];
 
-  home.packages = with pkgs; [
+  home.packages = (with pkgs; [
     # nil
     nixpkgs-fmt
     nixfmt-rfc-style
@@ -22,7 +22,6 @@
     markdown-oxide
 
     # database
-    tableplus
     mongosh
     redli
 
@@ -42,5 +41,7 @@
     gcc
     gnumake
     pkg-config
-  ];
+  ]) ++ (with selfPkgs; [
+    tableplus
+  ]);
 }
