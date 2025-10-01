@@ -24,7 +24,7 @@
         rebuildb = "nh os boot . --ask";
         rebuildc = "nh os switch . && nh clean all && nh os switch .";
 
-        update = "nvfetcher --config ./pkgs/nvfetcher.toml && nix flake update && git commit -a -m 'update.' && nh os boot . --ask";
+        update = "nix flake update && git commit -a -m 'update.' && nh os boot . --ask";
         sopsei =  "sops --encrypt --in-place";
         shutdown = "systemctl poweroff";
         reboot = "systemctl reboot";
@@ -34,7 +34,7 @@
         find = "fd";
         df = "duf";
         cd = "z";
-        nf = "nvfetcher --config ./pkgs/nvfetcher.toml";
+        nf = "nvfetcher";
 
         nvim = "hx";
         vim = "hx";

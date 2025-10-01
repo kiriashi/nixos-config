@@ -50,7 +50,7 @@
     firewall = {
       enable = true;
 
-      allowedTCPPorts = [ 7890 9090 ];
+      allowedTCPPorts = [ 7890 9090 27017 ];
       allowedUDPPorts = [ 53 7890 ];
 
       allowedTCPPortRanges = [ { from = 1714; to = 1764; } ];

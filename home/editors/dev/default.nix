@@ -22,6 +22,7 @@
     markdown-oxide
 
     # database
+    dbvisualizer
     mongosh
     redli
 

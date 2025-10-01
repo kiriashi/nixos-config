@@ -14,6 +14,7 @@
     ../system/zram.nix
 
     ../system/programs/fish.nix
+    ../system/programs/fprintd.nix
     ../system/programs/git.nix
     ../system/programs/gnupg.nix
     ../system/programs/greetd.nix

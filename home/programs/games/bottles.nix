@@ -10,7 +10,7 @@
   home.file = {
     wine-links-proton-cachyos-bottles = {
       source = config.lib.file.mkOutOfStoreSymlink "${
-        inputs.chaotic.legacyPackages.${pkgs.system}.proton-cachyos_x86_64_v4
+        pkgs.proton-cachyos_x86_64_v4
       }/bin";
       target = "${config.xdg.dataHome}/bottles/runners/proton-cachyos";
     };
