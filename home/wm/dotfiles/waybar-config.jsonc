@@ -101,7 +101,7 @@
         "format-linked": "",
         "format-disconnected": "",
         "tooltip-format": "{ifname} {ipaddr}/{cidr}\nIP: {gwaddr}\n信号强度: {signalStrength}%",
-        "on-click": "nmgui",
+        "on-click": "kitty -e networkmanager_dmenu",
     },
     
     "wireplumber": {

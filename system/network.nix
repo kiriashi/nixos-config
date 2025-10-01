@@ -9,7 +9,7 @@
     iw
     dig
     ethtool
-    nmgui
+    networkmanager_dmenu
   ];
 
   networking = {
@@ -36,11 +36,6 @@
     wireless = {
       enable = false;
       iwd.enable = true;
-    };
-
-    interfaces.wlan0.wakeOnLan = {
-      enable = true;
-      policy = [ "magic" ]; 
     };
 
     nftables = {

@@ -13,6 +13,14 @@
     };
     date = "2024-12-07";
   };
+  mihomo-party = {
+    pname = "mihomo-party";
+    version = "1.8.7";
+    src = fetchurl {
+      url = "https://github.com/mihomo-party-org/clash-party/releases/download/v1.8.7/mihomo-party-linux-1.8.7-amd64.deb";
+      sha256 = "sha256-a7GBs7IKMFfDBAleFljPYQLsjgqkjpTyW+WtLaa+L8M=";
+    };
+  };
   monaco-NF = {
     pname = "monaco-NF";
     version = "27dd08bfcadcc84d2df02178d7bf05d413eab0dd";
@@ -59,10 +67,10 @@
   };
   wanxiang_base = {
     pname = "wanxiang_base";
-    version = "13.0.1";
+    version = "13.0.3";
     src = fetchurl {
-      url = "https://github.com/amzxyz/rime_wanxiang/releases/download/v13.0.1/rime-wanxiang-base.zip";
-      sha256 = "sha256-Qei+QongmDOrO7MA95TaDIEl11Cduk2FyZQxgLYmggQ=";
+      url = "https://github.com/amzxyz/rime_wanxiang/releases/download/v13.0.3/rime-wanxiang-base.zip";
+      sha256 = "sha256-xNbr5P3VHYzv1qm/mKf1tkC/2MY9d4ibYQx8hh8a9XI=";
     };
   };
 }

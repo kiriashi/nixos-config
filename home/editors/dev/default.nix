@@ -8,7 +8,7 @@
     ./python.nix
   ];
 
-  home.packages = (with pkgs; [
+  home.packages = with pkgs; [
     # nil
     nixpkgs-fmt
     nixfmt-rfc-style
@@ -22,9 +22,9 @@
     markdown-oxide
 
     # database
-    dbvisualizer
+    sqlynx
     mongosh
-    redli
+    redlis
 
     # lua
     lua-language-server
@@ -42,7 +42,5 @@
     gcc
     gnumake
     pkg-config
-  ]) ++ (with selfPkgs; [
-    tableplus
-  ]);
+  ];
 }

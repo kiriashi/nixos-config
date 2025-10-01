@@ -20,6 +20,12 @@ src.from_pattern = "^v([0-9]+\\.[0-9]+\\.[0-9]+.*)$"
 src.to_pattern = "\\1"
 fetch.url = "https://github.com/amzxyz/rime_wanxiang/releases/download/v$ver/rime-wanxiang-base.zip"
 
+[mihomo-party]
+src.github_tag = "mihomo-party-org/clash-party"
+src.from_pattern = "^v([0-9]+\\.[0-9]+\\.[0-9]+.*)$"
+src.to_pattern = "\\1"
+fetch.url = "https://github.com/mihomo-party-org/clash-party/releases/download/v$ver/mihomo-party-linux-$ver-amd64.deb"
+
 [tableplus]
 src.manual = "LTS"
 fetch.url = "https://tableplus.com/release/linux/x64/TablePlus-x64.AppImage"

@@ -176,7 +176,7 @@ window-rule {
 window-rule {
     match app-id="pwvucontrol"
     match app-id="missioncenter"
-    match app-id="nmgui"
+    match app-id="nmapplet"
     match app-id="mpv"
     match app-id="waypaper"
     match app-id=r#".*\.exe$"#
@@ -244,12 +244,12 @@ binds {
     Super+Alt+L  hotkey-overlay-title="锁屏"          repeat=false  { spawn "gtklock"; }
     Mod+E        hotkey-overlay-title="打开文件"      repeat=false  { spawn "nautilus"; }
     Mod+Y        hotkey-overlay-title="打开Yazi"      repeat=false  { spawn "kitty" "-e" "yazi"; }
-    Mod+N        hotkey-overlay-title="打开Nekoray"   repeat=false  { spawn "nekoray"; }
+    Mod+N        hotkey-overlay-title="打开网络菜单"   repeat=false  { spawn "kitty" "-e" "networkmanager_dmenu"; }
     Mod+O        hotkey-overlay-title="打开录屏"      repeat=false  { spawn "obs"; }
     Mod+K        hotkey-overlay-title="kdeconnect"    repeat=false  { spawn "kdeconnect-app"; }
     Mod+B        hotkey-overlay-title="打开浏览器"    repeat=false  { spawn "firefox"; }
     Mod+C        hotkey-overlay-title="打开code"      repeat=false  { spawn "code"; }
-    Mod+G        hotkey-overlay-title="打开Gemini"      repeat=false  { spawn "kitty" "-e" "gemini"; }
+    Mod+G        hotkey-overlay-title="打开Gemini"      repeat=false  { spawn "cd" "Documents" "&&" "kitty" "-e" "gemini"; }
     Mod+M        hotkey-overlay-title="打开音乐"      repeat=false  { spawn "splayer"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }

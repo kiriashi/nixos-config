@@ -2,7 +2,7 @@
 
 stdenv.mkDerivation rec {
   pname = "wanxiang_base";
-  version = sources.wanxiang_base.version;
+  version = "LTS";
   
   src = sources.wanxiang_base.src;
 
