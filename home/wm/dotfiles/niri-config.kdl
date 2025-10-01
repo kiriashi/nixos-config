@@ -42,7 +42,7 @@ output "eDP-1" {
 
 output "HDMI-A-1" {
     scale 1.25
-    mode "2560x1440@144.001999"
+    mode "2560x1440@144.002"
 }
 
 input {
@@ -141,7 +141,7 @@ window-rule {
     match title=r#".*Lapce$"#
     match app-id="code"
     match app-id="cursor"
-    match app-id="zeditor"
+    match app-id="dev.zed.Zed-Dev"
     
     open-on-workspace "Code"
 }
@@ -152,6 +152,8 @@ window-rule {
     match app-id="wechat"
     match app-id="org.telegram.desktop"
     match app-id="QQ"
+    match app-id="wemeetapp"
+    match app-id="com.alibabainc.dingtalk"
     
     open-on-workspace "Chat"
 }
