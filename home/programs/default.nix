@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, myPkgs, ... }:
 
 {
   imports = [
@@ -14,7 +14,7 @@
     ./vir-manager.nix
   ];
 
-  home.packages = with pkgs; [
+  home.packages = (with pkgs; [
     # System tools
     xdg-utils 
     mission-center
@@ -41,7 +41,9 @@
     code-nautilus
     loupe
     fontforge-gtk
-  ];
+  ]) ++ (with myPkgs; [
+    mihomo-party
+  ]);
 
   # KDE Connect
   services.kdeconnect = {
