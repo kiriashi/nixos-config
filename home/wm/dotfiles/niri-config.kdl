@@ -1,6 +1,5 @@
 // spawn-at-startup "dms" "run"
 spawn-at-startup "bash" "-c" "wl-paste --watch cliphist store &"
-spawn-at-startup "systemctl" "--user" "restart" "clipsync.service"
 spawn-at-startup "waypaper" "--restore"
 spawn-at-startup "fcitx5" "-d"
 
@@ -13,9 +12,10 @@ hotkey-overlay {
 
 environment {
     XMODIFIERS "@im=fcitx"
+    INPUT_METHOD "fcitx"    
     GLFW_IM_MODULE "fcitx"
-    QT_IM_MODULE "fcitx"
-    INPUT_METHOD "fcitx"
+    GTK_IM_MODULE "fcitx" 
+    QT_IM_MODULE "fcitx"    
     QT_AUTO_SCREEN_SCALE_FACTOR "1"
     MOZ_ENABLE_WAYLAND "1"
 }

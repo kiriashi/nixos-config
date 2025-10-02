@@ -8,6 +8,7 @@
     ./shell
 
     ./clipsync.nix
+    ./mihomoConfig.nix
     ./media.nix
     ./zathura.nix
     ./mimelist.nix

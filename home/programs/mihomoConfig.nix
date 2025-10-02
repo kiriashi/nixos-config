@@ -1,8 +1,12 @@
+{ config, pkgs, lib, ... }:
+
+let
+  mihomoYaml = ''
 ### 订阅基础配置 [每天更新一次订阅节点，每 300 秒一次健康检查]
 NodeParam: &NodeParam {type: http, interval: 86400, health-check: {enable: true, url: 'http://www.gstatic.com/generate_204', interval: 300}}
 proxy-providers:
   Node:
-    url: 'https://sub.furina.ren/OfYj5LV9jRec9oKRwAOp/download/collection/all?target=ClashMeta'
+    url: '${config.sops.secrets.mihomo-sub-url.path}'
     <<: *NodeParam
     path: './proxy_provider/providers.yaml'
     
@@ -14,7 +18,7 @@ log-level: warning
 ipv6: true
 unified-delay: true
 tcp-concurrent: true
-keep-alive-idle: 240  # TCP Keep Alive 空闲
+keep-alive-idle: 600  # TCP Keep Alive 空闲
 keep-alive-interval: 15  # TCP Keep Alive 间隔
 find-process-mode: strict
 global-client-fingerprint: chrome
@@ -163,7 +167,7 @@ dns:
     - push.services.mozilla.com
     - +.epicgames.com
     - +.music.163.com
-    - +.music.126.com
+    - +.music.126.net
 
     ##### fake-ip start #####
 
@@ -436,3 +440,20 @@ rules:
   - RULE-SET,domestic_ip,🧱 墙内
   - RULE-SET,china_ip,🧱 墙内
   - MATCH,🐟 漏网之鱼
+  '';
+in
+{
+  options = {
+    mihomoConfig = {
+      enable = lib.mkOption {
+        type = lib.types.bool;
+        default = true;
+        description = "Enable mihomo config via Home Manager";
+      };
+    };
+  };
+
+  config = lib.mkIf config.mihomoConfig.enable {
+    xdg.configFile."mihomo/mihomo.yaml".text = mihomoYaml;
+  };
+}

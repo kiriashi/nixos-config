@@ -8,6 +8,7 @@
   environment.systemPackages = with pkgs; [
     iw
     dig
+    nmgui
     ethtool
   ];
 
@@ -16,7 +17,10 @@
 
     wireless = {
       enable = false;
-      iwd.enable = true;
+      iwd = {
+        enable = true;
+        package = pkgs.iwd;
+      };
     };
 
     networkmanager = {
