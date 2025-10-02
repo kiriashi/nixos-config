@@ -22,9 +22,8 @@
     markdown-oxide
 
     # database
-    sqlynx
     mongosh
-    redlis
+    redis
 
     # lua
     lua-language-server

@@ -91,7 +91,7 @@
         "format": "",
         "tooltip": true,
         "tooltip-format": "RAM: {used}G / {total}G\nSwap: {swapUsed}G / {swapTotal}G",
-		"on-click": "kitty -e btop",
+		"on-click": "kitty btop",
     },
     
     "network": {
@@ -101,7 +101,7 @@
         "format-linked": "",
         "format-disconnected": "",
         "tooltip-format": "{ifname} {ipaddr}/{cidr}\nIP: {gwaddr}\n信号强度: {signalStrength}%",
-        "on-click": "kitty -e networkmanager_dmenu",
+        "on-click": "kitty nm-connection-editor",
     },
     
     "wireplumber": {

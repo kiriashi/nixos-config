@@ -47,8 +47,8 @@ lib.mkIf config.optional.wm
     enable = true;
     settings = {
       main = {
-        font = "monospace:size=10";
-        icons-enabled = "no";
+        font = "monospace:size=11";
+        icons-enabled = "yes";
         layer = "overlay";
         line-height = "16";
         terminal = "kitty";

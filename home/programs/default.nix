@@ -1,4 +1,4 @@
-{ pkgs, myPkgs, ... }:
+{ pkgs, selfPkgs, ... }:
 
 {
   imports = [
@@ -41,7 +41,7 @@
     code-nautilus
     loupe
     fontforge-gtk
-  ]) ++ (with myPkgs; [
+  ]) ++ (with selfPkgs; [
     mihomo-party
   ]);
 

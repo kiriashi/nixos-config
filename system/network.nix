@@ -9,16 +9,21 @@
     iw
     dig
     ethtool
-    networkmanager_dmenu
   ];
 
   networking = {
     hostName = config.profile.hostName;
 
+    wireless = {
+      enable = false;
+      iwd.enable = true;
+    };
+
     networkmanager = {
       enable = true;
       wifi = {
-        macAddress = "random";
+        powersave = true;
+        macAddress = "random"; # or "permanent"
         backend = "iwd";
       };
       dns = "default";  # "default" | "none" | "systemd-resolved"
@@ -33,11 +38,6 @@
           "8.8.8.8"
         ];
 
-    wireless = {
-      enable = false;
-      iwd.enable = true;
-    };
-
     nftables = {
       enable = true;
     };
@@ -45,7 +45,7 @@
     firewall = {
       enable = true;
 
-      allowedTCPPorts = [ 7890 9090 27017 ];
+      allowedTCPPorts = [ 7890 9090 ];
       allowedUDPPorts = [ 53 7890 ];
 
       allowedTCPPortRanges = [ { from = 1714; to = 1764; } ];

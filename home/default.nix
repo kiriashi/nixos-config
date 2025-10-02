@@ -50,5 +50,16 @@
     enable = true;
     userDirs.enable = true;
     userDirs.createDirectories = true;
+
+    desktopEntries = {
+      nautilus = {
+        name = "Files";
+        comment = "Browse and organize files";
+        exec = "bash -c 'GTK_IM_MODULE=\"fcitx\" exec ${pkgs.gnome.nautilus}/bin/nautilus %U'";
+        icon = "org.gnome.Nautilus";
+        categories = [ "System" "Utility" "Core" ];
+        terminal = false;
+      };
+    };
   };
 }
