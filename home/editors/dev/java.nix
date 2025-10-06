@@ -1,16 +1,20 @@
-{ lib, config, pkgs, ... }:
-
-lib.mkIf config.optional.dev.java {
+{ 
+  lib,
+  config,
+  pkgs, 
+  ... 
+}:
+lib.mkIf config.optional.dev.java
+{
   programs.java = {
     enable = true;
-    package = pkgs.jdk17;
+    package = pkgs.zulu.override {
+      enableJavaFX = true;
+    };
   };
 
-  home.packages = with pkgs; [
-    maven
-    gradle
-    vscode-extensions.redhat.java
-    vscode-extensions.vscjava.vscode-java-test
-    vscode-extensions.vscjava.vscode-maven
-  ];
+  home.sessionVariables  = {
+    _JAVA_OPTIONS = "-Dawt.useSystemAAFontSettings=lcd";
+    _JAVA_AWT_WM_NONREPARENTING = "1";
+  };
 }

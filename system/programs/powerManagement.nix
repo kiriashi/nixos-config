@@ -3,10 +3,8 @@
 {
   powerManagement.enable = true;
 
-  # 硬盘健康监控
   services.smartd.enable = true;
-
-  # 自动 CPU 调度
+  services.power-profiles-daemon.enable = false;
   services.auto-cpufreq.enable = true;
 
   # SCX 调频器
@@ -31,10 +29,14 @@
         HandleLidSwitchExternalPower = "lock";
         HandleLidSwitchDocked = "ignore";
       
-        HandlePowerKey = "hibernate";
+        HandlePowerKey = "lock";
         HandlePowerKeyLongPress = "poweroff";
       };
     };
   };
+
+  systemd.sleep.extraConfig = ''
+    HibernateDelaySec=15m
+  '';
 }
 

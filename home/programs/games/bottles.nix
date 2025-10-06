@@ -27,19 +27,19 @@
     })
   ];
 
-  xdg.desktopEntries = {
-    "bottles" = {
-      name = "Bottles";
-      comment = "Run Windows software";
-      exec = "env PROTON_ENABLE_WAYLAND=1 PROTON_ENABLE_HDR=1 PROTON_USE_NTSYNC=1 PROTON_USE_WOW64=1 PULSE_SINK=Game bottles %u";
-      terminal = false;
-      icon = "com.usebottles.bottles";
-      type = "Application";
-      startupNotify = true;
-      categories = [
-        "Utility"
-        "Game"
-      ];
-    };
-  };
+  # xdg.desktopEntries = {
+  #   "bottles" = {
+  #     name = "Bottles";
+  #     comment = "Run Windows software";
+  #     exec = "env PROTON_ENABLE_WAYLAND=1 PROTON_ENABLE_HDR=1 PROTON_USE_NTSYNC=1 PROTON_USE_WOW64=1 PULSE_SINK=Game bottles %u";
+  #     terminal = false;
+  #     icon = "com.usebottles.bottles";
+  #     type = "Application";
+  #     startupNotify = true;
+  #     categories = [
+  #       "Utility"
+  #       "Game"
+  #     ];
+  #   };
+  # };
 }

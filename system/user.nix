@@ -8,6 +8,7 @@
     mutableUsers = false;
     users.${config.profile.userName} = {
       isNormalUser = true;
+      description = config.profile.fullName;
       extraGroups = [
         "wheel"
         "networkmanager"

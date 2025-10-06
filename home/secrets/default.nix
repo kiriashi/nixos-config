@@ -30,6 +30,8 @@
         sopsFile = ./ssh_config;
         path = "${config.profile.homeDir}/.ssh/config";
       };
+
+      mihomo-sub-url = { };
     };
   };
 }

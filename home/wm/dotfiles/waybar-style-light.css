@@ -57,6 +57,7 @@ tooltip label {
 #cpu,
 #memory,
 #network,
+#bluetooth,
 #wireplumber,
 #clock 
 {
@@ -75,6 +76,8 @@ tooltip label {
 #memory { color: #b9795f; }
 
 #network { color: #3a6bc7; }
+
+#bluetooth { color: #3f76ec; }
 
 #wireplumber { color: #2a796d; }
 

@@ -86,7 +86,7 @@ lib.mkIf config.optional.wm
       padding = 10;
       margin = "10,10,10,10";
       border-size = 3;
-      border-color = "#ddbc7d";
+      border-color = "#85c7d5ff";
       border-radius = 10;
       font = "Sans 10";
       icons = 1;

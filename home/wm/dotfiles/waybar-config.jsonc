@@ -10,8 +10,8 @@
     "modules-right": ["tray","group/status"],
 
     "tray": {
-        "icon-size": 14,
-        "spacing": 12
+      "icon-size": 14,
+      "spacing": 12
     },
     
     "niri/workspaces": {
@@ -24,9 +24,9 @@
         "Code": "",
         "Browser": "󰆋",
         "Chat": "",
-        "Game": "󰺵",
+        "Game": "󰺵"
       },
-      "tooltip": true,
+      "tooltip": true
     },
 
 
@@ -37,14 +37,15 @@
 			"cpu",
 			"memory",
             "network",
+            "bluetooth",
             "wireplumber",
-            "backlight",
+            "backlight"
 		],
         "drawer": {
             "transition-duration": 400,
             "children-class": "not-battery",
-            "transition-left-to-right": false,
-        },
+            "transition-left-to-right": false
+        }
 	},
 
     "clock": {
@@ -52,7 +53,7 @@
         "format": "{:%H\n%M\n%S}",
         "tooltip": true,
         "tooltip-format": " {:%Y-%m-%d}，右键清除通知",
-        "on-click-right": "makoctl reload",
+        "on-click-right": "makoctl reload"
     },
 
     "cpu": {
@@ -65,7 +66,7 @@
         "interval": 1,
         "states": {
             "warning": 30,
-            "critical": 10,
+            "critical": 10
         },
         "format": "{icon}",
         "format-charging": "",
@@ -73,7 +74,7 @@
         "format-alt": "{icon}",
         "format-icons": ["", "", "", "", ""],
         "tooltip": true,
-        "tooltip-format": "{capacity}%",
+        "tooltip-format": "🔋{capacity}%"
     },
     
     "backlight": {
@@ -83,7 +84,7 @@
         "min-length": 3,
         "on-click": "brightnessctl set 1%+",
         "on-click-right": "brightnessctl set 1%-",
-        "tooltip-format": "{percent}%",
+        "tooltip-format": "亮度: {percent}%"
     },
     
     "memory": {
@@ -91,7 +92,7 @@
         "format": "",
         "tooltip": true,
         "tooltip-format": "RAM: {used}G / {total}G\nSwap: {swapUsed}G / {swapTotal}G",
-		"on-click": "kitty btop",
+		"on-click": "kitty btop"
     },
     
     "network": {
@@ -100,8 +101,8 @@
         "format-ethernet": "",
         "format-linked": "",
         "format-disconnected": "",
-        "tooltip-format": "{ifname} {ipaddr}/{cidr}\nIP: {gwaddr}\n信号强度: {signalStrength}%",
-        "on-click": "nmgui",
+        "tooltip-format": "{ifname}\nIP: {ipaddr}\n信号强度: {signalStrength}%",
+        "on-click": "nmgui"
     },
     
     "wireplumber": {
@@ -115,7 +116,16 @@
         },
         "on-click": "pwvucontrol",
         "ignored-sinks": ["AudioRelay Virtual Sink", "Recorder Sink"],
-        "tooltip-format": "{volume}%",
+        "tooltip-format": "音量: {volume}%"
+    },
+
+    "bluetooth": {
+        "interval": 5,
+        "format-off": "󰂲",
+        "format-on": "󰂯",
+        "format-connected": "󰂱",
+        "tooltip-format": "状态: {status}\n设备: {device_alias}\n地址: {device_address}\n电量: {device_battery_percentage}%",
+        "on-click": "blueman-manager"
     },
 
     "group/power": {
@@ -125,48 +135,48 @@
             "custom/hibernate",
             "custom/lock",
 			"custom/poweroff",
-			"custom/reboot",
+			"custom/reboot"
 		],
         "drawer": {
             "transition-duration": 400,
             "children-class": "not-lock",
-            "transition-left-to-right": true,
-        },
+            "transition-left-to-right": true
+        }
 	},
 
     "custom/lock": {
     	"format" : "",
         "tooltip": true,
         "tooltip-format": "锁定",
-        "on-click": "niri msg action power-off-monitors && gtklock -d",
+        "on-click": "niri msg action power-off-monitors && gtklock -d"
     },
 
     "custom/poweroff": {
     	"format" : "",
         "tooltip": true,
         "tooltip-format": "关机",
-        "on-click": "systemctl poweroff",
+        "on-click": "systemctl poweroff"
     },
 
     "custom/reboot": {
     	"format" : "",
         "tooltip": true,
         "tooltip-format": "重启",
-        "on-click": "systemctl reboot",
+        "on-click": "systemctl reboot"
     },
     
     "custom/hibernate": {
     	"format" : "󰒲",
         "tooltip": true,
         "tooltip-format": "休眠",
-        "on-click": "systemctl hibernate",
+        "on-click": "systemctl hibernate"
     },
 
     "custom/search": {
     	"format" : "",
         "tooltip": true,
         "tooltip-format": "搜索",
-        "on-click": "fuzzel",
+        "on-click": "fuzzel"
     },
     
     "custom/caffeine": {
@@ -174,7 +184,8 @@
         "tooltip": true,
         "tooltip-format": "左键禁用自动休眠，右键启用自动休眠",
         "on-click": "systemctl stop --user swayidle.service && notify-send '自动休眠已禁用'",
-        "on-click-right": "systemctl start --user swayidle.service && notify-send '自动休眠已启用'",
-    },
+        "on-click-right": "systemctl start --user swayidle.service && notify-send '自动休眠已启用'"
+    }
 
 }
+

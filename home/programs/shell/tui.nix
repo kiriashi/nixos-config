@@ -2,11 +2,8 @@
 {
   home.packages = with pkgs; [
       exiftool
-      # search
       ripgrep
 
-      # misc
-      wlr-randr
       killall
       tree
       jaq

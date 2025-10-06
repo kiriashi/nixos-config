@@ -1,6 +1,6 @@
 let
   browser = "firefox.desktop";
-  file-manager = "org.gnome.Nautilus.desktop";
+  file-manager = "nemo.desktop";
   image-viewer = "org.gnome.Loupe.desktop";
   pdf-viewer = "org.pwmt.zathura.desktop";
   tg = "org.telegram.desktop.desktop";

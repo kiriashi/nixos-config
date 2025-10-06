@@ -11,13 +11,12 @@ hotkey-overlay {
 }
 
 environment {
-    XMODIFIERS "@im=fcitx"
-    INPUT_METHOD "fcitx"    
-    GLFW_IM_MODULE "fcitx"
-    GTK_IM_MODULE "fcitx" 
-    QT_IM_MODULE "fcitx"    
-    QT_AUTO_SCREEN_SCALE_FACTOR "1"
-    MOZ_ENABLE_WAYLAND "1"
+    XMODIFIERS "@im=fcitx" 
+    INPUT_METHOD "fcitx" 
+    GLFW_IM_MODULE "fcitx" 
+    QT_IM_MODULE "fcitx" 
+    QT_AUTO_SCREEN_SCALE_FACTOR "1" 
+    MOZ_ENABLE_WAYLAND "1" 
 }
 
 xwayland-satellite {
@@ -138,10 +137,9 @@ window-rule {
 
 workspace "Code"
 window-rule {
-    match title=r#".*Lapce$"#
     match app-id="code"
     match app-id="cursor"
-    match app-id="dev.zed.Zed-Dev"
+    match app-id="zed"
     
     open-on-workspace "Code"
 }
@@ -196,7 +194,6 @@ window-rule {
     match app-id="org.inkscape.Inkscape"
     match app-id="gimp"
     
-    match title=r#".*Lapce$"#  
     match app-id="code"
 
     open-maximized true
@@ -241,15 +238,16 @@ binds {
     Mod+S        hotkey-overlay-title="打开搜索"      repeat=false  { spawn "fuzzel"; }
     Mod+X        hotkey-overlay-title="打开剪切板"    repeat=false  { spawn "sh" "-c" "cliphist list | fuzzel --dmenu -p 'Clipboard > ' | cliphist decode | wl-copy"; }
     Mod+Escape   hotkey-overlay-title="总览"          repeat=false  { toggle-overview; }
-    Super+Alt+L  hotkey-overlay-title="锁屏"          repeat=false  { spawn "gtklock"; }
-    Mod+E        hotkey-overlay-title="打开文件"      repeat=false  { spawn "nautilus"; }
+    Mod+Ctrl+L  hotkey-overlay-title="锁屏"          repeat=false  { spawn "gtklock"; }
+    Mod+E        hotkey-overlay-title="打开文件"      repeat=false  { spawn "nemo"; }
     Mod+Y        hotkey-overlay-title="打开Yazi"      repeat=false  { spawn "kitty" "-e" "yazi"; }
     Mod+O        hotkey-overlay-title="打开录屏"      repeat=false  { spawn "obs"; }
     Mod+K        hotkey-overlay-title="kdeconnect"    repeat=false  { spawn "kdeconnect-app"; }
     Mod+B        hotkey-overlay-title="打开浏览器"    repeat=false  { spawn "firefox"; }
     Mod+C        hotkey-overlay-title="打开code"      repeat=false  { spawn "code"; }
     Mod+G        hotkey-overlay-title="打开Gemini"      repeat=false  { spawn "kitty" "-e" "bash" "-c" "cd ~/Documents && gemini"; }
-    Mod+M        hotkey-overlay-title="打开音乐"      repeat=false  { spawn "splayer"; }
+    Mod+P        hotkey-overlay-title="打开音乐"      repeat=false  { spawn "splayer"; }
+    Mod+M        hotkey-overlay-title="打开邮件"      repeat=false  { spawn "thunderbird"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }

@@ -15,21 +15,34 @@ lib.mkIf config.optional.niri
       enable = true;
       package = pkgs.xwayland-satellite-unstable;
     };
-    nautilus-open-any-terminal = {
+    gtklock = {
       enable = true;
-      terminal = "kitty";
+      config = {
+        main = {
+          idle-hide = true;
+          idle-timeout = 60;
+          time-format = "%H:%M:%S";
+        };
+        userinfo = {
+          image-size = 128;
+          under-clock = true;
+        };
+      };
+      modules = with pkgs; [
+        gtklock-userinfo-module
+        gtklock-powerbar-module
+        gtklock-playerctl-module
+      ];
     };
-    gtklock.enable = true;
   };
 
   security.pam.services.gtklock.text = lib.readFile "${pkgs.gtklock}/etc/pam.d/gtklock";
 
   services = {
+    accounts-daemon.enable = true;
     xserver.desktopManager.runXdgAutostartIfNone = true;
     gvfs.enable = true;
     seatd.enable = true;
-    gnome.sushi.enable =true;
-    gnome.gnome-keyring.enable = lib.mkForce false;
   };
 
   xdg = {

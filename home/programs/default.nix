@@ -38,8 +38,7 @@
     wpsoffice-cn
 
     # File manager
-    nautilus
-    code-nautilus
+    nemo-with-extensions
     loupe
     fontforge-gtk
   ]) ++ (with selfPkgs; [
@@ -49,7 +48,7 @@
   # KDE Connect
   services.kdeconnect = {
     enable = true;
-    indicator = true;
+    indicator = false;
   };
 
   # Secret Service

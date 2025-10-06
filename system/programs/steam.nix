@@ -31,8 +31,10 @@
       "--borderless"
       "--backend auto"
       "--force-grab-cursor"
-      "-W 3072"
-      "-H 1920"
+      "-W 1600"
+      "-H 900"
+      "--output 1920x1080"
+      "scale=fsr"
     ];
   };
 

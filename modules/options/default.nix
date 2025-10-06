@@ -8,7 +8,7 @@ with lib;
         default = true;
       };
       hypr  = lib.mkEnableOption "hyprland profile" // {
-          default = false;
+        default = false;
       };
       niri = lib.mkEnableOption "niri profile" // {
         default = true;
@@ -36,6 +36,11 @@ with lib;
       userName = mkOption {
         type = types.str;
         default = "kiriashi";
+      };
+
+      fullName = mkOption {
+        type = types.str;
+        default = "雾岛听风";
       };
 
       userPasswd = mkOption {

@@ -53,6 +53,7 @@ tooltip label {
 #workspaces button,
 #tray,
 #backlight,
+#bluetooth,
 #battery,
 #cpu,
 #memory,
@@ -77,6 +78,8 @@ tooltip label {
 #wireplumber { color: #b0f5e5; }
 
 #network { color: #8eb1f2; }
+
+#bluetooth { color: #82aaff; }
 
 #custom-lock { color: #B5E8E0; }
 

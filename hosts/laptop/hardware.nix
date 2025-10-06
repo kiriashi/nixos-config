@@ -1,7 +1,6 @@
 { pkgs, ... }:
 {
   # ===== 通用蓝牙设置 =====
-  services.blueman.enable = true;
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;

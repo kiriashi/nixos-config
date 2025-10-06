@@ -11,25 +11,26 @@
     fontDir.enable = true;
     packages = (with pkgs; [
       maple-mono.NF-CN
-      nerd-fonts.iosevka
+      wqy_microhei
+      nerd-fonts.noto
       noto-fonts-color-emoji
       noto-fonts-emoji-blob-bin
-      sarasa-gothic
-      corefonts
+      noto-fonts-cjk-sans
+      noto-fonts-cjk-serif
       ]) ++ (with selfPkgs; [
-      fonts.monolisa-NF
-      fonts.monaco-NF
-      ]);
+        fonts.monolisa-NF
+        fonts.monaco-NF
+    ]);
     fontconfig = {
       enable = true;
         defaultFonts = {
         serif = [
-          "Sarasa Gothic SC"
-          "Iosevka Nerd Font"
+          "WenQuanYi Micro Hei"
+          "NotoSerif Nerd Font"
         ];
         sansSerif = [
-          "Sarasa Gothic SC"
-          "Iosevka Nerd Font"
+          "WenQuanYi Micro Hei"
+          "NotoSans Nerd Font"
         ];
         monospace = [
           "MonoLisa Nerd Font"

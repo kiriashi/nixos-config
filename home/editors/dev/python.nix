@@ -8,6 +8,7 @@
 lib.mkIf config.optional.dev.python {
   home.packages = with pkgs; [
     python3
+    python313Packages.pip
   ];
 
   home.file.".pip/pip.conf".text = ''
