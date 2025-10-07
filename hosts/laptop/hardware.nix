@@ -30,7 +30,6 @@
     extraPackages = with pkgs; [
       mesa
       libva
-      amdvlk
 
       mesa-demos
       libva-utils
@@ -40,7 +39,6 @@
     extraPackages32 = with pkgs.pkgsi686Linux; [
       mesa
       libva
-      amdvlk
     ];
   };
 
