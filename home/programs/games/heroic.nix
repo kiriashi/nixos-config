@@ -15,7 +15,7 @@
       source = config.lib.file.mkOutOfStoreSymlink "${
         pkgs.proton-cachyos_x86_64_v4
       }/bin";
-      target = "${config.xdg.configHome}/heroic/tools/proton/proton-cachyos";
+      target = "${config.xdg.configHome}/heroic/tools/proton/proton-cachyos_x86_64";
     };
   };
 }

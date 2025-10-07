@@ -12,12 +12,14 @@
       source = config.lib.file.mkOutOfStoreSymlink "${
         pkgs.proton-cachyos_x86_64_v4
       }/bin";
-      target = "${config.xdg.dataHome}/bottles/runners/proton-cachyos";
+      target = "${config.xdg.dataHome}/bottles/runners/proton-cachyos_x86_64";
     };
 
     wine-links-proton-ge-bottles = {
-      source = config.lib.file.mkOutOfStoreSymlink "${pkgs.proton-ge-bin.steamcompattool}";
-      target = "${config.xdg.dataHome}/bottles/runners/proton-ge-bin";
+      source = config.lib.file.mkOutOfStoreSymlink "${
+        pkgs.proton-ge-custom
+        }/bin";
+      target = "${config.xdg.dataHome}/bottles/runners/proton-ge-custom";
     };
   };
 

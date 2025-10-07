@@ -28,13 +28,16 @@
     enable = true;
     package = pkgs.gamescope_git;
     args = [
-      "--borderless"
-      "--backend auto"
+      "-F fsr"
+      "--fsr-sharpness 7"
+      "-W 2560"
+      "-H 1440"
+      "-f"
+      "--rt"
+      "--adaptive-sync"
+      "--immediate-flip"
       "--force-grab-cursor"
-      "-W 1600"
-      "-H 900"
-      "--output 1920x1080"
-      "scale=fsr"
+      "--backend auto"
     ];
   };
 

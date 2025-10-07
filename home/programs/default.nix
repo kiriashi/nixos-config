@@ -42,7 +42,7 @@
     loupe
     fontforge-gtk
   ]) ++ (with selfPkgs; [
-    mihomo-party
+    
   ]);
 
   # KDE Connect
