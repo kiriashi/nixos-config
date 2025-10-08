@@ -4,9 +4,9 @@ let
   username = config.profile.userName;
   homeDir  = config.profile.homeDir;
   avatarPath = "${homeDir}/.face";
-  githubUrl = "https://github.com/${username}.png";
+  githubUrl = "https://github.com/${username}.png?size=256";
 in {
-  systemd.user.services.github-avatar = {
+  systemd.user.services.avatar = {
     Unit = {
       Description = "Fetch GitHub avatar for ${username}";
       After = [ "network-online.target" ];

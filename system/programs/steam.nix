@@ -35,7 +35,7 @@
       "--immediate-flip"
       "--force-grab-cursor"
       "--backend auto"
-      "-borderless"
+      "--fullscreen"
       "-W 2560"
       "-H 1440"
     ];

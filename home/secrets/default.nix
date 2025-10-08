@@ -8,19 +8,10 @@
   imports = [ inputs.sops-nix.homeManagerModules.sops ];
   
   home.file = {
-    "sops_keys" = {
-      source = ./.sops.yaml;
-      target = "${config.profile.homeDir}/.sops.yaml";
-    };
-
     "id_ed25519.pub" = {
       source = ./id_ed25519.pub;
       target = ".ssh/id_ed25519.pub";
     };
-  };
-
-  home.sessionVariables = {
-    SOPS_CONFIG = "${config.home.homeDirectory}/.sops.yaml";
   };
 
   sops = {
@@ -36,7 +27,7 @@
 
       ssh-config = {
         format = "binary";
-        sopsFile = ./ssh_config;
+        sopsFile = ./sshConfig;
         path = "${config.profile.homeDir}/.ssh/config";
       };
 
