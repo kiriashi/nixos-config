@@ -39,8 +39,7 @@ lib.mkIf config.optional.niri
   security.pam.services.gtklock.text = lib.readFile "${pkgs.gtklock}/etc/pam.d/gtklock";
 
   services = {
-    accounts-daemon.enable = true;
-    xserver.desktopManager.runXdgAutostartIfNone = true;
+  xserver.desktopManager.runXdgAutostartIfNone = true;
     gvfs.enable = true;
     seatd.enable = true;
   };
