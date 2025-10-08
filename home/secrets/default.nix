@@ -36,10 +36,9 @@
         path = "${config.profile.homeDir}/.ssh/config";
       };
 
-      mihomo-config = {
+      mihomo-sub-url = {
         format = "yaml";
-        sopsFile = ./mihomo.yaml;
-        path = "${config.profile.homeDir}/.config/mihomo/mihomo.yaml";
+        sopsFile = ./secrets.yaml;
       };
     };
   };
