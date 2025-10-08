@@ -24,8 +24,6 @@
     defaultSopsFile = ./secrets.yaml;
 
     secrets = { 
-      "mihomo-sub-url" =  ./mihomo-sub-url;
-
       id_ed22519 = {
         format = "binary";
         sopsFile = ./id_ed25519;
@@ -36,6 +34,12 @@
         format = "binary";
         sopsFile = ./ssh_config;
         path = "${config.profile.homeDir}/.ssh/config";
+      };
+
+      mihomo-config = {
+        format = "yaml";
+        sopsFile = ./mihomo;
+        path = "${config.profile.homeDir}/.config/mihomo/mihomo";
       };
     };
   };
