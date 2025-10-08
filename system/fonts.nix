@@ -1,6 +1,5 @@
 {
   pkgs,
-  selfPkgs,
   lib,
   ...
 }:
@@ -9,7 +8,7 @@
   fonts = lib.mkForce {
     enableDefaultPackages = false;
     fontDir.enable = true;
-    packages = (with pkgs; [
+    packages = with pkgs; [
       maple-mono.NF-CN
       wqy_microhei
       nerd-fonts.noto
@@ -17,10 +16,10 @@
       noto-fonts-emoji-blob-bin
       noto-fonts-cjk-sans
       noto-fonts-cjk-serif
-      ]) ++ (with selfPkgs; [
-        fonts.monolisa-NF
-        fonts.monaco-NF
-    ]);
+
+      self.fonts.monolisa-NF
+      self.fonts.monaco-NF
+    ];
     fontconfig = {
       enable = true;
         defaultFonts = {

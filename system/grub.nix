@@ -1,6 +1,6 @@
 { 
   lib,
-  selfPkgs,
+  pkgs,
   ... 
 }:
 
@@ -17,7 +17,7 @@
       # default = "Windows Boot Manager (on /dev/nvme0n1p1)";
 
       # gfxmodeEfi = "1200x750";
-      theme = selfPkgs.grub-themes.Arknights_Theresa;
+      theme = pkgs.self.grub-themes.Arknights_Theresa;
     };
     timeout = 5;
   };

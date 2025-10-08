@@ -6,18 +6,15 @@
 
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable"; 
 
-    sops-nix = {
-      url = "github:Mic92/sops-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    niri-flake.url = "github:sodiboo/niri-flake";
 
     zen-browser = { 
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs"; 
     }; 
 
-    niri-flake = { 
-      url = "github:sodiboo/niri-flake";
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -52,8 +49,7 @@ outputs =
       RBP15-2022 = nixpkgs.lib.nixosSystem { 
         inherit system; 
         specialArgs = { 
-          inherit inputs; 
-          selfPkgs = self.packages.${system}; 
+          inherit inputs selfPkgs; 
         }; 
         modules = [
           ./modules/options/laptop.nix 
@@ -74,8 +70,7 @@ outputs =
               sharedModules = [ ./modules/options/laptop.nix ]; 
               users.${config.profile.userName}.imports = [ ./home ];
               extraSpecialArgs = { 
-                inherit inputs; 
-                selfPkgs = self.packages.${system}; 
+                inherit inputs selfPkgs; 
               }; 
             }; 
           }) 

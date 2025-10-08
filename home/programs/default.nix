@@ -1,4 +1,4 @@
-{ pkgs, selfPkgs, ... }:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -7,15 +7,11 @@
     ./games
     ./shell
 
-    ./clipsync.nix
-    ./mihomoConfig.nix
     ./media.nix
     ./zathura.nix
-    ./mimelist.nix
-    ./vir-manager.nix
   ];
 
-  home.packages = (with pkgs; [
+  home.packages = with pkgs; [
     # System tools
     xdg-utils 
     mission-center
@@ -41,9 +37,7 @@
     nemo-with-extensions
     loupe
     fontforge-gtk
-  ]) ++ (with selfPkgs; [
-    
-  ]);
+  ];
 
   # KDE Connect
   services.kdeconnect = {

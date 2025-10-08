@@ -10,6 +10,7 @@
     ./editors
     ./programs
     ./secrets
+    ./services
     ./wm
   ];
 

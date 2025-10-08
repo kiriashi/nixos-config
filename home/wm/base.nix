@@ -2,12 +2,11 @@
   lib,
   pkgs, 
   config,
-  selfPkgs,
   ...
 }:
 lib.mkIf config.optional.wm
 {
-  home.packages = (with pkgs; [
+  home.packages = with pkgs; [
     pwvucontrol
     brightnessctl
     libnotify
@@ -23,12 +22,12 @@ lib.mkIf config.optional.wm
     waypaper
 
     socat
-  ]) ++ (with selfPkgs; [
-    wallpapers
-  ]);
+
+    self.wallpapers
+  ];
 
   home.file.wallpapers = {
-      source = "${selfPkgs.wallpapers}/share/Wallpapers";
+      source = "${pkgs.self.wallpapers}/share/Wallpapers";
       target = "Pictures/ Wallpapers";
   };
 

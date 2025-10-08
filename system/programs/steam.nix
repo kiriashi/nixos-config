@@ -15,6 +15,7 @@
     gamescopeSession.enable = true;
 
     extraPackages = with pkgs; [
+      mangohud
       zulu8
     ];
     extraCompatPackages = with pkgs; [
