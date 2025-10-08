@@ -8,6 +8,11 @@
   imports = [ inputs.sops-nix.homeManagerModules.sops ];
   
   home.file = {
+    "sops_keys" = {
+      source = ./.sops.yaml;
+      target = "${config.profile.homeDir}/.sops.yaml";
+    };
+
     "id_ed25519.pub" = {
       source = ./id_ed25519.pub;
       target = ".ssh/id_ed25519.pub";
@@ -31,7 +36,11 @@
         path = "${config.profile.homeDir}/.ssh/config";
       };
 
-      mihomo-sub-url = { };
+      mihomo-config = {
+        format = "binary";
+        sopsFile = ./mihomo_config;
+        path = "${config.profile.homeDir}/.config/mihomo/mihomo.yaml";
+      };
     };
   };
 }
