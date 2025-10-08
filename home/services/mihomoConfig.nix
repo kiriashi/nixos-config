@@ -6,7 +6,7 @@ let
 NodeParam: &NodeParam {type: http, interval: 86400, health-check: {enable: true, url: 'http://www.gstatic.com/generate_204', interval: 300}}
 proxy-providers:
   Node:
-    url: "${config.sops.secrets."mihomo-url".plaintext}"
+    url: "${lib.strings.trim (builtins.readFile config.sops.secrets."mihomo-sub-url".path)}"
     <<: *NodeParam
     path: './proxy_provider/providers.yaml'
 
