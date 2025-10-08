@@ -19,6 +19,10 @@
     };
   };
 
+  home.sessionVariables = {
+    SOPS_CONFIG = "${config.home.homeDirectory}/.sops.yaml";
+  };
+
   sops = {
     age.keyFile = "${config.profile.homeDir}/.config/sops/age/keys.txt";
     defaultSopsFile = ./secrets.yaml;
@@ -38,7 +42,7 @@
 
       mihomo-config = {
         format = "binary";
-        sopsFile = ./mihomo.yaml;
+        sopsFile = ./mihomoConfig;
         path = "${config.profile.homeDir}/.config/mihomo/mihomo.yaml";
       };
     };

@@ -26,6 +26,7 @@
 
         update = "nix flake update && git commit -a -m 'update.' && nh os boot . --ask";
         sopsei =  "sops --encrypt --in-place";
+        sopsebi =  "sops --encrypt --input-type binary --in-place";
         shutdown = "systemctl poweroff";
         reboot = "systemctl reboot";
 
