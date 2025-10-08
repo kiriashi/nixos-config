@@ -29,15 +29,14 @@
     package = pkgs.gamescope_git;
     args = [
       "-F fsr"
-      "--fsr-sharpness 7"
-      "-W 2560"
-      "-H 1440"
-      "-f"
-      "--rt"
+      "--fsr-sharpness 10"
       "--adaptive-sync"
       "--immediate-flip"
       "--force-grab-cursor"
       "--backend auto"
+      "-borderless"
+      "-W 2560"
+      "-H 1440"
     ];
   };
 
