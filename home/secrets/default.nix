@@ -42,7 +42,7 @@
 
       mihomo-config = {
         format = "binary";
-        sopsFile = ./mihomoConfig;
+        sopsFile = ./mihomo.yaml;
         path = "${config.profile.homeDir}/.config/mihomo/mihomo.yaml";
       };
     };
