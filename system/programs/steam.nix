@@ -26,18 +26,19 @@
   };
 
   programs.gamescope = {
-    enable = true;
-    package = pkgs.gamescope_git;
+    enable = true; 
+    package = pkgs.gamescope_git; 
+    capSysNice = true; 
     args = [
-      "-F fsr"
+      "--fsr"
       "--fsr-sharpness 10"
+      "-W 2560"
+      "-H 1440"
       "--adaptive-sync"
       "--immediate-flip"
       "--force-grab-cursor"
       "--backend auto"
       "--fullscreen"
-      "-W 2560"
-      "-H 1440"
     ];
   };
 

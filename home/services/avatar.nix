@@ -21,15 +21,15 @@ in {
         URL="${githubUrl}"
 
         if [ -f "$AVATAR" ]; then
-          echo "[github-avatar] $AVATAR already exists, skipping."
+          echo "$AVATAR already exists, skipping."
           exit 0
         fi
 
-        echo "[github-avatar] Trying to download $URL ..."
+        echo "Trying to download $URL ..."
         ${pkgs.curl}/bin/curl -fsL --max-time 30 "$URL" -o "$AVATAR" \
           && chmod 644 "$AVATAR" \
-          && echo "[github-avatar] Download success: $AVATAR" \
-          || echo "[github-avatar] Failed to fetch (Network error). Skipping."
+          && echo "Download success: $AVATAR" \
+          || echo "Failed to fetch (Network error). Skipping."
       '';
     };
 
