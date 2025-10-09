@@ -8,6 +8,6 @@ in
     tunMode = true;
     package = pkgs.mihomo;
     webui = pkgs.zashboard;
-    configFile = config.sops.secrets.mihomoConfig.path;
+    configFile = mihomoConfig;
   };
 }

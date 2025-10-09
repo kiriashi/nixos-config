@@ -10,7 +10,6 @@
     ../system/nix.nix
     ../system/security.nix
     ../system/services.nix
-    ../system/sops.nix
     ../system/user.nix
     ../system/zram.nix
 
