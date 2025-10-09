@@ -69,9 +69,7 @@ outputs =
               backupFileExtension = "backup"; 
               sharedModules = [ ./modules/options/laptop.nix ]; 
               users.${config.profile.userName}.imports = [ ./home ];
-              extraSpecialArgs = { 
-                inherit inputs selfPkgs; 
-              }; 
+              extraSpecialArgs = { inherit inputs selfPkgs; }; 
             }; 
           }) 
         ]; 
