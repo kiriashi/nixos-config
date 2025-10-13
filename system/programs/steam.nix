@@ -32,6 +32,9 @@
     args = [
       "--fsr"
       "--fsr-sharpness 10"
+      "-w 1600"
+      "-h 900"
+      "-r 144"
       "-W 2560"
       "-H 1440"
       "--adaptive-sync"
