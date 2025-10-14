@@ -9,8 +9,8 @@
   imports = [
     ./editors
     ./programs
-    ./secrets
     ./services
+    ./sops-nix
     ./wm
   ];
 
@@ -46,7 +46,7 @@
       };
     };
   };
-  
+
   xdg = {
     enable = true;
     userDirs.enable = true;

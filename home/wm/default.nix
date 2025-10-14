@@ -1,9 +1,7 @@
 { ... }:
 {
   imports = [
-    ./base.nix
-    ./theme.nix
-    
+    ./base
     ./niri
   ];
 }

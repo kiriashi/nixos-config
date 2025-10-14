@@ -1,7 +1,9 @@
 { ... }:
 
 {
-  imports = [ ./default.nix ];
+  imports = [
+    ../options.nix
+  ];
 
   profile = {
     editor = "hx";
@@ -33,5 +35,4 @@
       java = true;
     };
   };
-  
 }

@@ -52,11 +52,13 @@ outputs =
           inherit inputs selfPkgs; 
         }; 
         modules = [
-          ./modules/options/laptop.nix 
-          ./modules/RBP15-2022.nix 
-          ./modules/system.nix 
-          
           (import ./overlays) 
+          (import ./hosts/RBP15-2022)
+          
+          ./modules/system.nix
+          ./modules/programs.nix
+          ./modules/templates/laptop.nix 
+          
           ./modules/outputs/chaotic.nix
           ./modules/outputs/niri-flake.nix
           ./modules/outputs/nix-index.nix
@@ -67,7 +69,7 @@ outputs =
               useGlobalPkgs = true; 
               useUserPackages = true; 
               backupFileExtension = "backup"; 
-              sharedModules = [ ./modules/options/laptop.nix ]; 
+              sharedModules = [ ./modules/templates/laptop.nix ]; 
               users.${config.profile.userName}.imports = [ ./home ];
               extraSpecialArgs = { inherit inputs selfPkgs; }; 
             }; 
