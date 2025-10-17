@@ -27,13 +27,13 @@
 
       ssh-config = {
         format = "binary";
-        sopsFile = ./sshConfig;
+        sopsFile = ./ssh_config;
         path = "${config.profile.homeDir}/.ssh/config";
       };
 
       mihomo-config = {
         format = "binary";
-        sopsFile = ./mihomoConfig;
+        sopsFile = ./mihomo_config;
         path = "${config.profile.homeDir}/.config/mihomo/mihomo.yaml";
       };
     };
