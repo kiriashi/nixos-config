@@ -56,7 +56,7 @@
     "Mod+B" = lib.mkDefault {
       hotkey-overlay.title = "打开浏览器";
       repeat = false;
-      action.spawn = [ "firefox" ];
+      action.spawn = [ "zen-beta" ];
     };
 
     "Mod+C" = lib.mkDefault {

@@ -1,16 +1,18 @@
 {
   pkgs,
-  lib,
   ...
 }:
 
 {
-  fonts = lib.mkForce {
+  fonts = {
     enableDefaultPackages = false;
     fontDir.enable = true;
     packages = with pkgs; [
       sarasa-gothic
+
       nerd-fonts.iosevka
+      nerd-fonts.noto
+
       noto-fonts-color-emoji
       noto-fonts-emoji-blob-bin
 
@@ -27,8 +29,8 @@
           "Sarasa Gothic SC"
         ];
         monospace = [
-          "MonoLisa Nerd Font"
-          # "Monaco Nerd Font"
+          # "MonoLisa Nerd Font"
+          "Monaco Nerd Font"
           # "Maple Mono NF CN"
         ];
         emoji = [
