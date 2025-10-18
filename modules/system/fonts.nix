@@ -29,8 +29,8 @@
           "Sarasa Gothic SC"
         ];
         monospace = [
-          # "MonoLisa Nerd Font"
-          "Monaco Nerd Font"
+          "MonoLisa Nerd Font"
+          # "Monaco Nerd Font"
           # "Maple Mono NF CN"
         ];
         emoji = [
