@@ -1,10 +1,10 @@
 { ... }:
 {
   imports = [
+    ./dev    
+    
     ./helix.nix
     ./vscode.nix
-
-    ./dev
-    ./zed
+    ./zed.nix
   ];
 }
