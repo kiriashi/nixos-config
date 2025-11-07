@@ -35,6 +35,7 @@
 
     # File manager
     nemo-with-extensions
+    file-roller
     loupe
     fontforge-gtk
   ];

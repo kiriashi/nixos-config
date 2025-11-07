@@ -31,11 +31,11 @@
         path = "${config.profile.homeDir}/.ssh/config";
       };
 
-      mihomo-config = {
-        format = "binary";
-        sopsFile = ./mihomo_config;
-        path = "${config.profile.homeDir}/.config/mihomo/mihomo.yaml";
-      };
+      # mihomo-config = {
+      #   format = "binary";
+      #   sopsFile = ./mihomo_config;
+      #   path = "${config.profile.homeDir}/.config/mihomo/mihomo.yaml";
+      # };
     };
   };
 }

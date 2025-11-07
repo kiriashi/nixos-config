@@ -13,13 +13,6 @@
       }/bin";
       target = "${config.xdg.dataHome}/bottles/runners/proton-cachyos_x86_64";
     };
-
-    wine-links-proton-ge-bottles = {
-      source = config.lib.file.mkOutOfStoreSymlink "${
-        pkgs.proton-ge-custom
-        }/bin";
-      target = "${config.xdg.dataHome}/bottles/runners/proton-ge-custom";
-    };
   };
 
   home.packages = [

@@ -2,23 +2,38 @@
 {
   programs = {
     git = {
-      inherit (config.profile) userName userEmail;
       enable = true;
-
       lfs.enable = true;
-      extraConfig = {
+      
+      settings = {
+        # 用户信息
+        user = {
+          name = config.profile.userName;
+          email = config.profile.userEmail;
+        };
+        
+        # 凭证配置
         credential.helper = "store";
+        
+        # 分支配置
         init.defaultBranch = "main";
-        pull = {
-          rebase = false;
-        };
-        feature = {
-          manyFiles = true;
-        };
-        index = {
-          skipHash = false;
-        };
+        
+        # 拉取配置
+        pull.rebase = false;
+        
+        # 性能配置
+        feature.manyFiles = true;
+        index.skipHash = false;
       };
+      
+      # 可以添加全局忽略文件
+      ignores = [
+        "*~"
+        "*.swp"
+        ".DS_Store"
+        "result"
+        "result-*"
+      ];
     };
 
     lazygit = {

@@ -12,6 +12,7 @@
       { argv = [ "waypaper" "--restore" ]; }
 
       { sh = "wl-paste --watch cliphist store &"; }
+      { sh = "systemctl --user restart clipsync"; }
     ];
     
     prefer-no-csd = true;

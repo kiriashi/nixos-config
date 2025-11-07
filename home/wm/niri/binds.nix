@@ -296,7 +296,10 @@
     "Print".action.screenshot = { }; 
     "Ctrl+Print".action.screenshot-screen = { }; 
     "Alt+Print".action.screenshot-window = { }; 
-
+    "Mod+Shift+S".action.screenshot = { }; 
+    "Mod+Ctrl+S".action.screenshot-screen = { }; 
+    "Mod+Alt+S".action.screenshot-window = { }; 
+    
     # exit
     "Mod+Shift+E".action.quit = { };
   };

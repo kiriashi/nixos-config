@@ -10,7 +10,7 @@
   # SCX 调频器
   services.scx = {
     enable = true;
-    package = pkgs.scx_git.rustscheds;
+    package = pkgs.scx.full;
     scheduler = "scx_rusty";
   };
 

@@ -15,10 +15,10 @@
   };
   mihomo-party = {
     pname = "mihomo-party";
-    version = "1.8.7";
+    version = "1.8.8";
     src = fetchurl {
-      url = "https://github.com/mihomo-party-org/clash-party/releases/download/v1.8.7/mihomo-party-linux-1.8.7-amd64.deb";
-      sha256 = "sha256-a7GBs7IKMFfDBAleFljPYQLsjgqkjpTyW+WtLaa+L8M=";
+      url = "https://github.com/mihomo-party-org/clash-party/releases/download/v1.8.8/mihomo-party-linux-1.8.8-amd64.deb";
+      sha256 = "sha256-CijLo3yLQsHMtejIvRk41kWdv6VoZxOeHKawwqfG6gc=";
     };
   };
   monaco-NF = {
@@ -67,10 +67,10 @@
   };
   wanxiang_base = {
     pname = "wanxiang_base";
-    version = "13.0.3";
+    version = "13.3.0";
     src = fetchurl {
-      url = "https://github.com/amzxyz/rime_wanxiang/releases/download/v13.0.3/rime-wanxiang-base.zip";
-      sha256 = "sha256-xNbr5P3VHYzv1qm/mKf1tkC/2MY9d4ibYQx8hh8a9XI=";
+      url = "https://github.com/amzxyz/rime_wanxiang/releases/download/v13.3.0/rime-wanxiang-base.zip";
+      sha256 = "sha256-kN0ytHqU7xHUW67S8LeIVQTymAtZx7MureHpukwyaWY=";
     };
   };
 }

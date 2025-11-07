@@ -13,7 +13,7 @@
     bat
     busybox
     tealdeer
-    du-dust
+    dust
     dutree
     fd
     tokei
