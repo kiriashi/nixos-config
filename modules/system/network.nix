@@ -16,6 +16,10 @@
   networking = {
     hostName = config.profile.hostName;
 
+    proxy = {
+      default = "http://127.0.0.1:7890";
+    };
+
     wireless = {
       enable = false;
       iwd.enable = true;
@@ -55,7 +59,7 @@
       
       checkReversePath = "loose";
 
-      trustedInterfaces = [ "Meta" ];
+      trustedInterfaces = [ "mihomo" ];
 
       extraInputRules = ''
         ip6 nexthdr ipv6-icmp accept

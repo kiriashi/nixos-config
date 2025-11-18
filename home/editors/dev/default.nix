@@ -30,7 +30,7 @@
     stylua
 
     # typst
-    typstfmt
+    typstyle
     tinymist
 
     # json
