@@ -8,6 +8,7 @@
 {
   programs.niri.settings = {
     spawn-at-startup = [
+      { argv = [ "sparkle" ]; }
       { argv = [ "fcitx5" "-d" ]; }
       { argv = [ "waypaper" "--restore" ]; }
 
