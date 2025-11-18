@@ -56,7 +56,7 @@ outputs =
           (import ./hosts/RBP15-2022)
           
           ./modules/system.nix
-          ./modules/programs.nix
+          ./modules/services.nix
           ./modules/templates/laptop.nix 
           
           ./modules/outputs/chaotic.nix
