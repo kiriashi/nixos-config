@@ -20,21 +20,6 @@
         },
         "version": "cff62f79bd14dd9375a07cfb0b0f3dc2d08db4ec"
     },
-    "mihomo-party": {
-        "cargoLocks": null,
-        "date": null,
-        "extract": null,
-        "name": "mihomo-party",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "name": null,
-            "sha256": "sha256-i1pWgmrEUBLJxCNvFRGcqv36bBjgXYtaJMZVIQtKAfI=",
-            "type": "url",
-            "url": "https://github.com/mihomo-party-org/clash-party/releases/download/v1.8.9/mihomo-party-linux-1.8.9-amd64.deb"
-        },
-        "version": "1.8.9"
-    },
     "monaco-NF": {
         "cargoLocks": null,
         "date": "2025-09-25",

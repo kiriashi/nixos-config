@@ -13,14 +13,6 @@
     };
     date = "2024-12-07";
   };
-  mihomo-party = {
-    pname = "mihomo-party";
-    version = "1.8.9";
-    src = fetchurl {
-      url = "https://github.com/mihomo-party-org/clash-party/releases/download/v1.8.9/mihomo-party-linux-1.8.9-amd64.deb";
-      sha256 = "sha256-i1pWgmrEUBLJxCNvFRGcqv36bBjgXYtaJMZVIQtKAfI=";
-    };
-  };
   monaco-NF = {
     pname = "monaco-NF";
     version = "27dd08bfcadcc84d2df02178d7bf05d413eab0dd";

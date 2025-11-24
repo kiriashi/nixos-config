@@ -19,6 +19,8 @@
     defaultSopsFile = ./secrets.yaml;
 
     secrets = { 
+      github_token = { };
+      
       id_ed22519 = {
         format = "binary";
         sopsFile = ./id_ed25519;

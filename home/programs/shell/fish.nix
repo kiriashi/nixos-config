@@ -46,6 +46,11 @@
         fastfetch
         set --global fish_greeting 日々私たちが過ごしている日常は、実は、奇跡の連続なのかもしれない。
         set -gx PATH $HOME/.cargo/bin $PATH
+
+        # Load GitHub token from sops
+        if test -f "${config.sops.secrets.github_token.path}"
+          set -gx GITHUB_TOKEN (cat "${config.sops.secrets.github_token.path}")
+        end
       '';
 
       shellInit = ''
