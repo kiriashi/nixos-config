@@ -1,7 +1,4 @@
-{
-  ppkgs,
-  ...
-}:
+{ pkgs, lib, config, ... }:
 
 { 
   programs = {
