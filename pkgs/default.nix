@@ -34,7 +34,6 @@ combineOutput {
   # 直接目录
   loadDir = [
     ./wallpapers
-    ./mihomo-party
     ./tableplus
   ];
   

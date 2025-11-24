@@ -6,7 +6,7 @@ stdenv.mkDerivation rec {
 
   src = fetchurl {
     url = "https://github.com/amzxyz/RIME-LMDG/releases/download/LTS/wanxiang-lts-zh-hans.gram";
-    sha256 = "sha256:307c6274f5dbcc2f0132e99a5e781fe168ab909d7abed7ba495594b665f6f3b1";
+    sha256 = "sha256:40434c92d84ed52168e921ced47aa86e4b4009db5dfe659f98f8d07e5b36e324";
     name = "wanxiang-lts-zh-hans.gram";
   };
 

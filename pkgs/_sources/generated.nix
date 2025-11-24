@@ -67,10 +67,10 @@
   };
   wanxiang_base = {
     pname = "wanxiang_base";
-    version = "13.4.1";
+    version = "13.4.6";
     src = fetchurl {
-      url = "https://github.com/amzxyz/rime_wanxiang/releases/download/v13.4.1/rime-wanxiang-base.zip";
-      sha256 = "sha256-DzqCu8GuBpti5n8x9IA19xyoXdQh8TavJ9qaDa4aHnA=";
+      url = "https://github.com/amzxyz/rime_wanxiang/releases/download/v13.4.6/rime-wanxiang-base.zip";
+      sha256 = "sha256-R2ftvMHEy9sEnaKGoxYT+nCI+5vDCNdIpc1f6khT+V4=";
     };
   };
 }
